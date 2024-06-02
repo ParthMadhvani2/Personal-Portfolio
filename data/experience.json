@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Work & Internship Experience",
+    "description": "I've worked with startups & companies as a freelancer & intern",
+    "details": [
+      {
+        "experienceTitle": "Fullstack Developer",
+        "experienceDescription": [
+          "I created a lot of beautiful components using react, nextjs, and scss to make the product more user friendly",
+          "I developed components that directly interface with the backend APIs using tables and charts in dashboard pages ",
+          "Throughout the internship, I have gained a lot of knowledge and made several valuable contributions."
+        ],
+        "experienceOrg": {
+          "name": " Web3Scope.tech",
+          "link": "#",
+          "websiteDisplayName": "#"
+        },
+        "experienceStatus": {
+          "startAt": "April 2024",
+          "endAt": "present"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Open Source Experience",
+    "description": "I've contributed to startups & communities",
+    "details": [
+      {
+        "experienceTitle": "Mentor",
+        "experienceDescription": [
+          "As a mentor for GirlScript Summer of Code 2024 (#GSSoC2024), My role is to provide guidance, support, and encouragement to participating students throughout their open source development journey.",
+          "I manage the design & development of the community website using Next.js, Tailwind CSS, and TypeScript."
+        ],
+        "experienceOrg": {
+          "name": "GSSoC'24",
+          "link": "https://gssoc.girlscript.tech/",
+          "websiteDisplayName": "gssoc.tech"
+        },
+        "experienceStatus": {
+          "startAt": "May 2023",
+          "endAt": "Present"
+        }
+      },
+      {
+        "experienceTitle": "Contributor",
+        "experienceDescription": [
+          "As a contributor, I dove into open-source projects, collaborated with developers, & made impactful contributions to coding initiatives.",
+          "Project - Engineering-Notes-Website",
+          "I have also changed the UI of the website"
+        ],
+        "experienceOrg": {
+          "name": "GSSoC'23",
+          "link": "https://gssoc.girlscript.tech/",
+          "websiteDisplayName": "gssoc.tech"
+        },
+        "experienceStatus": {
+          "startAt": "May 2023",
+          "endAt": "Aug 2023"
+        }
+      }
+    ]
+  }
+]
