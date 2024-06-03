@@ -2,7 +2,7 @@
   "Development": [
     {
       "category": "Languages",
-      "skills": ["C & C++", "HTML & CSS", "JavaScript", "TypeScript"]
+      "skills": ["C & C++", "HTML & CSS", "JavaScript", "TypeScript", "SCSS", "Bash"]
     },
     {
       "category": "Databases & Query Languages",
@@ -18,10 +18,9 @@
         "Shadcn",
         "Tailwind CSS",
         "Chakra UI",
-        "Ant Design",
         "Materialize",
-        "Bootstrap",
-        "SCSS"
+        "Ant Design",
+        "Framer Motion"
       ]
     },
     {
@@ -30,7 +29,7 @@
     },
     {
       "category": "Tools",
-      "skills": ["Git", "Vite", "CI/CD", "Docker", "Postman", "Figma"]
+      "skills": ["Git", "Vite", "CI/CD", "Docker", "Postman", "Figma", "WebSockets", "Jest", "Cypress", "Strapi", "NPM/Yarn", "bun"]
     }
   ],
   "Design": [
