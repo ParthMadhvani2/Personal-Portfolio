@@ -36,12 +36,22 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <p className="mt-4">
               hire me → &nbsp;
               <LinkText
-                href="https://drive.google.com/file/d/1iuUTIBe5hZ_zAqSS4cD5yY0NR--T18kN/view?usp=sharing"
-                target="_blank"
+                href="/resume"
+                target="_self"
                 isExternal={false}
                 className="text-neutral-200 "
               >
                 Resume
+              </LinkText>{" "}
+            </p>
+            <p className="mt-6">
+              <LinkText
+                href="https://calendly.com/madhvaniparth/30min"
+                target="_blank"
+                isExternal={true}
+                className="text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
+              >
+                Schedule a meet / cal.com
               </LinkText>{" "}
             </p>
           </div>
@@ -53,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             height={500}
             className="outline-none
             hover:ring-8 ring-gradient-to-b from-neutral-400 to-neutral-800 ring-neutral-700 border-none hover:ring-offset-4 ring-offset-neutral-600 ring-opacity-50 cursor-pointer
-            transition-all duration-300 rounded-xl h-full "
+            transition-all duration-300 rounded-xl h-cover "
             alt="Parth Madhvani"
             priority
           />

@@ -11,15 +11,11 @@ export const metadata: Metadata = {
     template: "%s | Parth Madhvani",
   },
   description:
-    "Hey!, I am an engineer and designer, I build beautiful interfaces and experiences for the web with a focus on ux design and branding.",
+    "Hey! I am an engineer (designer, most of the times), learning how to build and design scalable websites and applications.",
   twitter: {
     card: "summary_large_image",
     site: "@parthmadhvani2",
     creator: "@parthmadhvani2",
-  },
-  metadataBase: new URL("https://parthmadhvani2.vercel.app"),
-  icons: {
-    icon: "/favicon.png",
   },
 };
 
@@ -52,7 +48,8 @@ export default function RootLayout({
       </Script>
       <html lang="en" className={manrope.className}>
         <head>
-          <link rel="icon" href="/favicon.png" sizes="any" />
+          <link rel="shortcut icon" href="/media/favicon.png" />
+          <meta name="title" content="Parth Madhvani" />
           <Script async src="https://cdn.splitbee.io/sb.js" strategy="afterInteractive" />
         </head>
         <body>

@@ -43,13 +43,13 @@ const WorkCategory: WorkCategory[] = [
     ],
   },
   {
-    name: "Building.",
+    name: "Newsletter.",
     details: [
       {
-        title: "FreshFruitHub",
-        description: "Your Virtual Marketplace for Fresh Groceries",
-        link: "/crafts",
-        isExternal: false,
+        title: "Subscribe",
+        description: "join my newsletter",
+        link: "/newsletter",
+        isExternal: true,
       },
     ],
   },

@@ -46,6 +46,24 @@ const ContactCategory: ContactCategory[] = [
       },
     ],
   },
+  {
+    name: "Schedule a meet",
+    details: [
+      {
+        contactType: "@parthmadhvani2",
+        contactLink: "https://calendly.com/madhvaniparth/30min",
+      },
+    ],
+  },
+  {
+    name: "Resume",
+    details: [
+      {
+        contactType: "@parthmadhvani2",
+        contactLink: "/resume",
+      },
+    ],
+  },
 ];
 
 const Contact: React.FC = () => {
@@ -88,7 +106,7 @@ const Contact: React.FC = () => {
                   <LinkText
                     key={index}
                     href={detail.contactLink}
-                    target="_blank"
+                    target="_self"
                     isExternal={true}
                     className="text-xl font-semibold text-neutral-200"
                   >
