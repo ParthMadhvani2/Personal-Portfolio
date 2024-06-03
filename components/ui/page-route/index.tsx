@@ -8,7 +8,7 @@ const PageRoute = () => {
   const pathname = usePathname();
   return (
     pathname !== "/" && (
-      <div className=" top-[96px] left-[13%] fixed  text-neutral-500 font-semibold">
+      <div className=" top-[10%] left-[13%] fixed  text-neutral-500 font-semibold">
         <LinkText
           href={"/"}
           className="no-underline flex justify-center items-center"

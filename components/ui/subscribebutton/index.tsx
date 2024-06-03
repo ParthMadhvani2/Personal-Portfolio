@@ -8,7 +8,7 @@ const SubscribeButton: React.FunctionComponent = () => {
   };
 
   return (
-    <div>
+    <div className='mx-auto'>
       <button
         className="mt-12 max-md:mx-auto text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
         onClick={handleSubscribeClick}

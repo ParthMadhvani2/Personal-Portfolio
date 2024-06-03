@@ -16,7 +16,7 @@ export const metadata = {
 
 const TechFlex = () => {
   return (
-    <div className="tech-flex">
+    <div className="tech-flex mt-8">
       <div className="mb-6">
         <h1 className=" mb-2 text-neutral-200 text-xl font-semibold">
           Super Powers that I have

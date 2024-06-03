@@ -5,7 +5,7 @@ const ResumeView: React.FunctionComponent = () => {
   return (
     <>
       <div className="resume-view-container">
-        <div className={'my-6'}>
+        <div className={'my-10'}>
           <Image
             src={'/media/resume.png'}
             width={'360'}
