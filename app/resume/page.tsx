@@ -20,7 +20,7 @@ const ResumeView: React.FunctionComponent = () => {
             }>
             <p className="mt-6">
               <LinkText
-                href="https://drive.google.com/file/d/1G3atqZRMhyWQU8bcr5xpAV9WGDuxpUHp/view?usp=sharing"
+                href="https://drive.google.com/file/d/12k8pHf7Pe9zPq9I-CfCZHfERQEVbCxOI/view?usp=sharing"
                 target="_blank"
                 isExternal={true}
                 className="text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
