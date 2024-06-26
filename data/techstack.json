@@ -6,7 +6,7 @@
     },
     {
       "category": "Databases & Query Languages",
-      "skills": ["MySQL", "Mongo DB", "PostgreSQL", "GraphQL (Query Language)", "SQL"]
+      "skills": [ "SQL","Mongo DB", "PostgreSQL", "GraphQL (Query Language)"]
     },
     {
       "category": "Libraries & Frameworks",
@@ -29,7 +29,7 @@
     },
     {
       "category": "Tools",
-      "skills": ["Git", "Vite", "CI/CD", "Docker", "Postman", "Figma", "WebSockets", "Jest", "Cypress", "Strapi", "NPM/Yarn", "bun"]
+      "skills": ["Git", "Vite", "CI/CD", "Postman", "Figma", "WebSockets", "Jest", "Clerk", "Stripe", "NPM/Yarn"]
     }
   ],
   "Design": [
