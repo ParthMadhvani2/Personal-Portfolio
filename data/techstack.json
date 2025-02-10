@@ -29,7 +29,7 @@
     },
     {
       "category": "Tools",
-      "skills": ["Git", "Vite", "Postman", "Figma", "Jest", "Clerk", "Stripe", "NPM/Yarn", "bun"]
+      "skills": ["Git", "Vite", "Postman", "Swagger", "Figma", "Jest", "Clerk", "Stripe", "NPM/Yarn", "bun"]
     }
   ],
   "Design": [

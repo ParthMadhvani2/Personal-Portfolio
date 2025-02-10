@@ -4,6 +4,42 @@
     "description": "I've worked with startups & companies as a freelancer & intern",
     "details": [
       {
+        "experienceTitle": "Software Engineer",
+        "experienceDescription": [
+          "Building No-code Workflow Automation platform to help you reduce time and effort of building software integrations by connecting applications, databases and APIs with simple natural language prompts"
+        ],
+        "experienceOrg": {
+          "name": "Connektra.io",
+          "link": "https://connektra.io/",
+          "websiteDisplayName": "connektra.io"
+        },
+        "experienceStatus": {
+          "startAt": "Feb 2025",
+          "endAt": "Present"
+        }
+      },
+      {
+        "experienceTitle": "Fullstack Developer",
+        "experienceDescription": [
+          "Designed and implemented a comprehensive, well-optimized database structure to handle complex data relationships, ensuring performance and scalability across all app features.",
+          "Oversaw front-end development, leveraging React with Tailwind CSS to build a responsive and user-friendly interface while ensuring seamless integration with the backend. ",
+          "Architected and managed the entire backend infrastructure of Xipper using PostgreSQL for data storage, with Prisma as the ORM for efficient schema management and migrations.",
+          "Developed and fine-tuned the analytics logic, enabling real-time insights and facilitating data-driven decisions, enhancing user experience and business intelligence.",
+          "Secure hosting while coordinating the React.js frontend hosted on a CDN for faster content delivery.",
+          "Implemented caching to optimize performance and reduce latency, enhancing the overall responsiveness of the app.",
+          "Facilitated communication between the development team and the CTO, aligning technical execution with strategic goals and acting as a key liaison to streamline project delivery."
+        ],
+        "experienceOrg": {
+          "name": "Xipper",
+          "link": "https://xipper.in/",
+          "websiteDisplayName": "xipper.in"
+        },
+        "experienceStatus": {
+          "startAt": "Oct 2024",
+          "endAt": "Jan 2025"
+        }
+      },
+      {
         "experienceTitle": "Fullstack Developer",
         "experienceDescription": [
           "Created numerous beautiful and user-friendly components using React, Next.js, and SCSS",
@@ -38,8 +74,8 @@
           "websiteDisplayName": "gssoc.girlscript.tech/wob"
         },
         "experienceStatus": {
-          "startAt": "August 2023",
-          "endAt": "present"
+          "startAt": "Aug 2024",
+          "endAt": "Oct 2024"
         }
       },
       {
@@ -54,8 +90,8 @@
           "websiteDisplayName": "gssoc.tech"
         },
         "experienceStatus": {
-          "startAt": "May 2023",
-          "endAt": "August 2024"
+          "startAt": "May 2024",
+          "endAt": "Aug 2024"
         }
       },
       {
