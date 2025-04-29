@@ -10,7 +10,6 @@ const Development: SkillCategory[] = skillsData.Development;
 const Design: SkillCategory[] = skillsData.Design;
 
 export const metadata = {
-  title: "super powers that I have",
   description: "technical and design skills I have acquired over the years",
 };
 

@@ -2,11 +2,11 @@
   "Development": [
     {
       "category": "Languages",
-      "skills": ["C & C++", "HTML & CSS", "JavaScript", "TypeScript", "SCSS", "Bash"]
+      "skills": ["C & C++", "JavaScript", "TypeScript", "Rust"]
     },
     {
       "category": "Databases & Query Languages",
-      "skills": [ "SQL","Mongo DB", "PostgreSQL", "GraphQL (Query Language)"]
+      "skills": ["SQL", "NoSQL", "MongoDB", "PostgreSQL", "GraphQL (Query Language)", "ORMs"]
     },
     {
       "category": "Libraries & Frameworks",
@@ -17,19 +17,49 @@
         "ExpressJS",
         "Shadcn",
         "Tailwind CSS",
-        "Chakra UI",
-        "Materialize",
-        "Ant Design",
-        "Framer Motion"
+        "Framer Motion",
+        "Bun"
+      ]
+    },
+    {
+      "category": "Testing & Architecture",
+      "skills": [
+        "Testing",
+        "Monorepos",
+        "Turborepo",
+        "Websockets",
+        "RTC"
       ]
     },
     {
       "category": "Platforms",
-      "skills": ["Github", "Netlify", "Vercel", "AWS", "Firebase", "Supabase"]
+      "skills": [
+        "GitHub",
+        "Netlify",
+        "Vercel",
+        "AWS",
+        "Firebase",
+        "Supabase",
+        "GCP VMs",
+        "ECS",
+        "Kubernetes",
+        "CDN"
+      ]
     },
     {
       "category": "Tools",
-      "skills": ["Git", "Vite", "Postman", "Swagger", "Figma", "Jest", "Clerk", "Stripe", "NPM/Yarn", "bun"]
+      "skills": [
+        "Git",
+        "Vite",
+        "Postman",
+        "Swagger",
+        "Figma",
+        "Jest",
+        "Clerk",
+        "Stripe",
+        "NPM/Yarn",
+        "Docker"
+      ]
     }
   ],
   "Design": [
@@ -47,7 +77,7 @@
       "skills": ["Figma"]
     },
     {
-      "category": "UX Pyschology Rules",
+      "category": "UX Psychology Rules",
       "skills": ["Hick's Law", "Fitt's Law", "Miller's Law", "Zeigarnik Effect"]
     }
   ]

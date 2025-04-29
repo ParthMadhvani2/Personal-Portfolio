@@ -6,16 +6,41 @@
       {
         "experienceTitle": "Software Engineer",
         "experienceDescription": [
-          "Building No-code Workflow Automation platform to help you reduce time and effort of building software integrations by connecting applications, databases and APIs with simple natural language prompts"
+          "Maintain and enhance 50+ top-tier integrations on the platform",
+          "Ship integrations at lightning speed with AI, automate & deliver projects 10x faster",
+          "AI-powered automation eliminates integration overhead, letting you focus on innovation instead of infrastructure.",
+          "Developing a no-code, visual workflow automation platform that helps organizations build custom integrations without engineering overhead",
+          "Implementing and optimizing React/TypeScript components for AI-powered integration workflows and connector management",
+          "Implementing AI modal interfaces that connect LLMs with workflow automation agents",
+          "Optimizing API performance, reducing latency, and improving data synchronization mechanisms"
         ],
         "experienceOrg": {
-          "name": "Connektra.io",
+          "name": "Connektra.io ( Synchromeda Technologies Pvt. Ltd )",
           "link": "https://connektra.io/",
           "websiteDisplayName": "connektra.io"
         },
         "experienceStatus": {
           "startAt": "Feb 2025",
-          "endAt": "Present"
+          "endAt": "May 2025"
+        }
+      },
+      {
+        "experienceTitle": "Design Engineer ( web3 )",
+        "experienceDescription": [
+          "Designed and developed Frontend for a comprehensive prediction market analysis platform that interfaces with the Aptos blockchain, empowering users to track, analyze, and participate in decentralized prediction markets.",          "Designed intuitive interfaces that improved user engagement with prediction markets",
+          "Implemented revenue model through trading fees and premium analysis features",
+          "Implemented performance optimizations reducing initial load time by 40%",
+          "Developed reusable component library accelerating future feature implementation",
+          "Created comprehensive UI documentation and style guides for design consistency"
+        ],
+        "experienceOrg": {
+          "name": "Either ( Freelance )",
+          "link": "https://either-alpha.vercel.app/",
+          "websiteDisplayName": "Either"
+        },
+        "experienceStatus": {
+          "startAt": "Feb 2025",
+          "endAt": "April 2025"
         }
       },
       {
@@ -26,8 +51,7 @@
           "Architected and managed the entire backend infrastructure of Xipper using PostgreSQL for data storage, with Prisma as the ORM for efficient schema management and migrations.",
           "Developed and fine-tuned the analytics logic, enabling real-time insights and facilitating data-driven decisions, enhancing user experience and business intelligence.",
           "Secure hosting while coordinating the React.js frontend hosted on a CDN for faster content delivery.",
-          "Implemented caching to optimize performance and reduce latency, enhancing the overall responsiveness of the app.",
-          "Facilitated communication between the development team and the CTO, aligning technical execution with strategic goals and acting as a key liaison to streamline project delivery."
+          "Implemented caching to optimize performance and reduce latency, enhancing the overall responsiveness of the app."
         ],
         "experienceOrg": {
           "name": "Xipper",
@@ -44,11 +68,11 @@
         "experienceDescription": [
           "Created numerous beautiful and user-friendly components using React, Next.js, and SCSS",
           "Developed components that directly interface with backend APIs, utilizing tables and charts for dashboard pages. ",
-          "TGained substantial knowledge and made several valuable contributions throughout the internship."
+          "Gained substantial knowledge and made several valuable contributions throughout the internship."
         ],
         "experienceOrg": {
-          "name": " Web3Scope.tech",
-          "link": "#",
+          "name": " Web3Scope",
+          "link": "https://www.linkedin.com/company/web3scope/",
           "websiteDisplayName": "web3scope.tech"
         },
         "experienceStatus": {
