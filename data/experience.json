@@ -62,23 +62,6 @@
           "startAt": "Oct 2024",
           "endAt": "Jan 2025"
         }
-      },
-      {
-        "experienceTitle": "Fullstack Developer",
-        "experienceDescription": [
-          "Created numerous beautiful and user-friendly components using React, Next.js, and SCSS",
-          "Developed components that directly interface with backend APIs, utilizing tables and charts for dashboard pages. ",
-          "Gained substantial knowledge and made several valuable contributions throughout the internship."
-        ],
-        "experienceOrg": {
-          "name": " Web3Scope",
-          "link": "https://www.linkedin.com/company/web3scope/",
-          "websiteDisplayName": "web3scope.tech"
-        },
-        "experienceStatus": {
-          "startAt": "April 2024",
-          "endAt": "June 2024"
-        }
       }
     ]
   },
@@ -116,22 +99,6 @@
         "experienceStatus": {
           "startAt": "May 2024",
           "endAt": "Aug 2024"
-        }
-      },
-      {
-        "experienceTitle": "Contributor",
-        "experienceDescription": [
-          "As a contributor, I dove into open-source projects, collaborated with developers, & made impactful contributions to coding initiatives.",
-          "Project - Engineering-Notes-Website"
-        ],
-        "experienceOrg": {
-          "name": "GSSoC'23",
-          "link": "https://gssoc.girlscript.tech/",
-          "websiteDisplayName": "gssoc.tech"
-        },
-        "experienceStatus": {
-          "startAt": "May 2023",
-          "endAt": "Aug 2023"
         }
       }
     ]
