@@ -28,7 +28,7 @@ const Experience: React.FC = () => {
   return (
     <div>
       <h1 className="text-xl font-semibold text-neutral-200">
-        Experience I have acquired over the years : (I'm still learning)
+        Experience I’ve acquired over the years : (still learning — always iterating)
       </h1>
       {ExperienceCategory.map((item, index) => (
         <div key={index} className="my-10">

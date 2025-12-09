@@ -38,20 +38,11 @@ const ContactCategory: ContactCategory[] = [
     ],
   },
   {
-    name: "Instagram",
-    details: [
-      {
-        contactType: "@parthmadhvani2",
-        contactLink: "https://www.instagram.com/parthmadhvani2/",
-      },
-    ],
-  },
-  {
     name: "Schedule a meet",
     details: [
       {
         contactType: "@parthmadhvani2",
-        contactLink: "https://calendly.com/madhvaniparth/30min",
+        contactLink: "https://cal.com/parth-madhvani-pjulld/30min",
       },
     ],
   },
@@ -90,11 +81,10 @@ const Contact: React.FC = () => {
         </LinkText>
       </h1>
       <p className="text-neutral-500 mb-6 font-semibold text-xl">
-        I'm currently open to new opportunities, if you have any questions or
-        just want to say hi, feel free to contact me using the links below.
+        I’m currently open to frontend engineering roles — feel free to reach out or say hi.
       </p>
       <h1 className="text-xl font-semibold text-neutral-500 mb-6">
-        Or you can find me on socials :
+        Find me on:
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

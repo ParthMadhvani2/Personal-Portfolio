@@ -2,63 +2,64 @@
   "Development": [
     {
       "category": "Languages",
-      "skills": ["C & C++", "JavaScript", "TypeScript", "Rust"]
+      "skills": ["JavaScript, TypeScript", "Python", "C & C++", "Rust (exploring)"]
     },
     {
-      "category": "Databases & Query Languages",
-      "skills": ["SQL", "NoSQL", "MongoDB", "PostgreSQL", "GraphQL (Query Language)", "ORMs"]
+      "category": "Databases & Data Layers",
+      "skills": ["PostgreSQL, MongoDB, Redis, DynamoDB", "SQL & NoSQL", "ORMs (Prisma, Mongoose, Drizzle)"]
     },
     {
-      "category": "Libraries & Frameworks",
+      "category": "Frontend Engineering",
       "skills": [
-        "React & Redux",
-        "NextJS",
-        "NodeJS",
-        "ExpressJS",
-        "Shadcn",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Bun"
+        "React, Next.js",
+        "TailwindCSS, shadcn/ui",
+        "Zustand, Redux, React Query (TanStack Query)",
+        "React Hook Form",
+        "Framer Motion, Motion",
+        "Vite",
+        "Jest (unit + integration testing)"
       ]
     },
     {
-      "category": "Testing & Architecture",
+      "category": "Backend Engineering",
       "skills": [
-        "Testing",
-        "Monorepos",
-        "Turborepo",
-        "Websockets",
-        "RTC"
+        "Node.js, Express.js, Hono.js, tRPC",
+        "REST APIs, GraphQL",
+        "WebSockets, RTC (real-time communication)"
       ]
     },
     {
-      "category": "Platforms",
+      "category": "Cloud, DevOps & System Design",
       "skills": [
-        "GitHub",
-        "Netlify",
-        "Vercel",
-        "AWS",
-        "Firebase",
-        "Supabase",
-        "GCP VMs",
-        "ECS",
-        "Kubernetes",
-        "CDN"
+        "AWS (EC2, VPC, S3, RDS, Lambda, CloudWatch)",
+        "Docker",
+        "CI/CD (GitHub Actions)",
+        "NGINX, Load Balancing, Reverse Proxying",
+        "CDN & Caching (Cloudflare, Fastly)",
+        "Monorepos (Turborepo)",
+        "Observability (logging, tracing, metrics)"
+      ]
+    },
+    {
+      "category": "Web3",
+      "skills": [
+        "Solidity (exploring)",
+        "Writing & testing smart contracts",
+        "Wallet integrations (ethers.js, wagmi)",
+        "Gas optimization fundamentals",
+        "Understanding mempool, RPC nodes, consensus mechanisms",
+        "Deploying smart contracts on testnets"
       ]
     },
     {
       "category": "Tools",
       "skills": [
-        "Git",
-        "Vite",
-        "Postman",
-        "Swagger",
+        "Git, Postman, Swagger",
         "Figma",
-        "Jest",
-        "Clerk",
-        "Stripe",
-        "NPM/Yarn",
-        "Docker"
+        "Stripe, Clerk",
+        "npm, Yarn, pnpm, Bun",
+        "Redis",
+        "FFmpeg"
       ]
     }
   ],
@@ -67,14 +68,13 @@
       "category": "Design",
       "skills": [
         "UI Design",
-        "UX Design & Research",
-        "Design Systems",
-        "Design Thinking"
+        "UX Research",
+        "Design Systems"
       ]
     },
     {
       "category": "Tools",
-      "skills": ["Figma"]
+      "skills": ["Figma (Primary Tool)"]
     },
     {
       "category": "UX Psychology Rules",

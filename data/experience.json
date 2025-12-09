@@ -4,18 +4,35 @@
     "description": "I've worked with startups & companies as a freelancer & intern",
     "details": [
       {
-        "experienceTitle": "Software Engineer",
+        "experienceTitle": "Founding Engineer",
         "experienceDescription": [
-          "Maintain and enhance 50+ top-tier integrations on the platform",
-          "Ship integrations at lightning speed with AI, automate & deliver projects 10x faster",
-          "AI-powered automation eliminates integration overhead, letting you focus on innovation instead of infrastructure.",
-          "Developing a no-code, visual workflow automation platform that helps organizations build custom integrations without engineering overhead",
-          "Implementing and optimizing React/TypeScript components for AI-powered integration workflows and connector management",
-          "Implementing AI modal interfaces that connect LLMs with workflow automation agents",
-          "Optimizing API performance, reducing latency, and improving data synchronization mechanisms"
+          "Built complex, scalable UI flows for RFQs, quoting, approvals, and invoicing.",
+          "Designed component-driven systems powering dynamic business workflows.",
+          "Implemented AI-powered features: PDF → quote extraction, email-ingested RFQs, product recommendations.",
+          "Collaborated closely with backend teams on APIs, data models, and ERP integrations."
         ],
         "experienceOrg": {
-          "name": "Connektra.io ( Synchromeda Technologies Pvt. Ltd )",
+          "name": "Pactle",
+          "link": "https://pactle.co/",
+          "websiteDisplayName": "pactle.co"
+        },
+        "experienceStatus": {
+          "startAt": "July 2025",
+          "endAt": "Nov 2025"
+        }
+      },
+      {
+        "experienceTitle": "Software Engineer",
+        "experienceDescription": [
+          "Maintained and improved 50+ enterprise-grade integrations on a no-code automation platform.",
+          "Built and optimized React + TypeScript components for AI-driven workflows.",
+          "Developed LLM-powered modal experiences for automation engines.",
+          "Reduced integration delivery time by 10x using AI-based tooling.",
+          "Optimized APIs, reduced latency, and improved sync performance.",
+          "Contributed to the visual workflow builder enabling zero-code integrations."
+        ],
+        "experienceOrg": {
+          "name": "Connektra.io",
           "link": "https://connektra.io/",
           "websiteDisplayName": "connektra.io"
         },
@@ -25,33 +42,14 @@
         }
       },
       {
-        "experienceTitle": "Design Engineer ( web3 )",
-        "experienceDescription": [
-          "Designed and developed Frontend for a comprehensive prediction market analysis platform that interfaces with the Aptos blockchain, empowering users to track, analyze, and participate in decentralized prediction markets.",          "Designed intuitive interfaces that improved user engagement with prediction markets",
-          "Implemented revenue model through trading fees and premium analysis features",
-          "Implemented performance optimizations reducing initial load time by 40%",
-          "Developed reusable component library accelerating future feature implementation",
-          "Created comprehensive UI documentation and style guides for design consistency"
-        ],
-        "experienceOrg": {
-          "name": "Either ( Freelance )",
-          "link": "https://either-alpha.vercel.app/",
-          "websiteDisplayName": "Either"
-        },
-        "experienceStatus": {
-          "startAt": "Feb 2025",
-          "endAt": "April 2025"
-        }
-      },
-      {
         "experienceTitle": "Fullstack Developer",
         "experienceDescription": [
-          "Designed and implemented a comprehensive, well-optimized database structure to handle complex data relationships, ensuring performance and scalability across all app features.",
-          "Oversaw front-end development, leveraging React with Tailwind CSS to build a responsive and user-friendly interface while ensuring seamless integration with the backend. ",
-          "Architected and managed the entire backend infrastructure of Xipper using PostgreSQL for data storage, with Prisma as the ORM for efficient schema management and migrations.",
-          "Developed and fine-tuned the analytics logic, enabling real-time insights and facilitating data-driven decisions, enhancing user experience and business intelligence.",
-          "Secure hosting while coordinating the React.js frontend hosted on a CDN for faster content delivery.",
-          "Implemented caching to optimize performance and reduce latency, enhancing the overall responsiveness of the app."
+          "Designed a scalable PostgreSQL schema using Prisma for complex relational data.",
+          "Led frontend engineering using React + Tailwind to build polished UIs.",
+          "Architected backend with Node.js + Prisma achieving sub-150ms API responses.",
+          "Developed real-time analytics powering actionable insights.",
+          "Implemented caching layers + CDN deployment to reduce latency.",
+          "Owned the entire development lifecycle across frontend, backend, and deployment."
         ],
         "experienceOrg": {
           "name": "Xipper",
@@ -66,39 +64,26 @@
     ]
   },
   {
-    "name": "Open Source Experience",
-    "description": "I've contributed to startups & communities",
+    "name": "Freelance/Contract Experience",
     "details": [
       {
-        "experienceTitle": "Mentor",
+        "experienceTitle": "Design Engineer ( web3 )",
         "experienceDescription": [
-          "As a mentor for Winter of Blockchain 2024 (#WoB2024), My role is to provide guidance, support, and encouragement with over 30,000 active contributors, throughout their open source development journey.",
-          "Share your expertise, help shape future blockchain innovators, and expand your network"
+          "Designed & developed frontend for a prediction-market analytics platform on Aptos.",
+          "Built reusable UI components, accelerating development speed.",
+          "Delivered premium analytics features and revenue-model UI flows.",
+          "Improved performance by 40% through bundling + render optimizations.",
+          "Designed clear UX flows that improved user engagement.",
+          "Created UI documentation and internal design guidelines."
         ],
         "experienceOrg": {
-          "name": "WoB'24",
-          "link": "https://gssoc.girlscript.tech/wob",
-          "websiteDisplayName": "gssoc.girlscript.tech/wob"
+          "name": "Either ( Prediction Market on Aptos )",
+          "link": "https://either-alpha.vercel.app/",
+          "websiteDisplayName": "Either"
         },
         "experienceStatus": {
-          "startAt": "Aug 2024",
-          "endAt": "Oct 2024"
-        }
-      },
-      {
-        "experienceTitle": "Mentor",
-        "experienceDescription": [
-          "As a mentor for GirlScript Summer of Code 2024 (#GSSoC2024), My role is to provide guidance, support, and encouragement with over 30,000 active contributors, throughout their open source development journey.",
-          "A hub for collaborative problem-solving and knowledge sharing, where mentors played a key role in resolving queries."
-        ],
-        "experienceOrg": {
-          "name": "GSSoC'24",
-          "link": "https://gssoc.girlscript.tech/",
-          "websiteDisplayName": "gssoc.tech"
-        },
-        "experienceStatus": {
-          "startAt": "May 2024",
-          "endAt": "Aug 2024"
+          "startAt": "Feb 2025",
+          "endAt": "April 2025"
         }
       }
     ]
