@@ -10,9 +10,9 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <div className={cn(className + "border-b border-dashed pb-6")}>
+    <section className={cn(className + "border-b border-dashed pb-6")}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
-        <div className="col-span-2">
+        <article className="col-span-2">
           <div>
             <div className="heading">
               <h1 className=" text-neutral-200 transition-all duration-300 text-5xl font-extrabold tracking-tighter">
@@ -26,12 +26,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <Seperator />
           <div className="description  flex flex-col text-xl font-semibold text-neutral-500 ">
             <p>
-              Crafting beautiful interfaces, components and experiences for the
-              web with a focus on ux design and branding for the past 2 years.
+              I craft fast, functional, and thoughtfully designed web interfaces with a deep focus on UX, interaction design, and clean engineering. I’ve worked with early-stage startups across AI, automation, and blockchain—helping them build products from 0 → 1 with clarity, speed, and scalable systems.
             </p>
 
             <p className="mt-4 text-neutral-200">
-              looking for a full-time role as a frontend engineer. <br />
+              I’m currently looking for a full-time frontend engineering role.<br />
             </p>
             <p className="mt-4">
               hire me → &nbsp;
@@ -46,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </p>
             <p className="mt-6">
               <LinkText
-                href="https://calendly.com/madhvaniparth/30min"
+                href="https://cal.com/parth-madhvani-pjulld/30min"
                 target="_blank"
                 isExternal={true}
                 className="text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
@@ -55,8 +54,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               </LinkText>{" "}
             </p>
           </div>
-        </div>
-        <div className="col-span-2 hidden lg:block p-4">
+        </article>
+        <figure className="col-span-2 hidden lg:block p-4">
           <Image
             src="/media/profile.png"
             width={500}
@@ -64,23 +63,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             className="outline-none
             hover:ring-8 ring-gradient-to-b from-neutral-400 to-neutral-800 ring-neutral-700 border-none hover:ring-offset-4 ring-offset-neutral-600 ring-opacity-50 cursor-pointer
             transition-all duration-300 rounded-xl h-cover "
-            alt="Parth Madhvani"
+            alt="Parth Madhvani - Frontend Design Engineer"
             priority
           />
-        </div>
+        </figure>
       </div>
-      {/* <p className="text-xl font-semibold text-neutral-500 mt-8">
-        In the past, I've worked on{" "}
-        <LinkText
-          href="https://www.web3scope.tech"
-          target="_blank"
-          className="text-neutral-200 decoration-purple-500 hover:decoration-purple-600 transition-all duration-300"
-        >
-          Web3Scope
-        </LinkText>{" "}
-        (agency) as a fullstack developer.
-      </p> */}
-    </div>
+    </section>
   );
 };
 

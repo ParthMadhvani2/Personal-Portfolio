@@ -19,40 +19,40 @@ const WorkCategory: WorkCategory[] = [
     details: [
       {
         title: "FramePhase",
-        description: "A simple Captions Generator Application ",
+        description: "AI-powered caption generator built with Next.js and AWS Transcribe. Designed for speed, accessibility, and creator workflows.",
         link: "https://frame-phase.netlify.app/",
         isExternal: true,
       },
       {
-        title: "Github Landing Page",
-        description: "Re-created github.com/home page",
-        link: "https://github-landing.parthmadhvani2.vercel.app/",
+        title: "Token Portfolio",
+        description: "Portfolio tracker for monitoring token holdings with live pricing, analytics, and wallet integration.",
+        link: "https://token-portfolio-parth.vercel.app/",
         isExternal: true,
       },
     ],
   },
-  {
-    name: "Components.",
-    details: [
-      {
-        title: "Crafts",
-        description: "Implementing interfaces and interactions.",
-        link: "/crafts",
-        isExternal: false,
-      },
-    ],
-  },
-  {
-    name: "Newsletter.",
-    details: [
-      {
-        title: "Subscribe",
-        description: "join my newsletter",
-        link: "/newsletter",
-        isExternal: true,
-      },
-    ],
-  },
+  // {
+  //   name: "Components.",
+  //   details: [
+  //     {
+  //       title: "Crafts",
+  //       description: "A collection of handcrafted UI components and micro-interactions. I explore patterns around motion, accessibility, and systematic design.",
+  //       link: "/crafts",
+  //       isExternal: false,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Newsletter.",
+  //   details: [
+  //     {
+  //       title: "Subscribe",
+  //       description: "I write about interface design, design systems, and product engineering.",
+  //       link: "/newsletter",
+  //       isExternal: true,
+  //     },
+  //   ],
+  // },
 ];
 
 const WorkItem: React.FC<WorkDetail> = ({
@@ -71,7 +71,7 @@ const WorkItem: React.FC<WorkDetail> = ({
         >
           {title}
         </LinkText>
-        <p className="text-xl font-semibold text-neutral-500">{description}</p>
+        <p className="text-sm text-neutral-500 leading-relaxed">{description}</p>
       </div>
     </>
   );
@@ -80,14 +80,14 @@ const WorkItem: React.FC<WorkDetail> = ({
 const Work: React.FC = () => {
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 my-10">
+      <div className="grid grid-cols-1 gap-2 my-10">
         {WorkCategory.map((item, index) => {
           return (
             <div key={index}>
               <h1 className="mb-6 text-xl font-semibold text-neutral-200">
                 {item.name}
               </h1>
-              <div>
+              <div className="flex justify-evenly items-center w-auto">
                 {item.details.map((detail, index) => {
                   return (
                     <WorkItem

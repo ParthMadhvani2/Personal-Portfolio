@@ -1,4 +1,4 @@
-import LinkText from "../../components/ui/link";
+import type { Metadata } from "next";
 import skillsData from "../../data/techstack.json";
 
 interface SkillCategory {
@@ -9,8 +9,17 @@ interface SkillCategory {
 const Development: SkillCategory[] = skillsData.Development;
 const Design: SkillCategory[] = skillsData.Design;
 
-export const metadata = {
-  description: "technical and design skills I have acquired over the years",
+export const metadata: Metadata = {
+  title: "Tech Stack & Skills | Parth Madhvani",
+  description:
+    "Complete list of technologies, frameworks, and tools I use for building fast, scalable web applications. React, Next.js, TypeScript, Node.js, PostgreSQL, Docker, and more.",
+  openGraph: {
+    title: "Tech Stack & Skills | Parth Madhvani",
+    description:
+      "Technologies and tools I use: React, Next.js, TypeScript, Node.js, PostgreSQL, Docker, and more.",
+    url: "https://parthmadhvani.com/tech-i-know",
+    type: "website",
+  },
 };
 
 const TechFlex = () => {
@@ -18,23 +27,15 @@ const TechFlex = () => {
     <div className="tech-flex mt-8">
       <div className="mb-6">
         <h1 className=" mb-2 text-neutral-200 text-xl font-semibold">
-          Super Powers that I have
+          Superpowers I’ve Built Over the Years
         </h1>
 
         <p className="text-neutral-500 text-xl font-semibold">
-          I've worked with a range of technologies in the web development world.
-          From design to development, here are a few things I've learned along
-          the way.
+          I’ve worked across the full web stack — from design systems to production-grade engineering.
+          Here’s a curated snapshot of the tools and technologies I use (and continue to learn).
         </p>
       </div>
       <div className="my-12">
-        <h1 className="text-xl font-semibold text-neutral-200">
-          Development skills I have acquired over the years:
-        </h1>
-        <p className="text-xl font-semibold text-neutral-500 mt-2 mb-6">
-          I'm always learning new things and I try to keep this list updated, so
-          it's not an exhaustive list.
-        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {Development.map((item, index) => (
@@ -57,24 +58,20 @@ const TechFlex = () => {
           ))}
         </div>
         <p className="text-xl text-neutral-500 mt-2 mb-6 font-semibold">
-          Some people call me a{" "}
-          <span className="text-neutral-200 font-semibold">
-            Full Stack Developer
-          </span>{" "}
-          but I prefer to call myself a{" "}
+          Some people call me a full-stack developer,{" "}
+          but I prefer
           <span className="text-neutral-200 font-semibold">
             Frontend Engineer
           </span>{" "}
-          because I love to work on the frontend side of things.
+          because designing and building great user experiences is where I operate best.
         </p>
       </div>{" "}
       <div className="my-12">
         <h1 className="text-xl font-semibold mb-6 text-neutral-200">
-          Design skills I have acquired so far: (I'm still learning)
+          Design skills
         </h1>
         <p className="text-xl text-neutral-500 mt-2 mb-6 font-semibold">
-          I'm always learning new things and I try to keep this list updated, so
-          it's not an exhaustive list.
+          I enjoy crafting interfaces that are both functional and delightful.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

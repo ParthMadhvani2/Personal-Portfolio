@@ -45,7 +45,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       },
       top: {
         position: "absolute",
-        left: "50%",
+        left: "-100%",
         transform: "translateX(-50%)",
         bottom: "100%",
       },

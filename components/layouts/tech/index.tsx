@@ -14,44 +14,44 @@ interface TechIKnow {
 const TechIKnow: TechIKnow[] = [
   {
     name: "React",
-    description: "JavaScript library",
+    description: "UI library for building interfaces",
     icon: <SiIcons.SiReact />,
     link: "https://reactjs.org",
     isExternal: true,
   },
   {
     name: "TypeScript",
-    description: "Typed JavaScript",
+    description: "Strongly typed JavaScript for scalable apps",
     icon: <SiIcons.SiTypescript />,
     link: "https://www.typescriptlang.org",
     isExternal: true,
   },
   {
     name: "Next.js",
-    description: "React framework",
+    description: "Full-stack React framework",
     icon: <SiIcons.SiNextdotjs />,
     link: "https://nextjs.org",
     isExternal: true,
   },
   {
-    name: "Tailwind CSS",
-    description: "CSS framework",
-    link: "https://tailwindcss.com",
-    icon: <SiIcons.SiTailwindcss />,
+    name: "Node.js",
+    description: "Backend runtime for scalable APIs",
+    icon: <SiIcons.SiNodedotjs />,
+    link: "https://nodejs.org",
     isExternal: true,
   },
   {
-    name: "Figma",
-    description: "design tool",
-    link: "https://figma.com",
-    icon: <SiIcons.SiFigma />,
+    name: "PostgreSQL",
+    description: "Relational database for modern applications",
+    icon: <SiIcons.SiPostgresql />,
+    link: "https://www.postgresql.org",
     isExternal: true,
   },
   {
-    name: "framer motion",
-    link: "https://www.framer.com/motion/",
-    description: "animation library",
-    icon: <SiIcons.SiFramer />,
+    name: "Docker",
+    description: "Containerization for deployment & DevOps",
+    icon: <SiIcons.SiDocker />,
+    link: "https://www.docker.com",
     isExternal: true,
   },
 ];
@@ -60,8 +60,8 @@ const TechStack: React.FC = () => {
   return (
     <div>
       <h1 className="mb-6 text-xl font-semibold text-neutral-500">
-        Super cool tech stack i know about
-        <span className="text-neutral-200 font-semibold ml-4  hidden sm:inline-block">
+        technologies i work with daily
+        <span className="text-neutral-200 font-semibold ml-2 hidden sm:inline-block">
           :hover on the icons:
         </span>
       </h1>
@@ -94,14 +94,11 @@ const TechStack: React.FC = () => {
 
       <div>
         <p className="text-xl font-semibold text-neutral-500">
-          This is not an exhaustive list.
-        </p>
-        <p className="text-xl font-semibold text-neutral-500 mb-6 mt-2">
-          I'm always learning new things and I try to keep this list updated.
+          this is a curated selection of the tools, frameworks, and platforms i use to build fast, scalable, and delightful products.
         </p>
       </div>
       <div className="text-xl font-semibold text-neutral-500">
-        All the tech I know about is listed →{" "}
+        All the tech I know is listed →{" "}
         <LinkText
           className="mb-6 text-xl font-semibold text-neutral-200"
           href="/tech-i-know"
