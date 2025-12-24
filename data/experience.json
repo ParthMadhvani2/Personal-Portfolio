@@ -1,15 +1,16 @@
 [
   {
-    "name": "Work & Internship Experience",
-    "description": "I've worked with startups & companies as a freelancer & intern",
+    "name": "Experience (Startups & Contract Work)",
+    "description": "Experience across early-stage startups and contract roles, owning features end-to-end.",
     "details": [
       {
-        "experienceTitle": "Founding Engineer",
+        "experienceTitle": "Software Engineer (Founding Engineer)",
         "experienceDescription": [
-          "Built complex, scalable UI flows for RFQs, quoting, approvals, and invoicing.",
-          "Designed component-driven systems powering dynamic business workflows.",
-          "Implemented AI-powered features: PDF → quote extraction, email-ingested RFQs, product recommendations.",
-          "Collaborated closely with backend teams on APIs, data models, and ERP integrations."
+          "Owned and built complex, scalable UI systems for RFQ capture, quoting, approvals, and invoicing workflows",
+          "Designed component-driven frontend architecture powering dynamic, multi-step business processes",
+          "Implemented AI-powered features including PDF/Image → quote extraction, email-ingested RFQs, and product recommendations",
+          "Collaborated closely with backend teams on API contracts, data models, and ERP integrations for quote-to-cash automation",
+          "Improved workflow usability and efficiency for manufacturing customer teams"
         ],
         "experienceOrg": {
           "name": "Pactle",
@@ -29,7 +30,8 @@
           "Developed LLM-powered modal experiences for automation engines.",
           "Reduced integration delivery time by 10x using AI-based tooling.",
           "Optimized APIs, reduced latency, and improved sync performance.",
-          "Contributed to the visual workflow builder enabling zero-code integrations."
+          "Contributed to the visual workflow builder enabling zero-code integrations.",
+          "Role impacted by a temporary company pause due to funding constraints."
         ],
         "experienceOrg": {
           "name": "Connektra.io",
@@ -42,7 +44,7 @@
         }
       },
       {
-        "experienceTitle": "Fullstack Developer",
+        "experienceTitle": "Full-Stack Developer (Internship)",
         "experienceDescription": [
           "Designed a scalable PostgreSQL schema using Prisma for complex relational data.",
           "Led frontend engineering using React + Tailwind to build polished UIs.",
@@ -64,10 +66,10 @@
     ]
   },
   {
-    "name": "Freelance/Contract Experience",
+    "name": "Contract Experience",
     "details": [
       {
-        "experienceTitle": "Design Engineer ( web3 )",
+        "experienceTitle": "Design Engineer (Contract)",
         "experienceDescription": [
           "Designed & developed frontend for a prediction-market analytics platform on Aptos.",
           "Built reusable UI components, accelerating development speed.",
@@ -77,13 +79,13 @@
           "Created UI documentation and internal design guidelines."
         ],
         "experienceOrg": {
-          "name": "Either ( Prediction Market on Aptos )",
+          "name": "Either — Web3 / Aptos",
           "link": "https://either-alpha.vercel.app/",
           "websiteDisplayName": "Either"
         },
         "experienceStatus": {
-          "startAt": "Feb 2025",
-          "endAt": "April 2025"
+          "startAt": "6",
+          "endAt": "months"
         }
       }
     ]

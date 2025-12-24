@@ -5,12 +5,11 @@ import Seperator from "../../../components/ui/seperator";
 
 interface HeroProps {
   className?: string;
-  attr?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <section className={cn(className + "border-b border-dashed pb-6")}>
+    <section className={cn("border-b border-dashed pb-6", className)}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
         <article className="col-span-2">
           <div>
@@ -19,29 +18,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 Parth Madhvani{" "}
               </h1>
               <p className="font-semibold text-neutral-200 mt-2 text-xl transition-all duration-300">
-                frontend (design) engineer
+                Frontend / Design Engineer
               </p>
             </div>
           </div>
           <Seperator />
           <div className="description  flex flex-col text-xl font-semibold text-neutral-500 ">
             <p>
-              I craft fast, functional, and thoughtfully designed web interfaces with a deep focus on UX, interaction design, and clean engineering. I’ve worked with early-stage startups across AI, automation, and blockchain—helping them build products from 0 → 1 with clarity, speed, and scalable systems.
+              I craft fast, thoughtfully designed web interfaces with a strong focus on UX, interaction design, and clean engineering. I’ve worked with early-stage startups across AI, automation, and blockchain—helping teams build 0 → 1 products with clarity, speed, and scalable systems.
             </p>
 
             <p className="mt-4 text-neutral-200">
-              I’m currently looking for a full-time frontend engineering role.<br />
-            </p>
-            <p className="mt-4">
-              hire me → &nbsp;
-              <LinkText
-                href="/resume"
-                target="_self"
-                isExternal={false}
-                className="text-neutral-200 "
-              >
-                Resume
-              </LinkText>{" "}
+              I’m currently exploring frontend or frontend-heavy full-stack roles at early-stage startups.<br />
             </p>
             <p className="mt-6">
               <LinkText
@@ -50,7 +38,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 isExternal={true}
                 className="text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
               >
-                Schedule a meet / cal.com
+                Book a 30-min intro call
+              </LinkText>{" "}
+            </p>
+            <p className="mt-4">
+              or view my → &nbsp;
+              <LinkText
+                href="/resume"
+                target="_self"
+                isExternal={false}
+                className="text-neutral-200 "
+              >
+                Resume
               </LinkText>{" "}
             </p>
           </div>
@@ -62,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             height={500}
             className="outline-none
             hover:ring-8 ring-gradient-to-b from-neutral-400 to-neutral-800 ring-neutral-700 border-none hover:ring-offset-4 ring-offset-neutral-600 ring-opacity-50 cursor-pointer
-            transition-all duration-300 rounded-xl h-cover "
+            transition-all duration-300 rounded-xl"
             alt="Parth Madhvani - Frontend Design Engineer"
             priority
           />
