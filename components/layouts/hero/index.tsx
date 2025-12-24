@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <section className={cn("border-b border-dashed pb-6", className)}>
+    <section className={cn("pb-6", className)}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
         <article className="col-span-2">
           <div>
