@@ -2,11 +2,11 @@
   "Development": [
     {
       "category": "Languages",
-      "skills": ["JavaScript, TypeScript", "Python", "C & C++", "Rust (exploring)"]
+      "skills": ["JavaScript, TypeScript", "Python", "Golang", "Rust (exploring)"]
     },
     {
       "category": "Databases & Data Layers",
-      "skills": ["PostgreSQL, MongoDB, Redis, DynamoDB", "SQL & NoSQL", "ORMs (Prisma, Mongoose, Drizzle)"]
+      "skills": ["PostgreSQL, MongoDB, Redis, DynamoDB", "ORMs (Prisma, Mongoose, Drizzle)"]
     },
     {
       "category": "Frontend Engineering",
@@ -23,7 +23,7 @@
     {
       "category": "Backend Engineering",
       "skills": [
-        "Node.js, Express.js, Hono.js, tRPC",
+        "Node.js, Express.js, tRPC",
         "REST APIs, GraphQL",
         "WebSockets, RTC (real-time communication)"
       ]
@@ -57,8 +57,7 @@
         "Git, Postman, Swagger",
         "Figma",
         "Stripe, Clerk",
-        "npm, Yarn, pnpm, Bun",
-        "Redis"
+        "npm, Yarn, pnpm, Bun"
       ]
     }
   ],
