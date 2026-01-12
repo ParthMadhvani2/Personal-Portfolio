@@ -4,7 +4,7 @@
     "description": "Experience across early-stage startups and contract roles, owning features end-to-end.",
     "details": [
       {
-        "experienceTitle": "Software Engineer (Founding Engineer)",
+        "experienceTitle": "Founding Engineer ( Software Engineer )",
         "experienceDescription": [
           "Owned and built complex, scalable UI systems for RFQ capture, quoting, approvals, and invoicing workflows",
           "Designed component-driven frontend architecture powering dynamic, multi-step business processes",
@@ -23,7 +23,7 @@
         }
       },
       {
-        "experienceTitle": "Software Engineer",
+        "experienceTitle": "Software Engineer (Internship)",
         "experienceDescription": [
           "Maintained and improved 50+ enterprise-grade integrations on a no-code automation platform.",
           "Built and optimized React + TypeScript components for AI-driven workflows.",
