@@ -34,7 +34,7 @@ const ResumeView: React.FunctionComponent = () => {
             }>
             <p className="mt-6">
               <LinkText
-                href="https://drive.google.com/file/d/1EC7LyoeP6_gFtd0IxsvdUXrnOpXWFD00/view?usp=sharing"
+                href="https://drive.google.com/file/d/1j-AesP4SDC1ka8CUIwD1cPlzBNK5nKdL/view?usp=sharing"
                 target="_blank"
                 isExternal={true}
                 className="text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
