@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             {/* Image */}
             <div className="relative aspect-square overflow-hidden rounded-xl">
               <Image
-                src="/media/DSC_0149-comp.jpg"
+                src="/media/profile.jpg"
                 fill
                 className="object-cover object-top
                            shadow-xl shadow-black/30
