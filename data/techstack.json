@@ -2,7 +2,7 @@
   "Development": [
     {
       "category": "Languages",
-      "skills": ["JavaScript, TypeScript", "Python", "Golang", "Rust (exploring)"]
+      "skills": ["JavaScript, TypeScript", "Python", "Golang"]
     },
     {
       "category": "Databases & Data Layers",
@@ -38,17 +38,6 @@
         "CDN & Caching (Cloudflare, Fastly)",
         "Monorepos (Turborepo)",
         "Observability (logging, tracing, metrics)"
-      ]
-    },
-    {
-      "category": "Web3",
-      "skills": [
-        "Solidity (exploring)",
-        "Writing & testing smart contracts",
-        "Wallet integrations (ethers.js, wagmi)",
-        "Gas optimization fundamentals",
-        "Understanding mempool, RPC nodes, consensus mechanisms",
-        "Deploying smart contracts on testnets"
       ]
     },
     {
