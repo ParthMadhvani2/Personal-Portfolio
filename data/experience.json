@@ -64,30 +64,5 @@
         }
       }
     ]
-  },
-  {
-    "name": "Contract Experience",
-    "details": [
-      {
-        "experienceTitle": "Design Engineer (Contract)",
-        "experienceDescription": [
-          "Designed & developed frontend for a prediction-market analytics platform on Aptos.",
-          "Built reusable UI components, accelerating development speed.",
-          "Delivered premium analytics features and revenue-model UI flows.",
-          "Improved performance by 40% through bundling + render optimizations.",
-          "Designed clear UX flows that improved user engagement.",
-          "Created UI documentation and internal design guidelines."
-        ],
-        "experienceOrg": {
-          "name": "Either — Web3 / Aptos",
-          "link": "https://either-alpha.vercel.app/",
-          "websiteDisplayName": "Either"
-        },
-        "experienceStatus": {
-          "startAt": "6",
-          "endAt": "months"
-        }
-      }
-    ]
   }
 ]
