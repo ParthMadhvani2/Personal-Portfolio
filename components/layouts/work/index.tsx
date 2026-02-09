@@ -19,14 +19,14 @@ const WorkCategory: WorkCategory[] = [
     details: [
       {
         title: "FramePhase",
-        description: "AI-powered caption generator built with Next.js and AWS Transcribe. Designed for speed, accessibility, and creator workflows.",
+        description: "AI-powered caption generator built with Next.js and WebAssembly. Developed a cutting-edge Captions Generator Application that transcribes videos and applies adjustable captions with a user- friendly editor.",
         link: "https://frame-phase.netlify.app/",
         isExternal: true,
       },
       {
-        title: "Token Portfolio",
-        description: "Portfolio tracker for monitoring token holdings with live pricing, analytics, and wallet integration.",
-        link: "https://token-portfolio-parth.vercel.app/",
+        title: "Crypto Trading Dashboard",
+        description: "A modern, responsive cryptocurrency trading dashboard built with Next.js 15, React 19, and TypeScript. Features real-time market data, interactive charts, advanced filtering, watchlist management, and price alerts with a professional-grade user interface.",
+        link: "https://crypto-trading-dashboard-2.vercel.app/",
         isExternal: true,
       },
     ],
@@ -87,7 +87,7 @@ const Work: React.FC = () => {
               <h1 className="mb-6 text-xl font-semibold text-neutral-200">
                 {item.name}
               </h1>
-              <div className="flex justify-evenly items-center w-auto">
+              <div className="flex justify-center items-center  gap-10">
                 {item.details.map((detail, index) => {
                   return (
                     <WorkItem

@@ -14,16 +14,9 @@ interface TechIKnow {
 const TechIKnow: TechIKnow[] = [
   {
     name: "React",
-    description: "UI library for building interfaces",
+    description: "Scalable UI architecture",
     icon: <SiIcons.SiReact />,
     link: "https://reactjs.org",
-    isExternal: true,
-  },
-  {
-    name: "TypeScript",
-    description: "Strongly typed JavaScript for scalable apps",
-    icon: <SiIcons.SiTypescript />,
-    link: "https://www.typescriptlang.org",
     isExternal: true,
   },
   {
@@ -34,22 +27,43 @@ const TechIKnow: TechIKnow[] = [
     isExternal: true,
   },
   {
+    name: "TypeScript",
+    description: "Type-safe application development",
+    icon: <SiIcons.SiTypescript />,
+    link: "https://www.typescriptlang.org",
+    isExternal: true,
+  },
+  {
     name: "Node.js",
-    description: "Backend runtime for scalable APIs",
+    description: "Backend services & APIs",
     icon: <SiIcons.SiNodedotjs />,
     link: "https://nodejs.org",
     isExternal: true,
   },
   {
     name: "PostgreSQL",
-    description: "Relational database for modern applications",
+    description: "Production-grade relational database",
     icon: <SiIcons.SiPostgresql />,
     link: "https://www.postgresql.org",
     isExternal: true,
   },
   {
+    name: "Redis",
+    description: "Caching & real-time data layer",
+    icon: <SiIcons.SiRedis />,
+    link: "https://redis.io",
+    isExternal: true,
+  },
+  {
+    name: "Tailwind CSS",
+    description: "Utility-first UI styling",
+    icon: <SiIcons.SiTailwindcss />,
+    link: "https://tailwindcss.com",
+    isExternal: true,
+  },
+  {
     name: "Docker",
-    description: "Containerization for deployment & DevOps",
+    description: "Containerized deployment",
     icon: <SiIcons.SiDocker />,
     link: "https://www.docker.com",
     isExternal: true,
@@ -66,7 +80,7 @@ const TechStack: React.FC = () => {
         </span>
       </h1>
 
-      <div className="grid grid-cols-6 gap-2 mb-6 ">
+      <div className="grid grid-cols-8 gap-2 mb-6">
         {TechIKnow.map((item, index) => {
           return (
             <div key={index}>
