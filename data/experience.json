@@ -1,10 +1,29 @@
 [
   {
-    "name": "Experience (Startups & Contract Work)",
-    "description": "Experience across early-stage startups and contract roles, owning features end-to-end.",
+    "name": "Experience",
+    "description": "Full-stack engineering across SaaS product studios, early-stage startups, and contract work. Comfortable owning a product surface end-to-end.",
     "details": [
       {
-        "experienceTitle": "Founding Engineer ( Software Engineer )",
+        "experienceTitle": "Full-Stack Engineer",
+        "experienceDescription": [
+          "Building and shipping three live SaaS products end-to-end: Embers (LinkedIn engagement-to-lead pipeline), Hood Cleaning Report (NFPA 96 compliance for commercial kitchen contractors), and SnapCount (real-time multiplayer tally counter, iOS + web).",
+          "Backend: Django 5 + DRF + Celery + Redis + OpenAI; Express.js + SSE for real-time sync; PostgreSQL with soft-delete patterns, complex indexes, and idempotent webhook handlers.",
+          "Frontend: React 19 + TanStack Start (SSR) on Cloudflare Workers; Tailwind v4 with token-based design systems; Expo SDK 53 with TurboModules for the iOS app.",
+          "Infra + billing: Cloudflare R2 for object storage, Dodo Payments for multi-tier subscriptions, Fernet-encrypted token storage for third-party OAuth integrations (CompanyCam).",
+          "Cross-functional: ship UI, API, billing, and marketing surfaces; involved in product and GTM decisions alongside the founder."
+        ],
+        "experienceOrg": {
+          "name": "Lead Catalyst",
+          "link": "https://leadcatalyst.in/",
+          "websiteDisplayName": "leadcatalyst.in"
+        },
+        "experienceStatus": {
+          "startAt": "March 2026",
+          "endAt": "Present"
+        }
+      },
+      {
+        "experienceTitle": "Founding Engineer (Software Engineer)",
         "experienceDescription": [
           "Owned and built complex, scalable UI systems for RFQ capture, quoting, approvals, and invoicing workflows",
           "Designed component-driven frontend architecture powering dynamic, multi-step business processes",

@@ -2,7 +2,7 @@
   "Development": [
     {
       "category": "Languages",
-      "skills": ["JavaScript, TypeScript", "Python", "Golang"]
+      "skills": ["TypeScript, JavaScript", "Python"]
     },
     {
       "category": "Databases & Data Layers",
@@ -11,53 +11,73 @@
     {
       "category": "Frontend Engineering",
       "skills": [
-        "React, Next.js",
-        "TailwindCSS, shadcn/ui",
-        "Zustand, Redux, React Query (TanStack Query)",
-        "React Hook Form",
-        "Framer Motion, Motion",
-        "Vite",
-        "Jest (unit + integration testing)"
+        "React 19, TanStack Start (SSR), TanStack Router, TanStack Query","Next.js 14 (app directory, server components)",
+        "Tailwind CSS v4, shadcn-style primitives, Radix UI",
+        "Zod, React Hook Form, CVA",
+        "Framer Motion, Sonner, lucide-react",
+        "Vite, Vitest"
       ]
     },
     {
       "category": "Backend Engineering",
       "skills": [
-        "Node.js, Express.js",
-        "REST APIs, GraphQL",
-        "WebSockets, RTC (real-time communication)"
+        "Django 5 + DRF, Celery, Redis",
+        "Express.js, Node.js",
+        "PostgreSQL (Prisma + Django ORM)",
+        "REST APIs, Server-Sent Events",
+        "Apify integration (actor orchestration, normalization)",
+        "Resend (transactional email)"
       ]
     },
     {
-      "category": "Cloud, DevOps & System Design",
+      "category": "AI / LLM Integration",
       "skills": [
-        "AWS (EC2, VPC, S3, RDS, Lambda, CloudWatch)",
-        "Docker",
+        "OpenAI Chat Completions + structured outputs",
+        "ICP classification at scale",
+        "Multi-class intent classification with weights",
+        "Voice-matched generation (DM drafting)",
+        "Cost-conscious prompt design"
+      ]
+    },
+    {
+      "category": "Mobile",
+      "skills": [
+        "Expo SDK 53, React Native 0.79 (TurboModules, Hermes)",
+        "Expo Router v5 (typed routes)",
+        "react-native-mmkv, react-native-sse, expo-haptics",
+        "iOS accessibility hooks (Reduce Motion, Reduce Transparency)",
+        "EAS Build + EAS Submit"
+      ]
+    },
+    {
+      "category": "Infra & DevOps",
+      "skills": [
+        "Cloudflare Workers (SSR at the edge)",
+        "Cloudflare R2 (S3-compatible storage)",
+        "Docker (multi-service compose)",
         "CI/CD (GitHub Actions)",
-        "NGINX, Load Balancing, Reverse Proxying",
-        "CDN & Caching (Cloudflare, Fastly)",
-        "Monorepos (Turborepo)",
-        "Observability (logging, tracing, metrics)"
+        "Wrangler deployment"
       ]
     },
     {
-      "category": "Web3",
+      "category": "Billing & Auth",
       "skills": [
-        "Solidity",
-        "Writing & testing smart contracts",
-        "Wallet integrations (ethers.js, wagmi)",
-        "Gas optimization fundamentals",
-        "Understanding mempool, RPC nodes, consensus mechanisms",
-        "Deploying smart contracts on testnets"
+        "Dodo Payments (webhook signature verification, plan hierarchy)",
+        "Stripe",
+        "JWT cookies + refresh rotation",
+        "Google OAuth (allauth)",
+        "Better Auth (Node ecosystem)",
+        "Fernet-encrypted token storage for third-party integrations"
       ]
     },
     {
       "category": "Tools",
       "skills": [
-        "Git, Postman, Swagger",
-        "Figma",
-        "Stripe, Clerk",
-        "npm, Yarn, pnpm, Bun"
+        "Git, Figma",
+        "Playwright (PDF generation, browser automation)",
+        "Postman, Swagger",
+        "Biome, Prettier",
+        "npm, pnpm, Bun"
       ]
     }
   ],
@@ -65,17 +85,18 @@
     {
       "category": "Design",
       "skills": [
-        "UI Design",
-        "UX Research",
-        "Design Systems"
+        "Design tokens + radius hierarchy",
+        "Component-driven architecture",
+        "UX research",
+        "Accessibility-first (aria-label, screen reader testing)"
       ]
     },
     {
       "category": "Tools",
-      "skills": ["Figma (Primary Tool)"]
+      "skills": ["Figma (primary tool)"]
     },
     {
-      "category": "UX Psychology Rules",
+      "category": "UX Psychology",
       "skills": ["Hick's Law", "Fitt's Law", "Miller's Law", "Zeigarnik Effect"]
     }
   ]

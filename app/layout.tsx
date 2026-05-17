@@ -7,18 +7,20 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    default: "Parth Madhvani - Frontend Design Engineer",
+    default: "Parth Madhvani · Full-stack engineer",
     template: "%s | Parth Madhvani",
   },
   description:
-    "Frontend design engineer specializing in fast, accessible web interfaces. Building scalable products with React, Next.js, and TypeScript. Currently available for frontend engineering roles.",
+    "Full-stack engineer shipping three live SaaS products: Embers, Hood Cleaning Report, SnapCount. Django, React, Expo, Cloudflare Workers.",
   keywords: [
-    "frontend engineer",
-    "Design Engineer",
-    "Backend Engineer",
-    "TypeScript Engineer",
-    "Web3 Developer",
-    "UI/UX",
+    "full-stack engineer",
+    "design engineer",
+    "product engineer",
+    "founding engineer",
+    "React engineer",
+    "Django engineer",
+    "TypeScript engineer",
+    "SaaS engineer",
   ],
   authors: [{ name: "Parth Madhvani" }],
   creator: "Parth Madhvani",
@@ -31,16 +33,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://parthmadhvani.com",
-    siteName: "Parth Madhvani - Portfolio",
-    title: "Parth Madhvani - Frontend Design Engineer",
+    siteName: "Parth Madhvani · Portfolio",
+    title: "Parth Madhvani · Full-stack engineer",
     description:
-      "Frontend design engineer specializing in fast, accessible web interfaces. Building scalable products with React, Next.js, and TypeScript.",
+      "Full-stack engineer shipping three live SaaS products: Embers, Hood Cleaning Report, SnapCount. Django, React, Expo, Cloudflare Workers.",
     images: [
       {
         url: "https://parthmadhvani.com/media/profile.png",
         width: 1200,
         height: 630,
-        alt: "Parth Madhvani - Frontend Design Engineer",
+        alt: "Parth Madhvani · Full-stack engineer",
         type: "image/png",
       },
     ],
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@parthmadhvani2",
     creator: "@parthmadhvani2",
-    title: "Parth Madhvani - Frontend Design Engineer",
+    title: "Parth Madhvani · Full-stack engineer",
     description:
-      "Crafting fast, accessible web interfaces with React, Next.js & TypeScript",
+      "Full-stack engineer shipping three live SaaS products: Embers, Hood Cleaning Report, SnapCount. Django, React, Expo, Cloudflare Workers.",
     images: ["https://parthmadhvani.com/media/profile.png"],
   },
   robots: {
@@ -102,16 +104,16 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Parth Madhvani",
-            jobTitle: "Frontend Design Engineer",
+            jobTitle: "Full-stack engineer",
             url: "https://parthmadhvani.com",
             sameAs: [
               "https://twitter.com/parthmadhvani2",
-              "https://linkedin.com/in/parthmadhvani",
+              "https://linkedin.com/in/parthmadhvani2",
               "https://github.com/ParthMadhvani2",
             ],
             image: "https://parthmadhvani.com/media/profile.png",
             description:
-              "Frontend design engineer specializing in fast, accessible web interfaces built with React, Next.js, and TypeScript.",
+              "Full-stack engineer shipping three live SaaS products: Embers, Hood Cleaning Report, and SnapCount.",
           }),
         }}
       />

@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               Parth Madhvani{" "}
             </h1>
             <p className="text-neutral-400 text-xl lg:text-2xl font-normal">
-              Frontend / Design Engineer
+              Full-stack engineer
             </p>
           </div>
 
@@ -25,16 +25,24 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
           <div className="space-y-5 text-base lg:text-lg leading-relaxed">
             <p className="text-neutral-400 max-w-2xl">
-              I craft fast, thoughtfully designed web interfaces with a strong
-              focus on UX, interaction design, and clean engineering. I’ve
-              worked with early-stage startups across AI, automation, and
-              blockchain—helping teams build 0 → 1 products with clarity, speed,
-              and scalable systems.
+              I build SaaS products end to end. Backend, frontend, mobile,
+              billing, design system, marketing site. Whatever the product
+              needs, I ship it.
+            </p>
+
+            <p className="text-neutral-400 max-w-2xl">
+              Three live products I work on right now:{" "}
+              <span className="text-neutral-200">Embers</span> (LinkedIn lead
+              pipeline),{" "}
+              <span className="text-neutral-200">Hood Cleaning Report</span>{" "}
+              (NFPA 96 compliance for kitchen exhaust contractors), and{" "}
+              <span className="text-neutral-200">SnapCount</span> (real-time
+              tally counter, iOS and web).
             </p>
 
             <p className="text-neutral-200 font-medium max-w-2xl">
-              I’m currently exploring frontend or frontend-heavy full-stack
-              roles at early-stage startups.
+              Open to full-stack or design-engineer roles where I&apos;d own
+              a product surface end to end.
               <br />
             </p>
             <div className="mt-8">

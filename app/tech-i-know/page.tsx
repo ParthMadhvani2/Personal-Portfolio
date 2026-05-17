@@ -12,11 +12,11 @@ const Design: SkillCategory[] = skillsData.Design;
 export const metadata: Metadata = {
   title: "Tech Stack & Skills | Parth Madhvani",
   description:
-    "Complete list of technologies, frameworks, and tools I use for building fast, scalable web applications. React, Next.js, TypeScript, Node.js, PostgreSQL, Docker, and more.",
+    "The stack I actually ship with: React 19, TanStack Start, Django + DRF, Celery, OpenAI, Expo, Cloudflare Workers, Dodo Payments. No padding, no listed tech I haven't used in production.",
   openGraph: {
     title: "Tech Stack & Skills | Parth Madhvani",
     description:
-      "Technologies and tools I use: React, Next.js, TypeScript, Node.js, PostgreSQL, Docker, and more.",
+      "React 19, TanStack Start, Django + DRF, Celery, OpenAI, Expo, Cloudflare Workers. The stack behind three shipped SaaS products.",
     url: "https://parthmadhvani.com/tech-i-know",
     type: "website",
   },
@@ -27,12 +27,13 @@ const TechFlex = () => {
     <div className="tech-flex mt-8">
       <div className="mb-6">
         <h1 className=" mb-2 text-neutral-200 text-xl font-semibold">
-          Superpowers I’ve Built Over the Years
+          The stack I actually ship with
         </h1>
 
         <p className="text-neutral-500 text-xl font-semibold">
-          I’ve worked across the full web stack — from design systems to production-grade engineering.
-          Here’s a curated snapshot of the tools and technologies I use (and continue to learn).
+          Grouped by depth, not breadth. Everything listed here is in production
+          in one of the three products I work on (Embers, Hood Cleaning Report,
+          SnapCount). Tech I&apos;ve only tinkered with is left out on purpose.
         </p>
       </div>
       <div className="my-12">
@@ -58,12 +59,12 @@ const TechFlex = () => {
           ))}
         </div>
         <p className="text-xl text-neutral-500 mt-2 mb-6 font-semibold">
-          Some people call me a full-stack developer,{" "}
-          but I prefer
+          People call me a full-stack engineer. I think of myself as a{" "}
           <span className="text-neutral-200 font-semibold">
-            Frontend Engineer
-          </span>{" "}
-          because designing and building great user experiences is where I operate best.
+            design engineer + product engineer
+          </span>
+          . Comfortable across the whole stack, but at my best where design,
+          frontend, and product decisions meet.
         </p>
       </div>{" "}
       <div className="my-12">

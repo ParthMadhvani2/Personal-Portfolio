@@ -1,9 +1,7 @@
-import React from 'react'
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
+// /crafts is reserved for a future UI components / experiments page.
+// Until that's built, redirect to home so no empty stub ships.
+export default function CraftsPage(): never {
+  redirect("/");
 }
-
-export default page

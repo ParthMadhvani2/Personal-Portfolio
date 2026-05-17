@@ -10,49 +10,51 @@ type WorkDetail = {
 
 type WorkCategory = {
   name: string;
+  subtitle?: string;
   details: WorkDetail[];
 };
 
 const WorkCategory: WorkCategory[] = [
   {
-    name: "Projects.",
+    name: "Building at Lead Catalyst.",
+    subtitle:
+      "Full-stack engineer at Lead Catalyst, a SaaS product studio. Three live products I work on end to end: backend, frontend, mobile, billing, and the marketing surfaces.",
     details: [
       {
-        title: "FramePhase",
-        description: "AI-powered caption generator built with Next.js and WebAssembly. Developed a cutting-edge Captions Generator Application that transcribes videos and applies adjustable captions with a user- friendly editor.",
-        link: "https://frame-phase.netlify.app/",
+        title: "Embers",
+        description:
+          "LinkedIn engagement-to-lead pipeline for founders and ghostwriters. Hourly Apify scrape, 5-dimensional lead scoring, 7-dimension AI ICP matching, voice-matched DM drafts. Django + DRF + Celery + Redis + OpenAI on the backend; React 19 + TanStack Start SSR on Cloudflare Workers; 5-tier billing via Dodo Payments.",
+        link: "https://useembers.com",
         isExternal: true,
       },
       {
-        title: "Crypto Trading Dashboard",
-        description: "A modern, responsive cryptocurrency trading dashboard built with Next.js 15, React 19, and TypeScript. Features real-time market data, interactive charts, advanced filtering, watchlist management, and price alerts with a professional-grade user interface.",
-        link: "https://crypto-trading-dashboard-2.vercel.app/",
+        title: "Hood Cleaning Report",
+        description:
+          "NFPA 96 compliance reports for commercial kitchen exhaust contractors. Django + DRF backend with multi-tenant workspaces, CompanyCam OAuth (Fernet-encrypted tokens, HMAC-SHA1 webhooks), Document Vault with signed share URLs and audit logging, block-based PDF generation via Playwright, photo storage on Cloudflare R2.",
+        link: "https://hoodcleaningreport.com",
+        isExternal: true,
+      },
+      {
+        title: "SnapCount",
+        description:
+          "Real-time multiplayer tally counter, iOS + web. Expo SDK 53 with TurboModules and Hermes; SSE-based sync over an Express backend; TanStack Start web app on Cloudflare Workers. Marketing site in 5 languages with free SEO tools, programmatic vertical landing pages, and dynamic sitemap.",
+        link: "https://snapcount.app",
         isExternal: true,
       },
     ],
   },
-  // {
-  //   name: "Components.",
-  //   details: [
-  //     {
-  //       title: "Crafts",
-  //       description: "A collection of handcrafted UI components and micro-interactions. I explore patterns around motion, accessibility, and systematic design.",
-  //       link: "/crafts",
-  //       isExternal: false,
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: "Newsletter.",
-  //   details: [
-  //     {
-  //       title: "Subscribe",
-  //       description: "I write about interface design, design systems, and product engineering.",
-  //       link: "/newsletter",
-  //       isExternal: true,
-  //     },
-  //   ],
-  // },
+  {
+    name: "Experiments.",
+    details: [
+      {
+        title: "FramePhase",
+        description:
+          "AI-powered video caption generator. Next.js + WebAssembly. Earlier personal experiment in browser-side ML inference.",
+        link: "https://frame-phase.netlify.app/",
+        isExternal: true,
+      },
+    ],
+  },
 ];
 
 const WorkItem: React.FC<WorkDetail> = ({
@@ -80,14 +82,19 @@ const WorkItem: React.FC<WorkDetail> = ({
 const Work: React.FC = () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-2 my-10">
+      <div className="grid grid-cols-1 gap-10 my-10">
         {WorkCategory.map((item, index) => {
           return (
             <div key={index}>
-              <h1 className="mb-6 text-xl font-semibold text-neutral-200">
+              <h1 className="mb-2 text-xl font-semibold text-neutral-200">
                 {item.name}
               </h1>
-              <div className="flex justify-center items-center  gap-10">
+              {item.subtitle && (
+                <p className="mb-6 text-sm text-neutral-500 leading-relaxed max-w-2xl">
+                  {item.subtitle}
+                </p>
+              )}
+              <div className="flex flex-col gap-8">
                 {item.details.map((detail, index) => {
                   return (
                     <WorkItem
@@ -109,4 +116,3 @@ const Work: React.FC = () => {
 };
 
 export default Work;
-
