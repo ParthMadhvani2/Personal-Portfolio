@@ -5,11 +5,11 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: "Resume | Parth Madhvani",
   description:
-    "View Parth Madhvani's resume - Frontend design engineer with experience in React, Next.js, TypeScript, and building scalable web interfaces.",
+    "Resume for Parth Madhvani. Full-stack engineer shipping three live SaaS products: Embers, Hood Cleaning Report, and SnapCount.",
   openGraph: {
     title: "Resume | Parth Madhvani",
     description:
-      "Frontend design engineer specializing in fast, accessible web interfaces. View resume and experience.",
+      "Design engineer + product engineer. Solo founder building three SaaS products in production.",
     url: "https://parthmadhvani.com/resume",
     type: "website",
   },
@@ -34,15 +34,24 @@ const ResumeView: React.FunctionComponent = () => {
             }>
             <p className="mt-6">
               <LinkText
-                href="https://drive.google.com/file/d/1Oz2RHObcfa4nCQmw28ARJ-sTlGMeo1eH/view?usp=sharing"
+                href="/Parth-Madhvani-Resume.pdf"
                 target="_blank"
                 isExternal={true}
                 className="text-black bg-slate-200 p-2 rounded-md hover:brightness-110"
               >
-                Resume on Drive
+                Download Resume (PDF)
               </LinkText>{" "}
             </p>
           </div>
+          <p className="text-neutral-500 text-sm text-center mt-4 max-w-md mx-auto">
+            Or reach out directly:{" "}
+            <a
+              href="mailto:madhvaniparth2@gmail.com"
+              className="text-neutral-300 underline underline-offset-4"
+            >
+              madhvaniparth2@gmail.com
+            </a>
+          </p>
         </div>
       </div>
     </>
