@@ -11,6 +11,7 @@ import { site } from "../../data/site";
 const links: { href: string; label: string; minor?: boolean }[] = [
   { href: "/work", label: "work" },
   { href: "/crafts", label: "crafts" },
+  { href: "/notes", label: "notes" },
   { href: "/tech-i-know", label: "stack", minor: true },
   { href: "/colophon", label: "colophon", minor: true },
   { href: "/resume", label: "resume" },

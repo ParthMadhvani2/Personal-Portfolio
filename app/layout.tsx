@@ -128,6 +128,7 @@ const jsonLd = {
         site.social.linkedin,
         site.social.github,
         site.social.productHunt,
+        site.social.peerlist,
       ],
     },
     {

@@ -33,6 +33,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/parthmadhvani2/",
     x: "https://x.com/parthmadhvani2",
     productHunt: "https://www.producthunt.com/@parth_madhvani",
+    peerlist: "https://peerlist.io/parthmadhvani2",
   },
   handle: "@parthmadhvani2",
   employer: { name: "Lead Catalyst", url: "https://leadcatalyst.in/" },

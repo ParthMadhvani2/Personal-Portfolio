@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE_URL}/work`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/crafts`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/notes`, changeFrequency: "weekly", priority: 0.8 },
     {
       url: `${SITE_URL}/tech-i-know`,
       changeFrequency: "yearly",
