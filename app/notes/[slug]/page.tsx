@@ -182,15 +182,19 @@ export default function ArticlePage({ params }: Params) {
 
         <footer className="mt-16 border-t border-line pt-8">
           <p className="prose-body text-[15px]">
-            The component this is about lives in{" "}
-            <Link
-              href="/crafts#squircle"
-              className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
-            >
-              the library
-            </Link>
-            , with its source. If you disagree with any of it I would like to
-            hear why:{" "}
+            {a.component ? (
+              <>
+                The component this is about lives in{" "}
+                <Link
+                  href={`/crafts#${a.component}`}
+                  className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
+                >
+                  the library
+                </Link>
+                , with its source.{" "}
+              </>
+            ) : null}
+            If you disagree with any of it I would like to hear why:{" "}
             <a
               href={`mailto:${site.email}`}
               className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
