@@ -39,14 +39,14 @@ export const crafts: CraftMeta[] = [
     id: "animated-number",
     name: "AnimatedNumber",
     principle:
-      "Only the digits that changed roll. Tabular figures stop the layout twitching mid-roll — the reason most hand-rolled counters look unstable.",
+      "Only the digits that changed roll. Tabular figures stop the layout twitching mid-roll, which is why most hand-rolled counters look unstable.",
     file: "animated-number.tsx",
   },
   {
     id: "hold-to-confirm",
     name: "HoldToConfirm",
     principle:
-      "Slow going in, snappy coming back — deliberate where the user is deciding, immediate where the system is responding. The fill is a clip-path, so it never reflows.",
+      "Slow going in, snappy coming back: deliberate where the user is deciding, immediate where the system is responding. The fill is a clip-path, so it never reflows.",
     file: "hold-to-confirm.tsx",
   },
   {
@@ -69,7 +69,7 @@ export const crafts: CraftMeta[] = [
     id: "marquee",
     name: "Marquee",
     principle:
-      "Constant motion is the one case where linear is correct — easing a loop makes it visibly pulse once per cycle. Stops entirely under reduced motion.",
+      "Constant motion is the one case where linear is correct, because easing a loop makes it visibly pulse once per cycle. Stops entirely under reduced motion.",
     file: "marquee.tsx",
   },
   {
@@ -83,7 +83,7 @@ export const crafts: CraftMeta[] = [
     id: "squircle",
     name: "Squircle",
     principle:
-      "An iOS icon is a superellipse, not a rounded rectangle. A rounded rect joins a straight edge to a circular arc and curvature jumps at the seam — the eye reads it as a pinched corner without knowing why.",
+      "An iOS icon is a superellipse, not a rounded rectangle. A rounded rect joins a straight edge to a circular arc and curvature jumps at the seam, and the eye reads it as a pinched corner without knowing why.",
     file: "squircle.tsx",
   },
   {
@@ -98,7 +98,7 @@ export const crafts: CraftMeta[] = [
     id: "reveal",
     name: "Reveal",
     principle:
-      "Fires once on scroll, then disconnects. A page-load entrance below the fold plays to nobody — and strands content at opacity 0 anywhere animations are paused.",
+      "Fires once on scroll, then disconnects. A page-load entrance below the fold plays to nobody, and it strands content at opacity 0 anywhere animations are paused.",
     file: "reveal.tsx",
   },
   {

@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { products, experiments } from "../../data/products";
+import {
+  products,
+  experiments,
+  shippedCount,
+  liveCount,
+  spell,
+} from "../../data/products";
 import { SpotlightCard } from "../craft/spotlight-card";
 import { StatusPill } from "../craft/status-pill";
 import Section from "./section";
@@ -10,7 +16,7 @@ export default function Products() {
     <Section
       id="work"
       label="Work"
-      title="four products, in production"
+      title={`${spell(shippedCount)} products, ${spell(liveCount)} still live`}
       intro={
         <>
           Not client work and not a tutorial repo. These are live products with

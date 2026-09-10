@@ -9,7 +9,7 @@ let fontCache: Promise<Face[]> | null = null;
 
 /**
  * Loads real Manrope faces for the card. Without them ImageResponse cannot
- * synthesise weight, and every title renders at regular — the wrong impression
+ * synthesise weight, and every title renders at regular, which is the wrong impression
  * for a card about interface craft. Both weights are loaded, or the whole card
  * ends up bold including its body copy.
  *
@@ -57,7 +57,7 @@ type Args = {
  * missing or mismatched preview. Generated at build time into static PNGs.
  *
  * Deliberately dark and typographic: the card is read at thumbnail size in a
- * feed, so it carries three things — who, what, and one line of why.
+ * feed, so it carries three things: who, what, and one line of why.
  */
 export async function ogImage({ eyebrow, title, subtitle, tags = [] }: Args) {
   const loaded = await faces();

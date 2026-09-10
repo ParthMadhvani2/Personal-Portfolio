@@ -16,7 +16,7 @@ type Props = {
 /**
  * An infinite horizontal ticker.
  *
- * Constant motion is the one case where `linear` is correct — easing a loop
+ * Constant motion is the one case where `linear` is correct, because easing a loop
  * makes it visibly pulse once per cycle. The content is duplicated and the
  * track translated by exactly -50%, which is what keeps the seam invisible at
  * any width without measuring anything.

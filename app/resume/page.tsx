@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Download, Mail } from "lucide-react";
 import { site, SITE_URL } from "../../data/site";
+import { shippedCount, spell } from "../../data/products";
 import { CopyButton } from "../../components/craft/copy-button";
 import { StatusPill } from "../../components/craft/status-pill";
 
 const title = "Résumé";
-const description = `Résumé for ${site.name} — design engineer and product engineer. Four SaaS products in production across web and iOS.`;
+const description = `Résumé for ${site.name}. Design engineer and product engineer. ${spell(shippedCount)} SaaS products shipped across web and iOS.`;
 
 export const metadata: Metadata = {
   title,

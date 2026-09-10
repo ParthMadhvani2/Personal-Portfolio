@@ -19,7 +19,7 @@ export default function CraftTeaser() {
         <>
           The interaction details I care about, extracted into files you can
           copy. No animation library, no headless-UI dependency, one helper
-          function. These are live — press them.
+          function. These are live. Press them.
         </>
       }
     >

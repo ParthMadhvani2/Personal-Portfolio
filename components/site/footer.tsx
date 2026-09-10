@@ -8,6 +8,7 @@ const elsewhere = [
   { label: "X", href: site.social.x },
   { label: "LinkedIn", href: site.social.linkedin },
   { label: "Product Hunt", href: site.social.productHunt },
+  { label: "Peerlist", href: site.social.peerlist },
   { label: "Book a call", href: site.calendar },
 ];
 

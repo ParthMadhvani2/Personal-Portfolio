@@ -9,7 +9,7 @@ import { cn } from "../../lib/cn";
  * The one thing it does that a styled `<kbd>` does not: it resolves `mod` to ⌘
  * on Apple platforms and Ctrl everywhere else, after mount. Hardcoding ⌘ is
  * wrong for most visitors, and rendering the platform guess on the server
- * guarantees a hydration mismatch — so it starts neutral and settles.
+ * guarantees a hydration mismatch, so it starts neutral and settles.
  */
 export function Kbd({
   children,

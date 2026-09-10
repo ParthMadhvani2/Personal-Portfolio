@@ -40,6 +40,13 @@ export default function SiteCommand() {
         onSelect: go("/tech-i-know"),
       },
       {
+        id: "notes",
+        group: "Pages",
+        label: "Notes",
+        keywords: "writing lessons observations shipping",
+        onSelect: go("/notes"),
+      },
+      {
         id: "colophon",
         group: "Pages",
         label: "Colophon",
@@ -104,6 +111,12 @@ export default function SiteCommand() {
         group: "Contact",
         label: "LinkedIn",
         onSelect: open(site.social.linkedin),
+      },
+      {
+        id: "pl",
+        group: "Contact",
+        label: "Peerlist",
+        onSelect: open(site.social.peerlist),
       },
       {
         id: "ph",

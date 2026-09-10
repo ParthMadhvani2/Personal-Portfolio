@@ -1,6 +1,6 @@
 /**
  * Inlined in <head> and run before first paint. Without it a stored dark
- * preference renders a white page for one frame on every navigation — the one
+ * preference renders a white page for one frame on every navigation. That is the one
  * bug that makes a theme toggle feel cheap no matter how good the transition.
  */
 export const THEME_KEY = "theme";

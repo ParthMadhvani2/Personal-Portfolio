@@ -9,8 +9,8 @@ import { AnimatedNumber } from "../../../components/craft/animated-number";
 
 type Params = { params: { slug: string } };
 
-// Every case study is a static page at build time — one URL per product is four
-// more things that can rank, each targeting its own long tail.
+// Every case study is a static page at build time, so each product gets its
+// own URL targeting its own long tail.
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
@@ -18,7 +18,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Params): Metadata {
   const p = productBySlug(params.slug);
   if (!p) return {};
-  const title = `${p.name} — ${p.kind}`;
+  const title = `${p.name} · ${p.kind}`;
   return {
     title,
     description: p.summary,

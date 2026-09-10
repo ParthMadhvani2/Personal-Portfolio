@@ -12,7 +12,7 @@ type Props = {
   className?: string;
 };
 
-const CLOSE_VELOCITY = 350; // px/s — a flick this fast dismisses regardless of distance
+const CLOSE_VELOCITY = 350; // px/s. A flick this fast dismisses regardless of distance
 const CLOSE_FRACTION = 0.45; // or drag past this share of the sheet's height
 
 /**
@@ -27,7 +27,7 @@ const CLOSE_FRACTION = 0.45; // or drag past this share of the sheet's height
  *
  * **Momentum projection.** On release it does not snap to whichever end is
  * closer. It asks where the sheet *would* come to rest given the release
- * velocity — Apple's exponential-decay projection, not the textbook v²/2a — and
+ * velocity, using Apple's exponential-decay projection rather than the textbook v²/2a, and
  * commits to the outcome nearest that. A short fast flick dismisses; a long
  * slow drag that stops halfway springs back.
  *
@@ -110,7 +110,7 @@ export function Sheet({ open, onClose, children, title, className }: Props) {
     const el = panel.current;
     if (!el) return;
     // Capture so tracking survives the pointer leaving the sheet's bounds.
-    // Throws NotFoundError if the pointer is no longer active — which happens
+    // Throws NotFoundError if the pointer is no longer active, which happens
     // with synthetic events and with a pointer cancelled by the OS between the
     // event firing and this handler running. A throw here would kill the drag
     // outright, so it is swallowed and tracking continues uncaptured.

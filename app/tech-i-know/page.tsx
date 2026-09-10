@@ -15,9 +15,9 @@ const total = [...development, ...design].reduce(
   0,
 );
 
-const title = "Stack — what's actually in production";
+const title = "Stack: what's actually in production";
 const description =
-  "React 19, TanStack Start, Django 5 + DRF, Celery, OpenAI, Expo SDK 53, Cloudflare Workers, Dodo Payments. Grouped by depth, not breadth — anything only tinkered with is left off.";
+  "React 19, TanStack Start, Django 5 + DRF, Celery, OpenAI, Expo SDK 53, Cloudflare Workers, Dodo Payments. Grouped by depth, not breadth. Anything only tinkered with is left off.";
 
 export const metadata: Metadata = {
   title,
@@ -77,10 +77,10 @@ export default function StackPage() {
           href="/work"
           className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
         >
-          the four products
+          the products
         </Link>
         . Tech I&apos;ve only read about or tried in a weekend project is left
-        off — a stack list that includes everything tells you nothing.
+        off, because a stack list that includes everything tells you nothing.
       </p>
 
       <section className="mt-14">
@@ -108,7 +108,7 @@ export default function StackPage() {
         >
           the component library
         </Link>{" "}
-        — ten interaction components with their source and the reasoning behind
+        , ten interaction components with their source and the reasoning behind
         each timing decision.
       </p>
     </div>

@@ -36,7 +36,7 @@ export function SpotlightCard({
   as = "div",
 }: Props) {
   // Widened deliberately: the element varies with `as`, and pinning the ref to
-  // one tag's interface buys nothing here — the only thing read off it is
+  // one tag's interface buys nothing here: the only thing read off it is
   // getBoundingClientRect, which every element has.
   const Tag = as as React.ElementType;
   const ref = useRef<HTMLElement>(null);

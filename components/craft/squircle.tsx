@@ -1,7 +1,7 @@
 import { cn } from "../../lib/cn";
 
 /**
- * Samples a superellipse — |x|ⁿ + |y|ⁿ = 1 — normalised into a 0..1 box.
+ * Samples a superellipse, |x|ⁿ + |y|ⁿ = 1, normalised into a 0..1 box.
  *
  * An iOS icon is not a rounded rectangle. A rounded rectangle joins a straight
  * edge to a circular arc, and curvature jumps at that seam; the eye reads the
@@ -42,7 +42,7 @@ function superellipse(n: number, steps: number) {
  * neither problem.
  *
  * Straight chords between 64 samples sit ~0.04px inside the true curve at icon
- * size — under a device pixel even at 3× density.
+ * size, under a device pixel even at 3× density.
  */
 export function squirclePolygon(n = 4.5, steps = 64) {
   return `polygon(${superellipse(n, steps)

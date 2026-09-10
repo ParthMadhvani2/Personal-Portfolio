@@ -11,6 +11,7 @@ import { site } from "../../data/site";
 const links: { href: string; label: string; minor?: boolean }[] = [
   { href: "/work", label: "work" },
   { href: "/crafts", label: "crafts" },
+  { href: "/notes", label: "notes" },
   { href: "/tech-i-know", label: "stack", minor: true },
   { href: "/colophon", label: "colophon", minor: true },
   { href: "/resume", label: "resume" },
@@ -19,7 +20,7 @@ const links: { href: string; label: string; minor?: boolean }[] = [
 /**
  * A translucent bar the content scrolls under, rather than an opaque strip that
  * permanently eats 56px of the viewport. The bright top edge is the light
- * catching the material — it is what stops a blurred surface reading as a flat
+ * catching the material, and it is what stops a blurred surface reading as a flat
  * grey rectangle.
  */
 export default function SiteNav() {

@@ -10,7 +10,7 @@ import { site } from "../data/site";
 
 export const metadata: Metadata = {
   // The root layout's default title already reads correctly for this page, so
-  // it is not overridden here — a template applied to the homepage would
+  // it is not overridden here, because a template applied to the homepage would
   // duplicate the name.
   alternates: { canonical: "/" },
   description: `${site.tagline} ${site.summary} Embers, Hood Cleaning Report, SnapCount and OutboundQA.`,

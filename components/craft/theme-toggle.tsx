@@ -15,7 +15,7 @@ const KEY = THEME_KEY;
  * The new theme wipes in as an expanding circle centred on the button you just
  * pressed, so the change is anchored to its cause rather than appearing to come
  * from nowhere. Where `startViewTransition` is unavailable it degrades to a
- * plain attribute flip — the feature is the polish, never the function.
+ * plain attribute flip. The feature is the polish, never the function.
  *
  * The abrupt light/dark jump is exactly the kind of brightness change reduced
  * motion is meant to soften, so that path skips the reveal too.
