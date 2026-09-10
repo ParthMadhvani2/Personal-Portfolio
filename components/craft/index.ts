@@ -22,6 +22,8 @@ export { CommandMenu } from "./command-menu";
 export type { CommandItem } from "./command-menu";
 export { Kbd } from "./kbd";
 export { Reveal } from "./reveal";
+export { BrowserFrame } from "./browser-frame";
+export { useInView } from "./use-in-view";
 export { ThemeToggle } from "./theme-toggle";
 export { themeScript, THEME_KEY } from "../../lib/theme-script";
 export { useSpring, useReducedMotion, project, rubberband } from "./use-spring";

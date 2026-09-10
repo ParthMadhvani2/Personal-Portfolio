@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { cn } from "../../lib/cn";
+import { useInView } from "./use-in-view";
 
 type Props = {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ type Props = {
   margin?: number;
   className?: string;
   as?: "div" | "li" | "section" | "article";
-};
+} & React.HTMLAttributes<HTMLElement>;
 
 /**
  * Reveals its children when they scroll into view: once, then it stops.
@@ -32,53 +32,22 @@ export function Reveal({
   margin = -80,
   className,
   as = "div",
+  ...rest
 }: Props) {
   // Widened for the same reason as SpotlightCard: the element varies with
   // `as`, and the only thing read off the ref is getBoundingClientRect.
   const As = as as React.ElementType;
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (
-      typeof IntersectionObserver === "undefined" ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setShown(true);
-      return;
-    }
-
-    // Already on screen at mount (above the fold): show without waiting for a
-    // scroll that may never come.
-    if (el.getBoundingClientRect().top < window.innerHeight) {
-      setShown(true);
-      return;
-    }
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setShown(true);
-        io.disconnect();
-      },
-      { rootMargin: `0px 0px ${margin}px 0px` },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [margin]);
+  const [ref, { inView }] = useInView<HTMLDivElement>(margin);
 
   return (
     <As
       ref={ref}
-      data-shown={shown || undefined}
-      style={{ transitionDelay: shown ? `${index * 55}ms` : "0ms" }}
+      data-hidden={!inView || undefined}
+      style={{ transitionDelay: inView ? `${index * 55}ms` : "0ms" }}
       className={cn(
-        "translate-y-2.5 opacity-0 transition-[opacity,transform] duration-[520ms] ease-out",
-        "data-[shown]:translate-y-0 data-[shown]:opacity-100",
-        "motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none",
+        "transition-[opacity,transform] duration-[520ms] ease-out",
+        "data-[hidden]:translate-y-2.5 data-[hidden]:opacity-0",
+        "motion-reduce:!translate-y-0 motion-reduce:!opacity-100 motion-reduce:transition-none",
         className,
       )}
     >

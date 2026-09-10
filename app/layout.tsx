@@ -1,26 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Manrope } from "next/font/google";
 import Script from "next/script";
+import { display, mono, sans } from "../lib/fonts";
 import "./globals.css";
 import { keywords, site, SITE_URL } from "../data/site";
 import { products } from "../data/products";
 import { themeScript } from "../lib/theme-script";
 import SiteNav from "../components/site/nav";
 import SiteFooter from "../components/site/footer";
-
-const display = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 const title = `${site.name} · ${site.role}`;
 const description = `${site.tagline} ${site.summary}`;
@@ -170,7 +156,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${display.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <head>
         {/* Runs before first paint so a stored theme never flashes the wrong one. */}

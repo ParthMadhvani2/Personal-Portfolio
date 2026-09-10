@@ -10,6 +10,7 @@ import { SegmentedControl } from "../craft/segmented-control";
 import { Sheet } from "../craft/sheet";
 import { SpotlightCard } from "../craft/spotlight-card";
 import { StatusPill } from "../craft/status-pill";
+import { BrowserFrame } from "../craft/browser-frame";
 import { CommandMenu } from "../craft/command-menu";
 import { Kbd } from "../craft/kbd";
 import { Reveal } from "../craft/reveal";
@@ -243,6 +244,17 @@ function RevealDemo() {
   );
 }
 
+function FrameDemo() {
+  return (
+    <BrowserFrame
+      src="/shots/snapcount.png"
+      alt="SnapCount home page"
+      url="snapcount.app"
+      className="max-w-sm"
+    />
+  );
+}
+
 function StatusDemo() {
   return (
     <div className="flex flex-wrap gap-2">
@@ -268,6 +280,7 @@ const registry: Record<string, React.ComponentType> = {
   squircle: SquircleDemo,
   "command-menu": CommandDemo,
   reveal: RevealDemo,
+  "browser-frame": FrameDemo,
   "theme-toggle": ThemeDemo,
 };
 

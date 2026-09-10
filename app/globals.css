@@ -136,9 +136,14 @@ html {
 }
 
 body {
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
   background-color: rgb(var(--bg));
   color: rgb(var(--text));
-  font-feature-settings: "cv11", "ss01";
+  font-feature-settings: "ss03", "cv11";
   font-variant-ligatures: contextual;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -172,24 +177,41 @@ body {
   text-transform: lowercase;
 }
 
+/* Display: Instrument Serif. One weight by design; a high-contrast serif at
+   display size does not need bold, it needs air and tight tracking. */
 .display {
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  /* tracking is size-specific: large type reads too loose without negative tracking */
-  letter-spacing: -0.033em;
-  line-height: 1.02;
+  font-family:
+    var(--font-display),
+    Iowan Old Style,
+    Georgia,
+    serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+/* The editorial register: used for pull quotes and asides, never for UI. */
+.editorial {
+  font-family:
+    var(--font-display),
+    Iowan Old Style,
+    Georgia,
+    serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .title {
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.018em;
+  line-height: 1.18;
 }
 
 .mono {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
-  font-feature-settings: "zero", "ss02";
+  font-feature-settings: "zero";
 }
 
 /* metadata label: the small-caps-ish register used for section eyebrows */
@@ -203,8 +225,9 @@ body {
 }
 
 .prose-body {
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 16.5px;
+  line-height: 1.68;
+  letter-spacing: -0.003em;
   color: rgb(var(--text-muted));
   max-width: 65ch;
 }
@@ -267,6 +290,36 @@ body {
 .rise {
   animation: rise 520ms var(--ease-out) backwards;
   animation-delay: calc(var(--i, 0) * 55ms);
+}
+
+/* Line reveal: the text rises out of its own clipped box. Only for display
+   headings, and only on first paint. Fading text in place says nothing;
+   masking it says the line arrived from somewhere. */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.line-mask > * {
+  display: block;
+  transform: translateY(105%);
+  animation: line-rise 900ms var(--ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@keyframes line-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-mask > * {
+    transform: none;
+    animation: none;
+  }
 }
 
 @keyframes pulse-ring {

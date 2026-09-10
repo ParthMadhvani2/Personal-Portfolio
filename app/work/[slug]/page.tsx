@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { products, productBySlug } from "../../../data/products";
 import { site, SITE_URL } from "../../../data/site";
+import { BrowserFrame } from "../../../components/craft/browser-frame";
 import { StatusPill } from "../../../components/craft/status-pill";
 import { AnimatedNumber } from "../../../components/craft/animated-number";
 
@@ -133,6 +134,16 @@ export default function CaseStudy({ params }: Params) {
           )}
         </div>
       </header>
+
+      {p.shot ? (
+        <BrowserFrame
+          className="mt-12"
+          src={p.shot}
+          alt={`${p.name} home page`}
+          url={new URL(p.url).hostname.replace("www.", "")}
+          priority
+        />
+      ) : null}
 
       {/* Column count follows the data. A fixed 3-up leaves an empty cell that
           reads as a missing value rather than a design choice. */}

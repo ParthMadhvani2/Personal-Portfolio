@@ -95,6 +95,14 @@ export const crafts: CraftMeta[] = [
     deps: ["kbd.tsx"],
   },
   {
+    id: "browser-frame",
+    name: "BrowserFrame",
+    principle:
+      "No traffic lights. They are the part of this pattern that became decoration, and they say mockup more than they say real site. A chrome bar carrying the actual URL does the useful half.",
+    file: "browser-frame.tsx",
+    deps: ["squircle.tsx"],
+  },
+  {
     id: "reveal",
     name: "Reveal",
     principle:

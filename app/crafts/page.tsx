@@ -75,8 +75,11 @@ export default function CraftsPage() {
         <ol className="divide-y divide-line">
           {crafts.map((c, i) => (
             <li key={c.id} id={c.id} className="scroll-mt-20 py-14 first:pt-12">
+              {/* min-w-0 on both children: a grid item defaults to min-width:auto, so
+                  the code block's intrinsic width would widen the track and push
+                  the page sideways no matter what overflow the inner box sets. */}
               <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-3">
                     {String(i + 1).padStart(2, "0")} · {c.file}
                   </p>
@@ -95,7 +98,7 @@ export default function CraftsPage() {
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="min-w-0 space-y-3">
                   <CodeBlock
                     filename={`components/craft/${c.file}`}
                     code={sources[c.file]}

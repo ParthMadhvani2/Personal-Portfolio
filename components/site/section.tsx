@@ -1,4 +1,5 @@
 import { cn } from "../../lib/cn";
+import { Reveal } from "../craft/reveal";
 
 type Props = {
   id?: string;
@@ -28,15 +29,21 @@ export default function Section({
       )}
     >
       {(label || title || intro) && (
-        <header className="mb-8">
-          {label ? <p className="label mb-3">{label}</p> : null}
-          {title ? (
-            <h2 className="title text-2xl sm:text-[28px] lower">{title}</h2>
-          ) : null}
-          {intro ? <div className="prose-body mt-3">{intro}</div> : null}
-        </header>
+        <Reveal as="div" className="mb-8">
+          <header>
+            {label ? <p className="label mb-3">{label}</p> : null}
+            {title ? (
+              <h2 className="display text-[clamp(1.9rem,4vw,2.6rem)] lower">
+                {title}
+              </h2>
+            ) : null}
+            {intro ? <div className="prose-body mt-3">{intro}</div> : null}
+          </header>
+        </Reveal>
       )}
-      {children}
+      {/* The body follows a beat behind its heading, so the eye lands on the
+          title first rather than on both at once. */}
+      <Reveal index={1}>{children}</Reveal>
     </section>
   );
 }

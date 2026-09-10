@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "../../lib/cn";
+import { Reveal } from "../craft/reveal";
 import { Squircle } from "../craft/squircle";
 import { products, type Product } from "../../data/products";
 
@@ -48,12 +49,12 @@ export default function Shelf() {
       onPointerLeave={() => setActive(null)}
     >
       <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
-        {products.map((p) => {
+        {products.map((p, i) => {
           const b = badge[p.status];
           const dimmed = active !== null && active !== p.slug;
 
           return (
-            <li key={p.slug}>
+            <Reveal as="li" key={p.slug} index={i} margin={-20}>
               <Link
                 href={`/work/${p.slug}`}
                 onPointerEnter={() => setActive(p.slug)}
@@ -111,12 +112,18 @@ export default function Shelf() {
                   {p.name}
                 </span>
               </Link>
-            </li>
+            </Reveal>
           );
         })}
 
         {Array.from({ length: EMPTY_WELLS }).map((_, i) => (
-          <li key={`well-${i}`} aria-hidden>
+          <Reveal
+            as="li"
+            key={`well-${i}`}
+            index={products.length + i}
+            margin={-20}
+            aria-hidden
+          >
             <Squircle
               as="span"
               className={cn(
@@ -133,7 +140,7 @@ export default function Shelf() {
             <span className="mt-2.5 block text-center text-[11px] text-dim/60">
               {i === 0 ? "next" : "\u00a0"}
             </span>
-          </li>
+          </Reveal>
         ))}
       </ul>
     </div>
