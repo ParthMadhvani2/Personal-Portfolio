@@ -91,8 +91,8 @@ export const products: Product[] = [
       "Dodo Payments",
     ],
     figures: [
+      { value: 2975, label: "organic search clicks, 90 days" },
       { value: 7, label: "ICP dimensions" },
-      { value: 5, label: "scoring dimensions" },
       { value: 5, label: "billing tiers" },
     ],
     launch: { date: "June 2026", slug: "embers" },
@@ -153,6 +153,10 @@ export const products: Product[] = [
       "React",
       "Tailwind v4",
     ],
+    figures: [
+      { value: 64, label: "organic search clicks, 90 days" },
+      { value: 2, label: "compliance standards covered" },
+    ],
     launch: { date: "July 2026", slug: "hoodcleaningreport" },
   },
   {
@@ -209,8 +213,9 @@ export const products: Product[] = [
       "Cloudflare Workers",
     ],
     figures: [
+      { value: 2185, label: "organic search clicks, 90 days" },
+      { value: 5, label: "marketing languages" },
       { value: 2, label: "platforms" },
-      { value: 5, label: "languages" },
     ],
     launch: { date: "June 2026", slug: "snapcount" },
   },
@@ -312,6 +317,18 @@ export const experiments = [
  * claim that goes stale the next time something ships, so nothing hardcodes it.
  */
 export const shippedCount = products.length;
+
+/**
+ * Organic search clicks across the marketing surfaces, from Google Search
+ * Console for the 90 days to September 2026. Worth stating because the SEO work
+ * on those sites is mine, and traffic is the only claim on this page that a
+ * reader could not otherwise verify by clicking through.
+ */
+export const organicClicks = products.reduce(
+  (n, p) =>
+    n + (p.figures?.find((f) => f.label.startsWith("organic"))?.value ?? 0),
+  0,
+);
 export const liveCount = products.filter((p) => p.status === "live").length;
 export const launchedCount = products.filter((p) => p.launch).length;
 

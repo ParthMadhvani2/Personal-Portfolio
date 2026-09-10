@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useInView } from "./use-in-view";
 import { cn } from "../../lib/cn";
 
 type Props = {
@@ -11,6 +12,12 @@ type Props = {
   suffix?: string;
   /** Locale-aware grouping, on by default. */
   format?: boolean;
+  /**
+   * Count up from zero the first time it scrolls into view. Worth it for a
+   * headline figure the page is making an argument with; noise for a value the
+   * reader is only glancing at.
+   */
+  countUp?: boolean;
   className?: string;
 };
 
@@ -34,25 +41,69 @@ export function AnimatedNumber({
   prefix,
   suffix,
   format = true,
+  countUp = false,
   className,
 }: Props) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const text = format ? value.toLocaleString("en-US") : String(value);
+  const [ref, { inView, armed }] = useInView<HTMLSpanElement>(-40);
+  const [shown, setShown] = useState(countUp ? 0 : value);
+  const raf = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!countUp) {
+      setShown(value);
+      return;
+    }
+    // Only count when the reveal actually armed; otherwise show the value.
+    if (!armed) {
+      setShown(value);
+      return;
+    }
+    if (!inView) return;
+
+    // Ease-out so it arrives quickly and settles, rather than crawling the
+    // whole way. A linear count reads as a progress bar, not an arrival.
+    const start = performance.now();
+    const D = 900;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / D);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setShown(Math.round(value * eased));
+      if (t < 1) raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => {
+      if (raf.current) cancelAnimationFrame(raf.current);
+    };
+  }, [countUp, inView, armed, value]);
+
+  // While counting, the per-digit roll is suppressed: thirty updates a second
+  // against a 520ms transition is a blur, not an odometer.
+  const counting = countUp && shown !== value;
+  const display = countUp ? shown : value;
+  const text = format ? display.toLocaleString("en-US") : String(display);
   const chars = text.split("");
 
   return (
-    <span className={cn("tnum inline-flex items-baseline", className)}>
+    <span
+      ref={ref}
+      className={cn("tnum inline-flex items-baseline", className)}
+    >
       {/* The digit strips are decoration. Screen readers get real text, because
           aria-label on a generic span is not reliably announced and role="text"
           only exists in Safari. */}
-      <span className="sr-only">{`${prefix ?? ""}${text}${suffix ?? ""}`}</span>
+      {/* The final value, always. A screen reader should never be read a
+          number that is mid-count. */}
+      <span className="sr-only">{`${prefix ?? ""}${
+        format ? value.toLocaleString("en-US") : String(value)
+      }${suffix ?? ""}`}</span>
       <span aria-hidden className="inline-flex items-baseline">
         {prefix ? <span>{prefix}</span> : null}
         {chars.map((c, i) =>
           /\d/.test(c) ? (
-            <Digit key={i} digit={Number(c)} animate={mounted} />
+            <Digit key={i} digit={Number(c)} animate={mounted && !counting} />
           ) : (
             <span key={i}>{c}</span>
           ),

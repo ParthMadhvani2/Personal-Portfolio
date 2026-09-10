@@ -51,12 +51,8 @@ const config: Config = {
         slow: "260ms",
       },
       fontFamily: {
-        sans: [
-          "var(--font-display)",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         mono: [
           "var(--font-mono)",
           "ui-monospace",

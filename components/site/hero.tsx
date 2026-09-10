@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 import { site } from "../../data/site";
-import { products } from "../../data/products";
+import { organicClicks, products } from "../../data/products";
 import { StatusPill } from "../craft/status-pill";
 import { AnimatedNumber } from "../craft/animated-number";
 import Shelf from "./shelf";
@@ -12,7 +12,7 @@ const launched = products.filter((p) => p.launch).length;
 const signal: { value: number; suffix?: string; label: string }[] = [
   { value: products.length, label: "products shipped" },
   { value: launched, label: "launched on Product Hunt in 2026" },
-  { value: 2, label: "platforms: web and iOS" },
+  { value: organicClicks, label: "organic search clicks in 90 days" },
 ];
 
 export default function Hero() {
@@ -24,18 +24,18 @@ export default function Hero() {
             <StatusPill tone="live">Available · {site.location}</StatusPill>
           </div>
 
-          <h1
-            className="display rise mt-6 text-[clamp(2.6rem,7.5vw,4.6rem)] lower"
-            style={{ ["--i" as string]: 1 }}
-          >
-            {site.name}
+          <h1 className="display mt-6 text-[clamp(3rem,8.5vw,5.4rem)] lower">
+            <span className="line-mask">
+              <span style={{ ["--i" as string]: 1 }}>{site.name}</span>
+            </span>
           </h1>
 
-          <p
-            className="rise mt-4 max-w-[26ch] text-[clamp(1.35rem,3.4vw,2rem)] font-medium leading-[1.15] tracking-[-0.02em] text-muted"
-            style={{ ["--i" as string]: 2 }}
-          >
-            {site.tagline}
+          <p className="mt-3 max-w-[24ch] text-[clamp(1.4rem,3.6vw,2.1rem)] leading-[1.12] text-muted">
+            <span className="line-mask">
+              <span className="editorial" style={{ ["--i" as string]: 2 }}>
+                {site.tagline}
+              </span>
+            </span>
           </p>
 
           <div className="rise mt-6 space-y-4" style={{ ["--i" as string]: 3 }}>
@@ -150,7 +150,7 @@ export default function Hero() {
             <dt className="label mb-2">{String(i + 1).padStart(2, "0")}</dt>
             <dd>
               <span className="title block text-[26px] text-fg">
-                <AnimatedNumber value={s.value} suffix={s.suffix} />
+                <AnimatedNumber value={s.value} suffix={s.suffix} countUp />
               </span>
               <span className="mt-0.5 block text-[13px] text-dim">
                 {s.label}

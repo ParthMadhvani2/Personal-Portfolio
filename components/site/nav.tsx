@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { cn } from "../../lib/cn";
 import { ThemeToggle } from "../craft/theme-toggle";
 import SiteCommand from "./site-command";
@@ -25,10 +26,29 @@ const links: { href: string; label: string; minor?: boolean }[] = [
  */
 export default function SiteNav() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  // At the top of the page there is nothing behind the bar, so the blur and the
+  // border are drawing a line for no reason. They arrive once content is
+  // actually passing underneath.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="material border-b border-line bg-bg/70 backdrop-blur-xl backdrop-saturate-150">
+      <div
+        className={cn(
+          "material transition-[background-color,border-color,backdrop-filter] duration-slow ease-out",
+          "border-b",
+          scrolled
+            ? "border-line bg-bg/75 backdrop-blur-xl backdrop-saturate-150"
+            : "border-transparent bg-bg/0",
+        )}
+      >
         <nav
           aria-label="Primary"
           className="mx-auto flex h-14 max-w-content items-center gap-0.5 px-4 sm:gap-1 sm:px-6"
