@@ -1,13 +1,12 @@
 {
-  "name": "Parth Madhvani - Frontend Design Engineer",
+  "name": "Parth Madhvani — Design engineer + product engineer",
   "short_name": "Parth Madhvani",
-  "description": "Frontend design engineer specializing in fast, accessible web interfaces. Building scalable products with React, Next.js, and TypeScript.",
+  "description": "From messy problem to working product. Four SaaS products in production across web and iOS.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#08080a",
+  "theme_color": "#08080a",
   "icons": [
     {
       "src": "/media/favicon.png",
@@ -19,15 +18,8 @@
       "src": "/media/favicon.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ],
-  "categories": ["technology", "productivity"],
-  "screenshots": [
-    {
-      "src": "/media/profile.png",
-      "sizes": "540x720",
-      "type": "image/png"
-    }
-  ]
+  "categories": ["technology", "portfolio", "productivity"]
 }

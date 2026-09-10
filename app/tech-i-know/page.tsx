@@ -1,103 +1,116 @@
 import type { Metadata } from "next";
-import skillsData from "../../data/techstack.json";
+import Link from "next/link";
+import data from "../../data/techstack.json";
+import { site, SITE_URL } from "../../data/site";
+import { SpotlightCard } from "../../components/craft/spotlight-card";
+import { StatusPill } from "../../components/craft/status-pill";
 
-interface SkillCategory {
-  category: string;
-  skills: string[];
-}
+type Group = { category: string; skills: string[] };
 
-const Development: SkillCategory[] = skillsData.Development;
-const Design: SkillCategory[] = skillsData.Design;
+const development: Group[] = data.Development;
+const design: Group[] = data.Design;
+
+const total = [...development, ...design].reduce(
+  (n, g) => n + g.skills.length,
+  0,
+);
+
+const title = "Stack — what's actually in production";
+const description =
+  "React 19, TanStack Start, Django 5 + DRF, Celery, OpenAI, Expo SDK 53, Cloudflare Workers, Dodo Payments. Grouped by depth, not breadth — anything only tinkered with is left off.";
 
 export const metadata: Metadata = {
-  title: "Tech Stack & Skills | Parth Madhvani",
-  description:
-    "The stack I actually ship with: React 19, TanStack Start, Django + DRF, Celery, OpenAI, Expo, Cloudflare Workers, Dodo Payments. No padding, no listed tech I haven't used in production.",
+  title,
+  description,
+  alternates: { canonical: "/tech-i-know" },
   openGraph: {
-    title: "Tech Stack & Skills | Parth Madhvani",
-    description:
-      "React 19, TanStack Start, Django + DRF, Celery, OpenAI, Expo, Cloudflare Workers. The stack behind three shipped SaaS products.",
-    url: "https://parthmadhvani.com/tech-i-know",
+    title: `${title} · ${site.name}`,
+    description,
+    url: `${SITE_URL}/tech-i-know`,
     type: "website",
   },
+  twitter: { card: "summary_large_image", title, description },
 };
 
-const TechFlex = () => {
+function Grid({ groups, offset = 0 }: { groups: Group[]; offset?: number }) {
   return (
-    <div className="tech-flex mt-8">
-      <div className="mb-6">
-        <h1 className=" mb-2 text-neutral-200 text-xl font-semibold">
-          The stack I actually ship with
-        </h1>
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {groups.map((g, i) => (
+        <SpotlightCard as="li" key={g.category} className="p-5">
+          <p className="label mb-4">
+            {String(offset + i + 1).padStart(2, "0")}
+          </p>
+          <h3 className="title mb-4 text-[16px]">{g.category}</h3>
+          <ul className="space-y-2">
+            {g.skills.map((s) => (
+              <li
+                key={s}
+                className="relative pl-4 text-[13px] leading-relaxed text-muted"
+              >
+                <span
+                  aria-hidden
+                  className="absolute left-0 top-[0.6em] h-1 w-1 rounded-full bg-line-strong"
+                />
+                {s}
+              </li>
+            ))}
+          </ul>
+        </SpotlightCard>
+      ))}
+    </ul>
+  );
+}
 
-        <p className="text-neutral-500 text-xl font-semibold">
-          Grouped by depth, not breadth. Everything listed here is in production
-          in one of the three products I work on (Embers, Hood Cleaning Report,
-          SnapCount). Tech I&apos;ve only tinkered with is left out on purpose.
-        </p>
-      </div>
-      <div className="my-12">
+export default function StackPage() {
+  return (
+    <div className="mx-auto max-w-content px-4 pb-4 pt-12 sm:px-6 sm:pt-20">
+      <StatusPill tone="accent">{total} entries · all shipped</StatusPill>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {Development.map((item, index) => (
-            <div
-              key={index}
-              className="border p-5 rounded-xl border-dashed border-neutral-700 hover:bg-neutral-900 transition-all duration-300"
-            >
-              <h1 className="text-xl font-semibold mb-6">{item.category}</h1>
-              <div className="">
-                {item.skills.map((skill, skillIndex) => (
-                  <div
-                    className="mb-3 flex flex-col gap-2 text-neutral-500 font-semibold"
-                    key={skillIndex}
-                  >
-                    <p className="font-semibold">{skill}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+      <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
+        the stack i ship with
+      </h1>
+
+      <p className="prose-body mt-5">
+        Grouped by depth rather than breadth. Everything here is running in
+        production in one of{" "}
+        <Link
+          href="/work"
+          className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
+        >
+          the four products
+        </Link>
+        . Tech I&apos;ve only read about or tried in a weekend project is left
+        off — a stack list that includes everything tells you nothing.
+      </p>
+
+      <section className="mt-14">
+        <h2 className="label mb-6">Engineering</h2>
+        <Grid groups={development} />
+      </section>
+
+      <section className="mt-16">
+        <div className="mb-6 max-w-prose">
+          <h2 className="label mb-3">Design</h2>
+          <p className="text-[15px] leading-relaxed text-muted">
+            People call me a full-stack engineer. I read myself as a design
+            engineer: comfortable across the stack, but at my most useful where
+            design, frontend and product decisions land on the same desk.
+          </p>
         </div>
-        <p className="text-xl text-neutral-500 mt-2 mb-6 font-semibold">
-          People call me a full-stack engineer. I think of myself as a{" "}
-          <span className="text-neutral-200 font-semibold">
-            design engineer + product engineer
-          </span>
-          . Comfortable across the whole stack, but at my best where design,
-          frontend, and product decisions meet.
-        </p>
-      </div>{" "}
-      <div className="my-12">
-        <h1 className="text-xl font-semibold mb-6 text-neutral-200">
-          Design skills
-        </h1>
-        <p className="text-xl text-neutral-500 mt-2 mb-6 font-semibold">
-          I enjoy crafting interfaces that are both functional and delightful.
-        </p>
+        <Grid groups={design} offset={development.length} />
+      </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {Design.map((item, index) => (
-            <div
-              key={index}
-              className="border p-5 rounded-xl border-dashed hover:bg-neutral-900 transition-all duration-300 border-neutral-700"
-            >
-              <h1 className="text-xl font-semibold mb-6">{item.category}</h1>
-              <div className="">
-                {item.skills.map((skill, skillIndex) => (
-                  <div
-                    className="mb-3 flex flex-col gap-2 text-neutral-500 font-semibold"
-                    key={skillIndex}
-                  >
-                    <p className="font-semibold">{skill}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <p className="prose-body mt-14 border-t border-line pt-8">
+        The clearest evidence of the design half is{" "}
+        <Link
+          href="/crafts"
+          className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
+        >
+          the component library
+        </Link>{" "}
+        — ten interaction components with their source and the reasoning behind
+        each timing decision.
+      </p>
     </div>
   );
-};
-
-export default TechFlex;
+}
