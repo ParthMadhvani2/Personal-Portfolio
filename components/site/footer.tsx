@@ -48,6 +48,12 @@ export default function SiteFooter() {
           >
             Components
           </Link>
+          <Link
+            href="/colophon"
+            className="text-[13px] text-muted transition-colors duration-fast ease-out hover:text-fg"
+          >
+            Colophon
+          </Link>
         </nav>
       </div>
 

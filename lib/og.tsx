@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
 
-type Face = { weight: 400 | 800; data: ArrayBuffer };
+export type Face = { weight: 400 | 800; data: ArrayBuffer };
 
 let fontCache: Promise<Face[]> | null = null;
 
@@ -16,7 +16,7 @@ let fontCache: Promise<Face[]> | null = null;
  * Fetched once per build and cached. If the network is unavailable the card
  * falls back to the default face rather than failing the build.
  */
-async function faces(): Promise<Face[]> {
+export async function faces(): Promise<Face[]> {
   if (!fontCache) {
     fontCache = (async () => {
       const load = async (weight: 400 | 800): Promise<Face | null> => {

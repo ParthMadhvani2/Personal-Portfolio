@@ -31,7 +31,15 @@ export default function Products() {
                   </p>
                   <h3 className="title text-[19px] lower">{p.name}</h3>
                 </div>
-                <StatusPill tone={p.status === "live" ? "live" : "neutral"}>
+                <StatusPill
+                  tone={
+                    p.status === "live"
+                      ? "live"
+                      : p.status === "sunset"
+                        ? "neutral"
+                        : "accent"
+                  }
+                >
                   {p.status}
                 </StatusPill>
               </div>
@@ -63,7 +71,7 @@ export default function Products() {
                 >
                   Read the build
                 </Link>
-                {p.status === "live" && (
+                {p.status !== "building" && (
                   <a
                     href={p.url}
                     target="_blank"

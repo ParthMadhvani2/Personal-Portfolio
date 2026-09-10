@@ -80,6 +80,28 @@ export const crafts: CraftMeta[] = [
     file: "status-pill.tsx",
   },
   {
+    id: "squircle",
+    name: "Squircle",
+    principle:
+      "An iOS icon is a superellipse, not a rounded rectangle. A rounded rect joins a straight edge to a circular arc and curvature jumps at the seam — the eye reads it as a pinched corner without knowing why.",
+    file: "squircle.tsx",
+  },
+  {
+    id: "command-menu",
+    name: "CommandMenu",
+    principle:
+      "Deliberately has no open animation. It is opened by keyboard shortcut tens of times a session, and an entrance is a tax charged on every single use.",
+    file: "command-menu.tsx",
+    deps: ["kbd.tsx"],
+  },
+  {
+    id: "reveal",
+    name: "Reveal",
+    principle:
+      "Fires once on scroll, then disconnects. A page-load entrance below the fold plays to nobody — and strands content at opacity 0 anywhere animations are paused.",
+    file: "reveal.tsx",
+  },
+  {
     id: "theme-toggle",
     name: "ThemeToggle",
     principle:

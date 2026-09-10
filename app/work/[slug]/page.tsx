@@ -81,7 +81,15 @@ export default function CaseStudy({ params }: Params) {
 
       <header className="max-w-prose pt-8">
         <div className="flex flex-wrap items-center gap-2">
-          <StatusPill tone={p.status === "live" ? "live" : "neutral"}>
+          <StatusPill
+            tone={
+              p.status === "live"
+                ? "live"
+                : p.status === "sunset"
+                  ? "neutral"
+                  : "accent"
+            }
+          >
             {p.status}
           </StatusPill>
           <span className="mono text-[11px] uppercase tracking-[0.08em] text-dim">
@@ -95,7 +103,7 @@ export default function CaseStudy({ params }: Params) {
         <p className="mt-4 text-[19px] leading-snug text-muted">{p.summary}</p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          {p.status === "live" && (
+          {p.status !== "building" && (
             <a
               href={p.url}
               target="_blank"
@@ -192,6 +200,15 @@ export default function CaseStudy({ params }: Params) {
           </ol>
         </section>
       )}
+
+      {p.epilogue ? (
+        <section className="mt-14 max-w-prose">
+          <h2 className="label mb-4">What happened next</h2>
+          <p className="border-l-2 border-line-strong pl-4 text-[16px] leading-relaxed text-muted">
+            {p.epilogue}
+          </p>
+        </section>
+      ) : null}
 
       {p.stack.length > 0 && (
         <section className="mt-12">
