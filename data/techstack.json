@@ -6,12 +6,16 @@
     },
     {
       "category": "Databases & Data Layers",
-      "skills": ["PostgreSQL, MongoDB, Redis, DynamoDB", "ORMs (Prisma, Mongoose, Drizzle)"]
+      "skills": [
+        "PostgreSQL, MongoDB, Redis, DynamoDB",
+        "ORMs (Prisma, Mongoose, Drizzle)"
+      ]
     },
     {
       "category": "Frontend Engineering",
       "skills": [
-        "React 19, TanStack Start (SSR), TanStack Router, TanStack Query","Next.js 14 (app directory, server components)",
+        "React 19, TanStack Start (SSR), TanStack Router, TanStack Query",
+        "Next.js 14 (app directory, server components)",
         "Tailwind CSS v4, shadcn-style primitives, Radix UI",
         "Zod, React Hook Form, CVA",
         "Framer Motion, Sonner, lucide-react",

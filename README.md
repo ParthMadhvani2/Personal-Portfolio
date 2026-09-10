@@ -1,42 +1,69 @@
 # Parth Madhvani · Portfolio
 
-🌐 **Live:** [parthmadhvani.com](https://parthmadhvani.com)
+**Live:** [parthmadhvani2.vercel.app](https://parthmadhvani2.vercel.app)
 
-![Portfolio Preview](./public/media/portfolio-src.png)
+From messy problem to working product. I take a product from the version someone
+describes out loud to something in production — schema, API, interface, iOS app,
+billing, and the marketing site it launches behind.
 
-## About
+## What's in here
 
-I build SaaS products end to end. Backend, frontend, mobile, billing, design system, marketing site. Whatever the product needs, I ship it.
+| Route                    | What it is                                                                                   |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
+| `/`                      | Hero, product grid, an interactive map of the layers I own, live components, stack, timeline |
+| `/work` · `/work/[slug]` | A build write-up per product: the problem, what I owned, the decisions                       |
+| `/crafts`                | Ten interaction components with their real source, read from disk at build time              |
+| `/tech-i-know`           | The stack, grouped by depth rather than breadth                                              |
+| `/resume`                | One page, with a PDF that actually downloads                                                 |
 
-Three live products I work on right now:
+## The products
 
-- **[Embers](https://useembers.com)** · LinkedIn engagement turned into ranked warm leads. I work on the scoring engine, the ICP classifier, the dashboard, and the build-in-public marketing.
-- **[Hood Cleaning Report](https://hoodcleaningreport.com)** · NFPA 96 compliance reports for commercial kitchen exhaust contractors. I built the CompanyCam OAuth integration, the photo and document vault, and the PDF pipeline.
-- **[SnapCount](https://snapcount.app)** · Real-time multiplayer tally counter, iOS and web. I built the iOS app on Expo's new architecture and the multi-language marketing site.
+- **[Embers](https://useembers.com)** · LinkedIn engagement turned into ranked warm leads. Scoring engine, ICP classifier, dashboard, billing, marketing.
+- **[Hood Cleaning Report](https://hoodcleaningreport.com)** · NFPA 96 compliance reports for kitchen exhaust contractors. CompanyCam OAuth, document vault, PDF pipeline.
+- **[SnapCount](https://snapcount.app)** · Real-time multiplayer tally counter, iOS and web. Expo on the new architecture, SSE sync, five-language marketing site.
+- **OutboundQA** · The fourth. Write-up pending.
 
-## What I'm good at
+## `components/craft`
 
-Building the full surface of a product. Most engineers stop at the API or the component. I keep going. Mobile app, billing flow, marketing site, design tokens, post-launch ops.
+The interaction components this site is built from, kept portable on purpose.
+Each file depends on React, `lucide-react` for icons, and a two-line `cn`
+helper — no animation library, no headless-UI package, no context to wire up.
+Colours resolve to CSS custom properties, so adopting one means copying the file
+and pointing about six variables at your own tokens. MIT.
 
-AI features that solve a real problem. Not "we added a chatbot." Comment intent classification, ICP matching across 7 dimensions, voice-matched DM generation with OpenAI structured outputs.
+`CopyButton` · `Tooltip` · `SegmentedControl` · `AnimatedNumber` ·
+`HoldToConfirm` · `Sheet` · `SpotlightCard` · `Marquee` · `StatusPill` ·
+`ThemeToggle` — plus `useSpring`, a small interruptible spring with Apple's
+momentum projection and rubber-banding helpers.
 
-Django + Celery + Postgres backends that scale without a rewrite. React 19 + TanStack Start frontends that load fast. Expo iOS apps that respect accessibility by default.
+Every component carries a comment explaining the principle behind its timing
+rather than just what it does. See them running at
+[/crafts](https://parthmadhvani2.vercel.app/crafts).
+
+## Running it
+
+```bash
+pnpm install
+pnpm dev
+```
+
+## Configuration
+
+`NEXT_PUBLIC_SITE_URL` sets the canonical host for every canonical tag, OG URL,
+JSON-LD `@id` and sitemap entry. It defaults to the Vercel URL. **Set it in
+Vercel the moment a custom domain is connected** — otherwise canonicals keep
+pointing at the old host.
 
 ## Stack
 
-Django 5, DRF, Celery, PostgreSQL, Redis, OpenAI, Apify. React 19, TanStack Start, Tailwind v4, Shadcn-style primitives, Radix UI, Zod. Expo SDK 53, React Native, TurboModules. Cloudflare Workers, R2, Docker, Wrangler. Dodo Payments, Stripe, JWT, Google OAuth.
+Next.js 14 (App Router) · TypeScript · Tailwind (fully token-driven, light and
+dark) · zero animation dependencies · OG cards generated at build with
+`next/og`.
 
-## Open to
+## Contact
 
-Full-stack or design-engineer roles where the scope is end-to-end product, not narrow IC tickets.
-
-## Stack (this portfolio site)
-
-Next.js 14 (App Router) · TypeScript · Tailwind CSS · JSON-driven content
-
-## Connect
-
-- **GitHub:** [github.com/ParthMadhvani2](https://github.com/ParthMadhvani2)
-- **LinkedIn:** [linkedin.com/in/parthmadhvani2](https://www.linkedin.com/in/parthmadhvani2)
-- **Email:** madhvaniparth2@gmail.com
-- **Book a call:** [cal.com/parth-madhvani-pjulld/30min](https://cal.com/parth-madhvani-pjulld/30min)
+[Email](mailto:madhvaniparth2@gmail.com) ·
+[Book a call](https://cal.com/parth-madhvani-pjulld/30min) ·
+[LinkedIn](https://www.linkedin.com/in/parthmadhvani2) ·
+[X](https://x.com/parthmadhvani2) ·
+[GitHub](https://github.com/ParthMadhvani2)
