@@ -1,3 +1,4 @@
+import { articles } from "../../data/articles";
 import { crafts } from "../../data/crafts";
 import { notes } from "../../data/notes";
 import {
@@ -75,6 +76,10 @@ ${experiments.map((e) => `- [${e.name}](${e.url}): ${e.summary}`).join("\n")}
 Portable on purpose: React, lucide-react for icons, and a two-line class helper. No animation library, no headless-UI package. MIT.
 
 ${crafts.map((c) => `- ${c.name}: ${c.principle}`).join("\n")}
+
+## Articles
+
+${articles.map((a) => `- [${a.title}](${SITE_URL}/notes/${a.slug}): ${a.summary} (${a.read} min, ${a.tags.join(", ")})`).join("\n")}
 
 ## Notes
 

@@ -13,7 +13,8 @@ iOS app, billing, and the marketing site it launches behind.
 | `/` | Hero, the product shelf, an interactive map of the layers I own, live components, stack, timeline |
 | `/work` · `/work/[slug]` | A build write-up per product, opening with a screenshot of the live site |
 | `/crafts` | Fifteen interaction components with their real source, read from disk at build time |
-| `/notes` | Numbered, tag-filtered observations from shipping |
+| `/notes` | Numbered, tag-filtered observations from shipping, plus long-form articles |
+| `/notes/[slug]` | Articles with live interactive demos inline |
 | `/colophon` | Every design decision on the site, including the maths |
 | `/tech-i-know` | The stack, grouped by depth rather than breadth |
 | `/resume` | One page, with a PDF that downloads |

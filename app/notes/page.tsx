@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { articles } from "../../data/articles";
 import { notes } from "../../data/notes";
 import { site, SITE_URL } from "../../data/site";
 import { Rss } from "lucide-react";
 import { StatusPill } from "../../components/craft/status-pill";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import NotesList from "../../components/site/notes-list";
 
 const title = "Notes: things shipping taught me";
@@ -82,6 +85,37 @@ export default function NotesPage() {
         </a>
         , not a note.
       </p>
+
+      {articles.length > 0 ? (
+        <section className="mt-12">
+          <p className="label mb-4">Longer pieces</p>
+          <ul className="grid gap-3">
+            {articles.map((a) => (
+              <li key={a.slug}>
+                <Link
+                  href={`/notes/${a.slug}`}
+                  className="group flex items-start justify-between gap-5 rounded-lg border border-line bg-surface p-5 transition-[background-color,border-color] duration-slow ease-out hover:border-line-strong hover:bg-surface-hover"
+                >
+                  <span className="min-w-0">
+                    <span className="title block text-[17px]">{a.title}</span>
+                    <span className="prose-body mt-1.5 block text-[14px]">
+                      {a.summary}
+                    </span>
+                    <span className="mono mt-3 block text-[11px] text-dim">
+                      {a.date} · {a.read} min ·{" "}
+                      {a.tags.map((t) => `#${t}`).join(" ")}
+                    </span>
+                  </span>
+                  <ArrowRight
+                    size={16}
+                    className="mt-1 shrink-0 text-dim transition-transform duration-fast ease-out group-hover:translate-x-0.5"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <NotesList />
     </div>

@@ -1,3 +1,4 @@
+import { articles } from "../../../data/articles";
 import { notes } from "../../../data/notes";
 import { products } from "../../../data/products";
 import { site, SITE_URL } from "../../../data/site";
@@ -28,6 +29,19 @@ const productName = (slug: string | null) =>
   products.find((p) => p.slug === slug)?.name ?? null;
 
 export function GET() {
+  const longform = articles
+    .map(
+      (a) => `    <item>
+      <title>${esc(a.title)}</title>
+      <link>${esc(`${SITE_URL}/notes/${a.slug}`)}</link>
+      <guid isPermaLink="true">${esc(`${SITE_URL}/notes/${a.slug}`)}</guid>
+      <pubDate>${rfc822(a.date)}</pubDate>
+      <description>${esc(a.summary)}</description>
+${a.tags.map((t) => `      <category>${esc(t)}</category>`).join("\n")}
+    </item>`,
+    )
+    .join("\n");
+
   const items = notes
     .map((n) => {
       const from = productName(n.from);
@@ -53,12 +67,13 @@ ${n.tags.map((t) => `      <category>${esc(t)}</category>`).join("\n")}
     <title>${esc(`Notes · ${site.name}`)}</title>
     <link>${SITE_URL}/notes</link>
     <description>${esc(
-      "Short observations from shipping SaaS products. Things that cost something to learn, mostly by getting them wrong first."
+      "Short observations from shipping SaaS products. Things that cost something to learn, mostly by getting them wrong first.",
     )}</description>
     <language>en</language>
     <managingEditor>${esc(`${site.email} (${site.name})`)}</managingEditor>
     <lastBuildDate>${rfc822(latest)}</lastBuildDate>
     <atom:link href="${SITE_URL}/notes/rss.xml" rel="self" type="application/rss+xml"/>
+${longform}
 ${items}
   </channel>
 </rss>
