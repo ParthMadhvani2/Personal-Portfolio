@@ -161,6 +161,14 @@ export default function RootLayout({
       <head>
         {/* Runs before first paint so a stored theme never flashes the wrong one. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Feed auto-discovery. Written by hand because Next 14's
+            alternates.types accepts the value and emits nothing. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`Notes · ${site.name}`}
+          href="/notes/rss.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

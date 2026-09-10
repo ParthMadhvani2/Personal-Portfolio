@@ -97,27 +97,28 @@ export default function Colophon() {
             />
           </Squircle>
           <div>
-            <h3 className="title text-[17px]">A spring settling</h3>
+            <h3 className="title text-[17px]">A P, built from the system</h3>
             <p className="prose-body mt-2 text-[15px]">
-              The curve is not drawn. It is plotted from{" "}
+              The first version of this mark was a damped spring plotted from{" "}
               <code className="mono text-[13px] text-fg">
                 y(t) = A·e^(−ζωt)·cos(ω_d·t)
-              </code>{" "}
-              , an underdamped oscillation coming to rest, with ζ = 0.17. It
-              starts loud on the left and resolves into a line with a single
-              blue point at the end.
+              </code>
+              . It was a nice idea and a bad mark. At 96px it read as a stray
+              &ldquo;w&rdquo;; at 16px it read as lint. A mark has one job
+              before it has any others, which is to survive a browser tab.
             </p>
             <p className="prose-body mt-3 text-[15px]">
-              It means the tagline literally: messy problem in, working product
-              out. It is also the exact function every component on this site
-              animates with, which felt like the right thing for a mark to be a
-              picture of.
+              So: a P. The counter is a superellipse, the same curve as the tile
+              and as every product icon on the site, which is the part that
+              makes it belong to this system rather than to a typeface. A P is
+              left-heavy, so it sits fractionally right of true centre to read
+              as centred.
             </p>
             <p className="prose-body mt-3 text-[15px]">
-              There are two cuts. The large one carries 1.8 oscillations; the
-              favicon cut carries 1.3 with a heavier stroke, because an icon
-              needs optical sizing for exactly the reason type does: detail that
-              reads at 128px turns to mud at 16.
+              Two cuts, for the reason type needs them. The display cut has a
+              tighter counter; the favicon cut carries a heavier stem and a
+              slightly <em>larger</em> counter, because a hole that looks
+              correct at 96px clogs shut at 16.
             </p>
           </div>
         </div>
