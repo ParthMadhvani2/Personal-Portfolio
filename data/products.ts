@@ -4,7 +4,9 @@ export type Product = {
   /** One line. What it is, for whom. No adjectives. */
   summary: string;
   url: string;
-  status: "live" | "building";
+  status: "live" | "building" | "sunset";
+  /** Path to the product's real app icon in /public/brand/icons. */
+  icon?: string;
   /** Category shown as an eyebrow. */
   kind: string;
   year: string;
@@ -24,11 +26,14 @@ export type Product = {
   }[];
   /** Product Hunt launch — month, and the slug on his maker profile. */
   launch?: { date: string; slug: string };
+  /** For retired products: what happened and what it taught. */
+  epilogue?: string;
 };
 
 export const products: Product[] = [
   {
     slug: "embers",
+    icon: "/brand/icons/embers.png",
     name: "Embers",
     summary:
       "Turns LinkedIn engagement into a ranked queue of warm leads for founders and ghostwriters.",
@@ -94,6 +99,7 @@ export const products: Product[] = [
   },
   {
     slug: "hood-cleaning-report",
+    icon: "/brand/icons/hoodcleaningreport.png",
     name: "Hood Cleaning Report",
     summary:
       "NFPA 96 compliance reports for commercial kitchen exhaust contractors.",
@@ -151,6 +157,7 @@ export const products: Product[] = [
   },
   {
     slug: "snapcount",
+    icon: "/brand/icons/snapcount.png",
     name: "SnapCount",
     summary: "Real-time multiplayer tally counter for iOS and the web.",
     url: "https://snapcount.app",
@@ -209,11 +216,12 @@ export const products: Product[] = [
   },
   {
     slug: "outboundqa",
+    icon: "/brand/icons/outboundqa.svg",
     name: "OutboundQA",
     summary:
       "Catches cold email infrastructure problems before a campaign goes out, not after it burns a domain.",
     url: "https://outboundqa.com",
-    status: "live",
+    status: "sunset",
     kind: "Outbound infrastructure QA",
     year: "2026",
     problem:
@@ -258,6 +266,9 @@ export const products: Product[] = [
       { value: 3, label: "possible verdicts" },
     ],
     launch: { date: "June 2026", slug: "outboundqa" },
+    /** Shipped, launched, ran, retired. That is a complete arc, not a gap. */
+    epilogue:
+      "Sunsetted after launch. The checks were sound and the verdict model held up; the problem was that a domain audit is something a team does once a quarter, not a thing they come back to weekly. Worth knowing before building the next one.",
   },
 ];
 

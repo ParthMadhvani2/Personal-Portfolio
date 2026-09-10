@@ -65,7 +65,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: { icon: "/media/favicon.png", apple: "/media/favicon.png" },
   manifest: "/manifest.json",
 };
 

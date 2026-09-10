@@ -4,12 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "../../lib/cn";
 import { ThemeToggle } from "../craft/theme-toggle";
+import SiteCommand from "./site-command";
+import Image from "next/image";
 import { site } from "../../data/site";
 
-const links = [
+const links: { href: string; label: string; minor?: boolean }[] = [
   { href: "/work", label: "work" },
   { href: "/crafts", label: "crafts" },
-  { href: "/tech-i-know", label: "stack" },
+  { href: "/tech-i-know", label: "stack", minor: true },
+  { href: "/colophon", label: "colophon", minor: true },
   { href: "/resume", label: "resume" },
 ];
 
@@ -33,12 +36,14 @@ export default function SiteNav() {
             href="/"
             className="mr-auto flex items-center gap-2.5 rounded-md py-1 pr-2 transition-opacity duration-fast ease-out hover:opacity-70"
           >
-            <span
-              aria-hidden
-              className="grid h-6 w-6 place-items-center rounded-[7px] bg-fg font-mono text-[11px] font-medium text-bg"
-            >
-              pm
-            </span>
+            <Image
+              src="/media/mark.svg"
+              alt=""
+              width={24}
+              height={24}
+              className="h-6 w-6"
+              priority
+            />
             {/* Below 480px the wordmark wraps and shoves the toggle off the bar, so
                 the mark carries it alone. */}
             <span className="title hidden text-[15px] lower xs:inline">
@@ -77,6 +82,7 @@ export default function SiteNav() {
             aria-hidden
             className="mx-1 hidden h-4 w-px bg-line xs:block sm:mx-1.5"
           />
+          <SiteCommand />
           <ThemeToggle />
         </nav>
       </div>

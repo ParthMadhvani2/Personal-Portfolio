@@ -5,6 +5,7 @@ import { site } from "../../data/site";
 import { products } from "../../data/products";
 import { StatusPill } from "../craft/status-pill";
 import { AnimatedNumber } from "../craft/animated-number";
+import Shelf from "./shelf";
 
 const launched = products.filter((p) => p.launch).length;
 
@@ -128,6 +129,17 @@ export default function Hero() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* The shelf: what he has actually shipped, as the products' own icons. */}
+      <div className="mt-14">
+        <div className="mb-4 flex items-baseline justify-between gap-4">
+          <p className="label">Shipped</p>
+          <p className="text-[12px] text-dim">
+            four live products · two slots open
+          </p>
+        </div>
+        <Shelf />
       </div>
 
       {/* Signal row — three numbers the eye can land on before it reads a word. */}

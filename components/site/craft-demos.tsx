@@ -10,6 +10,10 @@ import { SegmentedControl } from "../craft/segmented-control";
 import { Sheet } from "../craft/sheet";
 import { SpotlightCard } from "../craft/spotlight-card";
 import { StatusPill } from "../craft/status-pill";
+import { CommandMenu } from "../craft/command-menu";
+import { Kbd } from "../craft/kbd";
+import { Reveal } from "../craft/reveal";
+import { Squircle } from "../craft/squircle";
 import { ThemeToggle } from "../craft/theme-toggle";
 import { Tooltip, TooltipProvider } from "../craft/tooltip";
 
@@ -187,6 +191,58 @@ function MarqueeDemo() {
   );
 }
 
+function SquircleDemo() {
+  return (
+    <div className="flex flex-wrap items-end gap-5">
+      {[2, 4.5, 12].map((n) => (
+        <div key={n}>
+          <Squircle n={n} className="h-14 w-14 bg-accent" />
+          <p className="mono mt-2 text-[10px] text-dim">n = {n}</p>
+        </div>
+      ))}
+      <div>
+        <span className="block h-14 w-14 rounded-[16px] bg-line-strong" />
+        <p className="mono mt-2 text-[10px] text-dim">rounded rect</p>
+      </div>
+    </div>
+  );
+}
+
+function CommandDemo() {
+  const items = ["Home", "Work", "Crafts", "Colophon", "Résumé"].map(
+    (label) => ({
+      id: label,
+      group: "Pages",
+      label,
+      onSelect: () => {},
+    }),
+  );
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <CommandMenu items={items} />
+      <span className="flex items-center gap-1.5 text-[13px] text-dim">
+        or press <Kbd>mod</Kbd> <Kbd>K</Kbd>
+      </span>
+    </div>
+  );
+}
+
+function RevealDemo() {
+  return (
+    <div className="max-h-[150px] overflow-y-auto rounded-md border border-line bg-bg-subtle p-3">
+      <p className="mb-3 text-[12px] text-dim">scroll this box</p>
+      <div className="h-[130px]" />
+      {["fires once", "then disconnects", "visible without JS"].map((t, i) => (
+        <Reveal key={t} index={i} className="mb-2">
+          <p className="rounded-md border border-line bg-surface px-3 py-2 text-[13px] text-muted">
+            {t}
+          </p>
+        </Reveal>
+      ))}
+    </div>
+  );
+}
+
 function StatusDemo() {
   return (
     <div className="flex flex-wrap gap-2">
@@ -209,6 +265,9 @@ const registry: Record<string, React.ComponentType> = {
   "spotlight-card": SpotlightDemo,
   marquee: MarqueeDemo,
   "status-pill": StatusDemo,
+  squircle: SquircleDemo,
+  "command-menu": CommandDemo,
+  reveal: RevealDemo,
   "theme-toggle": ThemeDemo,
 };
 
