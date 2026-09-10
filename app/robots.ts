@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       // No crawl-delay: Google ignores it and Bing reads it as a throttle, which
       // is the opposite of what a five-page site wants.
-      { userAgent: "*", allow: "/" },
+      // _resp.html is a local responsive-audit harness, not a page.
+      { userAgent: "*", allow: "/", disallow: ["/_resp.html"] },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

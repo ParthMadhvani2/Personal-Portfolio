@@ -1,0 +1,67 @@
+<!doctype html><meta charset="utf-8"><title>responsive probe</title>
+<meta name="robots" content="noindex,nofollow">
+<!--
+  Dev tool, not part of the site. Loads every page in an iframe at every
+  breakpoint and reports horizontal overflow, which is the failure that
+  actually breaks a layout. Same-origin, so it can read the iframe document.
+
+  Run: open /_resp.html and call `await runAudit()` in the console.
+  An empty array is a pass.
+-->
+<style>html,body{margin:0;background:#111}iframe{border:0;display:block}</style>
+<script>
+const PAGES = ["/","/work","/work/embers","/crafts","/notes","/colophon","/tech-i-know","/resume","/nope"];
+const WIDTHS = [320,360,390,414,640,768,1024,1280,1536,1920];
+
+function probe(doc, win) {
+  const d = doc.documentElement, vw = d.clientWidth;
+  const o = d.scrollWidth - d.clientWidth;
+  const bad = [];
+  if (o > 1) {
+    for (const el of doc.querySelectorAll("body *")) {
+      const r = el.getBoundingClientRect();
+      if (!r.width || !r.height) continue;
+      const cs = win.getComputedStyle(el);
+      if (cs.position === "fixed") continue;
+      let p = el.parentElement, scroller = false;
+      while (p && p !== doc.body) {
+        const pc = win.getComputedStyle(p);
+        if (["auto","scroll","hidden"].includes(pc.overflowX)) { scroller = true; break; }
+        p = p.parentElement;
+      }
+      if (scroller) continue;
+      if (r.right > vw + 1 || r.left < -1) {
+        bad.push(el.tagName.toLowerCase() + "." +
+          (el.className || "").toString().split(" ").slice(0,2).join(".").slice(0,36) +
+          " →" + Math.round(r.right));
+      }
+    }
+  }
+  return { o, bad: bad.slice(0, 3) };
+}
+
+window.runAudit = async function () {
+  const out = [];
+  for (const w of WIDTHS) {
+    for (const page of PAGES) {
+      const f = document.createElement("iframe");
+      f.style.width = w + "px";
+      f.style.height = "900px";
+      f.src = page;
+      document.body.appendChild(f);
+      await new Promise((res) => {
+        f.onload = () => setTimeout(res, 260);
+        setTimeout(res, 4000);
+      });
+      try {
+        const r = probe(f.contentDocument, f.contentWindow);
+        if (r.o > 1) out.push({ w, page, overflow: r.o, bad: r.bad });
+      } catch (e) {
+        out.push({ w, page, error: String(e).slice(0, 60) });
+      }
+      f.remove();
+    }
+  }
+  return out;
+};
+</script>

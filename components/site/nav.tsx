@@ -9,13 +9,14 @@ import SiteCommand from "./site-command";
 import Image from "next/image";
 import { site } from "../../data/site";
 
-const links: { href: string; label: string; minor?: boolean }[] = [
+/** tier 0 always shows, 1 hides under 420px, 2 hides under 768px. */
+const links: { href: string; label: string; tier?: 1 | 2 }[] = [
   { href: "/work", label: "work" },
   { href: "/crafts", label: "crafts" },
   { href: "/notes", label: "notes" },
-  { href: "/tech-i-know", label: "stack", minor: true },
-  { href: "/colophon", label: "colophon", minor: true },
-  { href: "/resume", label: "resume" },
+  { href: "/tech-i-know", label: "stack", tier: 2 },
+  { href: "/colophon", label: "colophon", tier: 2 },
+  { href: "/resume", label: "resume", tier: 1 },
 ];
 
 /**
@@ -55,7 +56,7 @@ export default function SiteNav() {
         >
           <Link
             href="/"
-            className="mr-auto flex items-center gap-2.5 rounded-md py-1 pr-2 transition-opacity duration-fast ease-out hover:opacity-70"
+            className="mr-auto flex shrink-0 items-center gap-2.5 rounded-md py-1 pr-2 transition-opacity duration-fast ease-out hover:opacity-70"
           >
             <Image
               src="/media/mark.svg"
@@ -81,8 +82,13 @@ export default function SiteNav() {
                 href={l.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative rounded-md px-2 py-1.5 text-[13px] font-medium lower sm:px-2.5",
+                  "relative shrink-0 rounded-md px-2 py-1.5 text-[13px] font-medium lower sm:px-2.5",
                   "transition-colors duration-fast ease-out",
+                  // Two tiers of yielding. The command menu reaches every one
+                  // of these, so on a narrow bar they give up their space
+                  // rather than pushing the controls off the edge.
+                  l.tier === 2 && "hidden md:inline-block",
+                  l.tier === 1 && "hidden xs:inline-block",
                   active ? "text-fg" : "text-dim hover:text-fg",
                 )}
               >

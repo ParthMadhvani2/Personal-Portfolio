@@ -7,6 +7,8 @@ export type Product = {
   status: "live" | "building" | "sunset";
   /** Path to the product's real app icon in /public/brand/icons. */
   icon?: string;
+  /** Screenshot of the live site, captured headless from the real URL. */
+  shot?: string;
   /** Category shown as an eyebrow. */
   kind: string;
   year: string;
@@ -33,6 +35,7 @@ export type Product = {
 export const products: Product[] = [
   {
     slug: "embers",
+    shot: "/shots/embers.png",
     icon: "/brand/icons/embers.png",
     name: "Embers",
     summary:
@@ -99,6 +102,7 @@ export const products: Product[] = [
   },
   {
     slug: "hood-cleaning-report",
+    shot: "/shots/hood-cleaning-report.png",
     icon: "/brand/icons/hoodcleaningreport.png",
     name: "Hood Cleaning Report",
     summary:
@@ -161,6 +165,7 @@ export const products: Product[] = [
   },
   {
     slug: "snapcount",
+    shot: "/shots/snapcount.png",
     icon: "/brand/icons/snapcount.png",
     name: "SnapCount",
     summary: "Real-time multiplayer tally counter for iOS and the web.",
@@ -239,6 +244,7 @@ export const products: Product[] = [
   },
   {
     slug: "outboundqa",
+    shot: "/shots/outboundqa.png",
     icon: "/brand/icons/outboundqa.svg",
     name: "OutboundQA",
     summary:

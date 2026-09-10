@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "../../lib/cn";
+import { Search } from "lucide-react";
 import { Kbd } from "./kbd";
 
 export type CommandItem = {
@@ -200,14 +201,18 @@ function Trigger({ onOpen }: { onOpen: (from: HTMLElement) => void }) {
       onClick={(e) => onOpen(e.currentTarget)}
       aria-label="Open command menu"
       className={cn(
-        "hidden h-8 items-center gap-2 rounded-md border border-line bg-surface px-2.5 sm:inline-flex",
-        "text-[12px] text-dim transition-[transform,color,background-color] duration-fast ease-out",
+        "inline-flex h-8 shrink-0 items-center gap-2 rounded-md border border-line",
+        "bg-surface px-2 text-[12px] text-dim md:px-2.5",
+        "transition-[transform,color,background-color] duration-fast ease-out",
         "hover:bg-surface-hover hover:text-fg active:scale-[0.97]",
       )}
     >
-      Search
-      <Kbd>mod</Kbd>
-      <Kbd>K</Kbd>
+      <Search size={14} className="md:hidden" />
+      <span className="hidden md:inline">Search</span>
+      <span className="hidden items-center gap-1 md:inline-flex">
+        <Kbd>mod</Kbd>
+        <Kbd>K</Kbd>
+      </span>
     </button>
   );
 }
