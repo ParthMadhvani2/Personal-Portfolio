@@ -12,7 +12,7 @@ export type Product = {
   year: string;
   /** What was actually hard, stated plainly. */
   problem: string;
-  /** Owned surfaces — the reason this reads as product work, not ticket work. */
+  /** Owned surfaces: the reason this reads as product work, not ticket work. */
   owned: string[];
   /** Specific engineering decisions. Nouns and constraints, not claims. */
   build: { title: string; detail: string }[];
@@ -24,7 +24,7 @@ export type Product = {
     prefix?: string;
     label: string;
   }[];
-  /** Product Hunt launch — month, and the slug on his maker profile. */
+  /** Product Hunt launch: month, and the slug on his maker profile. */
   launch?: { date: string; slug: string };
   /** For retired products: what happened and what it taught. */
   epilogue?: string;
@@ -59,7 +59,7 @@ export const products: Product[] = [
       {
         title: "Scoring across five dimensions",
         detail:
-          "A lead's rank comes from engagement recency, frequency, comment intent, title match and company size. Every row carries the reason it scored what it did — a number with no explanation is a number nobody trusts.",
+          "A lead's rank comes from engagement recency, frequency, comment intent, title match and company size. Every row carries the reason it scored what it did. A number with no explanation is a number nobody trusts.",
       },
       {
         title: "ICP matching across seven dimensions",
@@ -125,12 +125,12 @@ export const products: Product[] = [
       {
         title: "Document vault with signed share URLs",
         detail:
-          "Reports go out as expiring signed links rather than attachments, and every view is written to an audit log — which is the part that matters when an inspector asks who saw what and when.",
+          "Reports go out as expiring signed links rather than attachments, and every view is written to an audit log, which is the part that matters when an inspector asks who saw what and when.",
       },
       {
         title: "AI drafts the compliance fields",
         detail:
-          "The imported photo set is used to draft the NFPA 96 and ANSI-IKECA C10 fields, which the technician reviews rather than types. The review step is not optional — this is a document an inspector reads, so a wrong field is worse than an empty one.",
+          "The imported photo set is used to draft the NFPA 96 and ANSI-IKECA C10 fields, which the technician reviews rather than types. The review step is not optional: this is a document an inspector reads, so a wrong field is worse than an empty one.",
       },
       {
         title: "Block-based PDF generation",
@@ -165,7 +165,7 @@ export const products: Product[] = [
     kind: "iOS + web app",
     year: "2026",
     problem:
-      "Counting things with other people is a genuinely shared task — door counts, wine inventory, reps, scores — and every tally app on the store assumes one person and one device. The moment a second person helps, you are reconciling two numbers by shouting across a room.",
+      "Counting things with other people is a genuinely shared task (door counts, wine inventory, reps, scores), and every tally app on the store assumes one person and one device. The moment a second person helps, you are reconciling two numbers by shouting across a room.",
     owned: ["iOS app", "Sync layer", "Web app", "Marketing site"],
     build: [
       {
@@ -181,7 +181,7 @@ export const products: Product[] = [
       {
         title: "Guests join with a link",
         detail:
-          "No account, no install. The person you handed the clipboard to should not have to sign up first — an onboarding wall on a shared counter is the reason the second device never gets used.",
+          "No account, no install. The person you handed the clipboard to should not have to sign up first. An onboarding wall on a shared counter is the reason the second device never gets used.",
       },
       {
         title: "Data you can take with you",
@@ -215,6 +215,24 @@ export const products: Product[] = [
     launch: { date: "June 2026", slug: "snapcount" },
   },
   {
+    slug: "diam-jewels",
+    icon: "/brand/icons/diam-jewels.png",
+    name: "Diam Jewels",
+    summary:
+      "Inventory and accounting for jewellers: gold, diamonds, stones, sales, purchases and ledgers in one place.",
+    url: "https://diam-jewels.leadcatalyst.in",
+    status: "live",
+    kind: "Inventory and accounting",
+    year: "2026",
+    problem:
+      "A jeweller's stock is not a list of items, it is weight and purity that change as pieces are made, broken and remade. Most shops track that across a paper ledger for the metal, a spreadsheet for the stones and an accountant who reconciles the two later. The gap between them is where the margin quietly goes.",
+    // TODO(parth): fill in `owned`, `build` and `stack`. Left thin deliberately
+    // rather than invented, because I do not know which surfaces were yours.
+    owned: [],
+    build: [],
+    stack: [],
+  },
+  {
     slug: "outboundqa",
     icon: "/brand/icons/outboundqa.svg",
     name: "OutboundQA",
@@ -241,7 +259,7 @@ export const products: Product[] = [
       {
         title: "Ready, Needs Fix, or Do Not Launch",
         detail:
-          "Fifteen green ticks is not an answer — it is homework. The output is one of three verdicts with the exact fix for each failure, because the person uploading the CSV wants to know whether to press send today.",
+          "Fifteen green ticks is not an answer; it is homework. The output is one of three verdicts with the exact fix for each failure, because the person uploading the CSV wants to know whether to press send today.",
       },
       {
         title: "Evidence, not assertions",
@@ -251,7 +269,7 @@ export const products: Product[] = [
       {
         title: "Shareable client report",
         detail:
-          "Agencies run this for clients, so the report is the deliverable — a link they can forward rather than a screenshot they have to explain.",
+          "Agencies run this for clients, so the report is the deliverable: a link they can forward rather than a screenshot they have to explain.",
       },
     ],
     stack: [
@@ -274,6 +292,13 @@ export const products: Product[] = [
 
 export const experiments = [
   {
+    name: "Crypto Trading Dashboard",
+    url: "https://crypto-trading-dashboard-2.vercel.app/",
+    summary:
+      "Real-time crypto market dashboard: live price feeds over WebSockets, interactive charting, filtering, watchlists and price alerts. Built to see how far a data-dense trading surface could go before it needed a backend.",
+    stack: ["Next.js 15", "React 19", "TypeScript", "WebSockets", "Chart.js"],
+  },
+  {
     name: "FramePhase",
     url: "https://frame-phase.netlify.app/",
     summary:
@@ -281,6 +306,33 @@ export const experiments = [
     stack: ["Next.js", "WebAssembly", "AWS Transcribe"],
   },
 ];
+
+/**
+ * Counts, derived. Every "four products" written by hand in page copy is a
+ * claim that goes stale the next time something ships, so nothing hardcodes it.
+ */
+export const shippedCount = products.length;
+export const liveCount = products.filter((p) => p.status === "live").length;
+export const launchedCount = products.filter((p) => p.launch).length;
+
+const WORDS = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+];
+
+/** Small numbers read better spelled out in prose. */
+export function spell(n: number) {
+  return WORDS[n] ?? String(n);
+}
 
 export function productBySlug(slug: string) {
   return products.find((p) => p.slug === slug);

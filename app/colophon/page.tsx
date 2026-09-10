@@ -5,7 +5,7 @@ import { crafts } from "../../data/crafts";
 import Squircle from "../../components/craft/squircle";
 import { StatusPill } from "../../components/craft/status-pill";
 
-const title = "Colophon — how this site is built";
+const title = "Colophon: how this site is built";
 const description =
   "Every decision on this site, written down: the superellipse behind the icons, why the easing curves are custom, why there is no animation library, and what the mark is a graph of.";
 
@@ -84,7 +84,7 @@ export default function Colophon() {
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">01 — The mark</h2>
+        <h2 className="label mb-5">01 · The mark</h2>
         <div className="grid gap-8 rounded-lg border border-line bg-surface p-6 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-10">
           <Squircle className="h-24 w-24 shrink-0 bg-[#0F1B33]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -103,7 +103,7 @@ export default function Colophon() {
               <code className="mono text-[13px] text-fg">
                 y(t) = A·e^(−ζωt)·cos(ω_d·t)
               </code>{" "}
-              — an underdamped oscillation coming to rest, with ζ = 0.17. It
+              , an underdamped oscillation coming to rest, with ζ = 0.17. It
               starts loud on the left and resolves into a line with a single
               blue point at the end.
             </p>
@@ -116,8 +116,8 @@ export default function Colophon() {
             <p className="prose-body mt-3 text-[15px]">
               There are two cuts. The large one carries 1.8 oscillations; the
               favicon cut carries 1.3 with a heavier stroke, because an icon
-              needs optical sizing for exactly the reason type does — detail
-              that reads at 128px turns to mud at 16.
+              needs optical sizing for exactly the reason type does: detail that
+              reads at 128px turns to mud at 16.
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function Colophon() {
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">02 — The icon shape</h2>
+        <h2 className="label mb-5">02 · The icon shape</h2>
         <div className="rounded-lg border border-line bg-surface p-6">
           <div className="flex flex-wrap items-end gap-8">
             {[
@@ -140,8 +140,8 @@ export default function Colophon() {
             ))}
           </div>
           <p className="prose-body mt-6 text-[15px]">
-            Every tile on this site is clipped to a superellipse —{" "}
-            <code className="mono text-[13px] text-fg">|x|ⁿ + |y|ⁿ = 1</code> —
+            Every tile on this site is clipped to a superellipse,{" "}
+            <code className="mono text-[13px] text-fg">|x|ⁿ + |y|ⁿ = 1</code>,
             not a rounded rectangle. A rounded rectangle joins a straight edge
             to a circular arc, and curvature jumps at the seam. The eye reads
             that discontinuity as a faintly pinched corner without being able to
@@ -159,7 +159,7 @@ export default function Colophon() {
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">03 — Type</h2>
+        <h2 className="label mb-5">03 · Type</h2>
         <div className="overflow-x-auto rounded-lg border border-line">
           <table className="w-full min-w-[520px] border-collapse text-left">
             <thead>
@@ -198,14 +198,14 @@ export default function Colophon() {
           Lowercase is a voice, applied to display headings and UI labels. It is
           deliberately <em>not</em> a{" "}
           <code className="mono text-[13px] text-fg">text-transform</code> on{" "}
-          <code className="mono text-[13px] text-fg">*</code> — that lowercases
+          <code className="mono text-[13px] text-fg">*</code>, which lowercases
           NFPA and iOS too, and the result reads as a bug rather than a choice.
         </p>
       </section>
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">04 — Motion</h2>
+        <h2 className="label mb-5">04 · Motion</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border border-line bg-surface p-5">
             <h3 className="title mb-4 text-[15px]">Easing</h3>
@@ -234,9 +234,9 @@ export default function Colophon() {
             <p className="mt-5 border-t border-line pt-4 text-[13px] leading-relaxed text-dim">
               Nothing on this site uses <code className="mono">ease-in</code>.
               It starts slow, which delays movement at the exact moment the user
-              is watching hardest — a 300ms{" "}
-              <code className="mono">ease-in</code> dropdown feels slower than a
-              300ms <code className="mono">ease-out</code> one.
+              is watching hardest. A 300ms <code className="mono">ease-in</code>{" "}
+              dropdown feels slower than a 300ms{" "}
+              <code className="mono">ease-out</code> one.
             </p>
           </div>
         </div>
@@ -249,7 +249,7 @@ export default function Colophon() {
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">05 — Dependencies</h2>
+        <h2 className="label mb-5">05 · Dependencies</h2>
         <div className="rounded-lg border border-line bg-surface p-6">
           <p className="prose-body text-[15px]">
             There is no animation library here. All {crafts.length} components
@@ -270,7 +270,7 @@ export default function Colophon() {
           <p className="prose-body mt-3 text-[15px]">
             That is not minimalism for its own sake. CSS transitions run off the
             main thread, so they hold up while the browser is busy parsing a
-            route — which is precisely when a Framer Motion animation driven by{" "}
+            route, which is precisely when a Framer Motion animation driven by{" "}
             <code className="mono text-[13px] text-fg">
               requestAnimationFrame
             </code>{" "}
@@ -300,7 +300,7 @@ export default function Colophon() {
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">06 — Accessibility</h2>
+        <h2 className="label mb-5">06 · Accessibility</h2>
         <ul className="divide-y divide-line rounded-lg border border-line bg-surface">
           {[
             [
@@ -317,7 +317,7 @@ export default function Colophon() {
             ],
             [
               "Focus",
-              "Never removed, only replaced — a 2px accent ring with offset, on :focus-visible so pointer users never see it.",
+              "Never removed, only replaced: a 2px accent ring with offset, on :focus-visible so pointer users never see it.",
             ],
             [
               "Colour",
@@ -341,13 +341,13 @@ export default function Colophon() {
 
       {/* ---------------------------------------------------------------- */}
       <section className="mt-16">
-        <h2 className="label mb-5">07 — Brand assets</h2>
+        <h2 className="label mb-5">07 · Brand assets</h2>
         <div className="rounded-lg border border-line bg-surface p-6">
           <p className="prose-body text-[15px]">
             The social banners are generated from this codebase rather than
             exported from a design tool, so they cannot drift from the tokens
-            and they can be regenerated after any change. The four product icons
-            sit on the mark&apos;s own damped curve, and the layout keeps the
+            and they can be regenerated after any change. The product icons sit
+            on the mark&apos;s own damped curve, and the layout keeps the
             message clear of the avatar crop on both platforms.
           </p>
           <ul className="mt-5 flex flex-wrap gap-2">
@@ -381,7 +381,7 @@ export default function Colophon() {
       </section>
 
       <p className="prose-body mt-16 border-t border-line pt-8">
-        Disagree with any of it? I would genuinely like to hear why —{" "}
+        Disagree with any of it? I would genuinely like to hear why.{" "}
         <a
           href={`mailto:${site.email}`}
           className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"

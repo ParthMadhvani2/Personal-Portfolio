@@ -23,7 +23,7 @@ type Props = {
  * reads as noise.
  *
  * Everything is `font-variant-numeric: tabular-nums`, which is what stops the
- * layout twitching as glyph widths change mid-roll — the reason most
+ * layout twitching as glyph widths change mid-roll, which is why most
  * hand-rolled counters look unstable.
  *
  * Under reduced motion the value simply updates. A rolling number is

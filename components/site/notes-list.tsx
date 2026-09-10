@@ -20,7 +20,7 @@ export default function NotesList() {
 
   return (
     <>
-      {/* Tags are the navigation, as in the collections this borrows from —
+      {/* Tags are the navigation, as in the collections this borrows from,
           but only the ones that exist, and the count updates so the filter
           never lies about how much is behind it. */}
       <div className="mt-8 flex flex-wrap items-center gap-1.5">
@@ -48,7 +48,7 @@ export default function NotesList() {
             <li key={note.n} id={`n${note.n}`} className="scroll-mt-20 py-8">
               <div className="grid gap-3 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-7">
                 {/* Numbered so the collection visibly accumulates. Numbers are
-                    stable and never reused — they are permalinks. */}
+                    stable and never reused, because they are permalinks. */}
                 <a
                   href={`#n${note.n}`}
                   aria-label={`Link to note ${note.n}`}

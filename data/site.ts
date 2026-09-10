@@ -6,7 +6,7 @@
 
 // parthmadhvani.com does not currently resolve. Canonicals pointing at a dead
 // host tell Google to prefer a page it cannot fetch, which suppresses the site
-// that is actually live — so the default is the URL that serves today. Set
+// that is actually live, so the default is the URL that serves today. Set
 // NEXT_PUBLIC_SITE_URL in Vercel the moment the custom domain is connected and
 // every canonical, OG tag and sitemap entry follows.
 export const SITE_URL = (
@@ -20,7 +20,7 @@ export const site = {
   // and the social presence say the same thing.
   tagline: "From messy problem to working product.",
   summary:
-    "I build SaaS products end to end — backend, frontend, iOS, billing, design system, marketing site. Four products launched in 2026.",
+    "I build SaaS products end to end: backend, frontend, iOS, billing, design system, marketing site. Five products in production.",
   location: "Surat / Bengaluru, India",
   timezone: "Asia/Kolkata",
   email: "madhvaniparth2@gmail.com",
@@ -40,7 +40,7 @@ export const site = {
   education: {
     name: "A. D. Patel Institute of Technology",
     degree: "B.E. Information Technology",
-    years: "2021 – 2025",
+    years: "2021-2025",
   },
   availability: {
     open: true,

@@ -75,7 +75,7 @@ export function CopyButton({ value, label, className, timeout = 1600 }: Props) {
       {label ? (
         <span className="relative block">
           <span className="invisible" aria-hidden>
-            {/* reserves the wider of the two labels — no layout shift on swap */}
+            {/* reserves the wider of the two labels, so no layout shift on swap */}
             {label.length >= 6 ? label : "copied"}
           </span>
           <Label show={!copied}>{label}</Label>

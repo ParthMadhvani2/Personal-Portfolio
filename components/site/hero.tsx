@@ -12,7 +12,7 @@ const launched = products.filter((p) => p.launch).length;
 const signal: { value: number; suffix?: string; label: string }[] = [
   { value: products.length, label: "products shipped" },
   { value: launched, label: "launched on Product Hunt in 2026" },
-  { value: 2, label: "platforms — web and iOS" },
+  { value: 2, label: "platforms: web and iOS" },
 ];
 
 export default function Hero() {
@@ -50,7 +50,7 @@ export default function Hero() {
                 {site.employer.name}
               </a>
               . I take a product from the messy version someone describes out
-              loud to something in production — schema, API, interface, iOS app,
+              loud to something in production: schema, API, interface, iOS app,
               billing, and the marketing site it launches behind.
             </p>
             <p className="prose-body">
@@ -60,7 +60,7 @@ export default function Hero() {
               nobody designed. That&apos;s the part I want.
             </p>
             <p className="prose-body">
-              Four of them went out this year —{" "}
+              Four of them went out this year:{" "}
               <a
                 href={site.social.productHunt}
                 target="_blank"
@@ -135,14 +135,12 @@ export default function Hero() {
       <div className="mt-14">
         <div className="mb-4 flex items-baseline justify-between gap-4">
           <p className="label">Shipped</p>
-          <p className="text-[12px] text-dim">
-            four live products · two slots open
-          </p>
+          <p className="text-[12px] text-dim">five shipped · one slot open</p>
         </div>
         <Shelf />
       </div>
 
-      {/* Signal row — three numbers the eye can land on before it reads a word. */}
+      {/* Signal row: three numbers the eye can land on before it reads a word. */}
       <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3">
         {signal.map((s, i) => (
           <div

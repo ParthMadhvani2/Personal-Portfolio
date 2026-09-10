@@ -22,7 +22,7 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const title = `${site.name} — ${site.role}`;
+const title = `${site.name} · ${site.role}`;
 const description = `${site.tagline} ${site.summary}`;
 
 export const metadata: Metadata = {
@@ -81,7 +81,7 @@ export const viewport: Viewport = {
 
 /**
  * Structured data. A single @graph rather than several disconnected blobs, so
- * the Person, the site and each product are explicitly linked by @id — which is
+ * the Person, the site and each product are explicitly linked by @id, which is
  * what lets a knowledge panel resolve "who built SnapCount" to this page.
  */
 const jsonLd = {
@@ -135,7 +135,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: `${site.name} — portfolio`,
+      name: `${site.name} · portfolio`,
       description,
       publisher: { "@id": `${SITE_URL}/#person` },
       inLanguage: "en",

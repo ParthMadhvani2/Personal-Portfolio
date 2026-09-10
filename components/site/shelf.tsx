@@ -7,8 +7,13 @@ import { cn } from "../../lib/cn";
 import { Squircle } from "../craft/squircle";
 import { products, type Product } from "../../data/products";
 
-/** Two empty wells: enough to read as "still going", not as an empty shelf. */
-const EMPTY_WELLS = 2;
+/**
+ * Wells fill out the last row rather than being a fixed count, so the shelf
+ * stays a clean rectangle whatever gets added next, and still reads as having
+ * room. A hardcoded number leaves an orphan the moment the product count moves.
+ */
+const COLS = 6;
+const EMPTY_WELLS = (COLS - (products.length % COLS)) % COLS;
 
 const badge: Record<
   Product["status"],
@@ -22,7 +27,7 @@ const badge: Record<
 /**
  * The shelf.
  *
- * Icons are the products' own — the same files their sites serve — rather than
+ * Icons are the products' own, the same files their sites serve, rather than
  * redrawn approximations, because a portfolio showing icons that do not match
  * the real thing is a small lie the visitor can check in one click.
  *
@@ -55,7 +60,7 @@ export default function Shelf() {
                 onFocus={() => setActive(p.slug)}
                 onBlur={() => setActive(null)}
                 className="group block text-center"
-                aria-label={`${p.name} — ${p.summary}`}
+                aria-label={`${p.name}: ${p.summary}`}
               >
                 <span
                   className={cn(

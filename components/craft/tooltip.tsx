@@ -96,7 +96,7 @@ export function Tooltip({
     setOpen(false);
   }, [group, open]);
 
-  // Escape closes without moving the pointer — a tooltip must never trap focus
+  // Escape closes without moving the pointer. A tooltip must never trap focus
   // or sit stubbornly over the thing you are trying to read.
   useEffect(() => {
     if (!open) return;
@@ -120,7 +120,7 @@ export function Tooltip({
         role="tooltip"
         data-side={side}
         data-open={open || undefined}
-        // The origin is the trigger, not the tooltip's own centre — a popover
+        // The origin is the trigger, not the tooltip's own centre: a popover
         // that scales out of the element you are pointing at keeps the
         // relationship between the two obvious.
         className={cn(

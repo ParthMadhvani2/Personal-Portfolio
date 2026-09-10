@@ -4,7 +4,7 @@ import { site, SITE_URL } from "../../data/site";
 import { StatusPill } from "../../components/craft/status-pill";
 import NotesList from "../../components/site/notes-list";
 
-const title = "Notes — things shipping taught me";
+const title = "Notes: things shipping taught me";
 const description =
   "Short observations from building four SaaS products: idempotent webhooks, why SSE beat sockets, why fifteen green ticks is homework, and why quarterly tools do not retain.";
 
@@ -58,7 +58,7 @@ export default function NotesPage() {
       </h1>
       <p className="prose-body mt-5">
         Collections like this usually catalogue details spotted in other
-        people&apos;s products. These are from mine — things that cost something
+        people&apos;s products. These are from mine. Things that cost something
         to learn, mostly by getting them wrong first, while shipping four SaaS
         products in a year.
       </p>

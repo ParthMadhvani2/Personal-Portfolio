@@ -1,5 +1,5 @@
 /**
- * Notes — short observations from shipping, numbered as they accumulate.
+ * Notes: short observations from shipping, numbered as they accumulate.
  *
  * The genre this borrows from (Design Spells, 60fps) collects details spotted
  * in *other people's* products. The useful inversion for a portfolio is to
@@ -13,7 +13,7 @@
  */
 
 export type Note = {
-  /** Stable, ascending. Displayed descending. Never renumber — links break. */
+  /** Stable, ascending. Displayed descending. Never renumber, because links break. */
   n: number;
   title: string;
   body: string;
@@ -27,7 +27,7 @@ export const notes: Note[] = [
   {
     n: 14,
     title: "A score with no reason is a number you have to trust",
-    body: "Embers ranks leads across five dimensions, and the first version just showed the rank. Nobody used it. Every row now carries the reason it scored what it did — engaged twice in six days, title and company size match — and the same number suddenly became actionable.",
+    body: "Embers ranks leads across five dimensions, and the first version just showed the rank. Nobody used it. Every row now carries the reason it scored what it did (engaged twice in six days, title and company size match), and the same number suddenly became actionable.",
     tags: ["product", "ai"],
     from: "embers",
     date: "2026-08",
@@ -35,7 +35,7 @@ export const notes: Note[] = [
   {
     n: 13,
     title: "Fifteen green ticks is homework, not an answer",
-    body: "OutboundQA runs fifteen infrastructure checks. Showing fifteen results made the user do the synthesis themselves. Collapsing it to one verdict — Ready, Needs Fix, Do Not Launch — with the checks underneath is the same data doing the work instead of delegating it.",
+    body: "OutboundQA runs fifteen infrastructure checks. Showing fifteen results made the user do the synthesis themselves. Collapsing it to one verdict (Ready, Needs Fix, Do Not Launch) with the checks underneath is the same data doing the work instead of delegating it.",
     tags: ["product"],
     from: "outboundqa",
     date: "2026-06",
@@ -67,7 +67,7 @@ export const notes: Note[] = [
   {
     n: 9,
     title: "Retried webhooks are not a rare case",
-    body: "Payment providers retry on any non-2xx, including the ones caused by your own deploy. A handler that provisions on every delivery will double-provision eventually — not as an edge case, but on a normal Tuesday. Idempotency keys on the handler cost an afternoon; finding out the other way costs a refund and the trust.",
+    body: "Payment providers retry on any non-2xx, including the ones caused by your own deploy. A handler that provisions on every delivery will double-provision eventually, not as an edge case but on a normal Tuesday. Idempotency keys on the handler cost an afternoon; finding out the other way costs a refund and the trust.",
     tags: ["billing", "backend"],
     from: "embers",
     date: "2026-05",
@@ -92,7 +92,7 @@ export const notes: Note[] = [
   {
     n: 6,
     title: "The audit log matters more than the share link",
-    body: "Compliance reports go out as signed, expiring URLs, which is the obvious half. The half that actually gets asked about is who opened it and when — an inspector's question, months later, that the sharing mechanism alone cannot answer.",
+    body: "Compliance reports go out as signed, expiring URLs, which is the obvious half. The half that actually gets asked about is who opened it and when. That is an inspector's question, months later, and the sharing mechanism alone cannot answer it.",
     tags: ["security", "product"],
     from: "hood-cleaning-report",
     date: "2026-03",
@@ -100,7 +100,7 @@ export const notes: Note[] = [
   {
     n: 5,
     title: "Render PDFs as HTML, not coordinates",
-    body: "Report layouts change constantly and every change in a coordinate-pushing PDF library is arithmetic. Composing typed blocks and rendering through Playwright means the layout is CSS — reviewable in a browser, and the same code path as the on-screen preview.",
+    body: "Report layouts change constantly and every change in a coordinate-pushing PDF library is arithmetic. Composing typed blocks and rendering through Playwright means the layout is CSS: reviewable in a browser, and the same code path as the on-screen preview.",
     tags: ["pdf", "backend"],
     from: "hood-cleaning-report",
     date: "2026-03",
@@ -108,7 +108,7 @@ export const notes: Note[] = [
   {
     n: 4,
     title: "Prompts that run per row are a unit-cost decision",
-    body: "Embers classifies every engager on every post, so prompt length is not a style question — it is multiplied by the entire dataset, forever. Designing the prompt against cost per row from the start is much easier than discovering the bill later and having to re-tune it against a live scoring model.",
+    body: "Embers classifies every engager on every post, so prompt length is not a style question; it is multiplied by the entire dataset, forever. Designing the prompt against cost per row from the start is much easier than discovering the bill later and having to re-tune it against a live scoring model.",
     tags: ["ai", "backend"],
     from: "embers",
     date: "2026-02",
@@ -124,7 +124,7 @@ export const notes: Note[] = [
   {
     n: 2,
     title: "Tabular figures, or the layout twitches",
-    body: "Any number that updates live — a counter, a timer, a total — will shift its own width as glyphs change unless the figures are tabular. It reads as instability rather than as a typographic detail, and it is one CSS declaration.",
+    body: "Any number that updates live (a counter, a timer, a total) will shift its own width as glyphs change unless the figures are tabular. It reads as instability rather than as a typographic detail, and it is one CSS declaration.",
     tags: ["motion", "type"],
     from: "snapcount",
     date: "2026-01",

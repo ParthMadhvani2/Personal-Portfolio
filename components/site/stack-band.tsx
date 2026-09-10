@@ -10,7 +10,7 @@ type Tech = {
   Icon: React.ComponentType<{ size?: number; "aria-hidden"?: boolean }>;
 };
 
-/** Only things running in production in one of the four products. */
+/** Only things running in production in one of the products. */
 const stack: Tech[] = [
   { name: "React 19", note: "Every web surface", Icon: Si.SiReact },
   { name: "TypeScript", note: "Everything, strict", Icon: Si.SiTypescript },
@@ -40,7 +40,7 @@ export default function StackBand() {
       intro={
         <>
           Grouped by depth rather than breadth. Anything I&apos;ve only tinkered
-          with is left off on purpose — the{" "}
+          with is left off on purpose. The{" "}
           <Link
             href="/tech-i-know"
             className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
@@ -57,7 +57,7 @@ export default function StackBand() {
             <Tooltip key={name} label={name} description={note} side="bottom">
               <span
                 className="flex h-11 items-center gap-2.5 rounded-md border border-line bg-surface px-3.5 text-[13px] text-muted transition-[background-color,color,transform] duration-fast ease-out hover:bg-surface-hover hover:text-fg"
-                aria-label={`${name} — ${note}`}
+                aria-label={`${name}: ${note}`}
               >
                 <Icon size={16} aria-hidden />
                 {name}

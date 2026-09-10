@@ -1,5 +1,5 @@
 /**
- * craft — a small set of interaction components built for this site and kept
+ * craft: a small set of interaction components built for this site and kept
  * portable on purpose.
  *
  * Each file is self-contained: React, `lucide-react` for icons, and the `cn`

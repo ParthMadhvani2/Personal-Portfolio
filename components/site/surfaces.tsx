@@ -34,7 +34,7 @@ const layers: Layer[] = [
     id: "ios",
     name: "iOS app",
     detail:
-      "Expo on the new architecture — TurboModules and Hermes — with real-time sync and haptics. Accessibility hooks are read on mount, so Reduce Motion and Reduce Transparency actually change what renders.",
+      "Expo on the new architecture (TurboModules and Hermes), with real-time sync and haptics. Accessibility hooks are read on mount, so Reduce Motion and Reduce Transparency actually change what renders.",
     stack: ["Expo SDK 53", "React Native 0.79", "MMKV", "expo-haptics", "EAS"],
   },
   {

@@ -141,9 +141,9 @@ function SheetDemo() {
       <Sheet open={open} onClose={() => setOpen(false)} title="Drag me">
         <h3 className="title text-[17px] lower">drag the handle</h3>
         <p className="mt-2 text-[14px] leading-relaxed text-muted">
-          Flick it down fast and it goes, even from near the top — the release
-          velocity is projected forward to decide where it would have landed.
-          Drag it slowly to halfway and let go, and it springs back. Try
+          Flick it down fast and it goes, even from near the top, because the
+          release velocity is projected forward to decide where it would have
+          landed. Drag it slowly to halfway and let go, and it springs back. Try
           grabbing it again while it is closing.
         </p>
         <p className="mt-3 text-[14px] leading-relaxed text-muted">

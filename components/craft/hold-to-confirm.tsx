@@ -8,7 +8,7 @@ type Props = {
   onConfirm: () => void;
   /** How long the hold must last, in ms. */
   duration?: number;
-  /** Destructive styling — red fill instead of accent. */
+  /** Destructive styling: red fill instead of accent. */
   destructive?: boolean;
   className?: string;
 };
@@ -22,7 +22,7 @@ type Props = {
  * The fill is a `clip-path: inset()` overlay rather than an animated width, so
  * it composites on the GPU and never reflows the label underneath.
  *
- * The timing is deliberately asymmetric — slow going in (the user is deciding),
+ * The timing is deliberately asymmetric: slow going in (the user is deciding),
  * snappy coming back (the system is responding). A release that unwound as
  * slowly as the press would feel like the button was arguing with you.
  *
@@ -96,7 +96,7 @@ export function HoldToConfirm({
         className,
       )}
     >
-      {/* Fill layer. Slow in, fast out — the whole feel lives in these two
+      {/* Fill layer. Slow in, fast out. The whole feel lives in these two
           transition declarations. */}
       <span
         aria-hidden

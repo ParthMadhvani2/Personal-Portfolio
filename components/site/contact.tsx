@@ -23,7 +23,7 @@ export default function Contact() {
 
           <p className="prose-body mt-5">
             A role where I own a product surface end to end rather than a lane
-            of it — the kind of scope where the schema decision and the empty
+            of it. The kind of scope where the schema decision and the empty
             state are the same person&apos;s problem. Design engineering,
             product engineering, or founding engineer at a team small enough
             that those titles mean the same thing.

@@ -28,7 +28,7 @@ const useIsoLayoutEffect =
  * The label row is rendered twice. The lower copy is styled inactive; the upper
  * copy is styled active and clipped to exactly the selected segment. Sliding
  * the clip in lockstep with the thumb means the text colour changes *as the
- * thumb passes over it*, pixel by pixel — something you cannot get by timing a
+ * thumb passes over it*, pixel by pixel, which you cannot get by timing a
  * `color` transition on each label, where the text always flips slightly ahead
  * of or behind the thumb.
  *

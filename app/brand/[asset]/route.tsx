@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { faces } from "../../../lib/og";
+import { products, shippedCount, spell } from "../../../data/products";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -76,12 +77,11 @@ export async function GET(
     <polyline points="${springPath(w, h, h * 0.17)}" fill="none" stroke="#333947" stroke-width="3.5" stroke-linecap="round"/>
   </svg>`;
 
-  const icons = [
-    "embers.png",
-    "hoodcleaningreport.png",
-    "snapcount.png",
-    "outboundqa.svg",
-  ].map(iconDataUri);
+  // Derived, so a new product appears on the banner without editing it here.
+  const files = products
+    .map((p) => p.icon?.replace("/brand/icons/", ""))
+    .filter((f): f is string => Boolean(f));
+  const icons = files.map(iconDataUri);
 
   // Sit the icons on the curve itself, spread across the right two-thirds.
   const amp = h * 0.17;
@@ -98,6 +98,10 @@ export async function GET(
     );
   };
   const tile = Math.round(h * 0.17);
+  // The run sits clear of the avatar crop on the left and the platform's own
+  // side cropping on the right, however many icons there are.
+  const START = 0.62;
+  const END = 0.9;
 
   return new ImageResponse(
     <div

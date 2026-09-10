@@ -77,7 +77,7 @@ export function CommandMenu({ items, placeholder = "Search…" }: Props) {
   }, [open]);
 
   // Keep the active row in view during keyboard navigation, without smooth
-  // scrolling — held arrow keys would queue a backlog of animations.
+  // scrolling, because held arrow keys would queue a backlog of animations.
   useEffect(() => {
     list.current
       ?.querySelector('[data-active="true"]')
@@ -171,7 +171,7 @@ export function CommandMenu({ items, placeholder = "Search…" }: Props) {
                         "flex w-full items-center gap-3 rounded-md px-3 py-2 text-left",
                         "text-[14px] text-muted",
                         // A tint, not a shade. bg-bg-subtle sits 5/255 from the panel in dark
-                        // mode — technically a selection, visually nothing.
+                        // mode: technically a selection, visually nothing.
                         "data-[active=true]:bg-accent/15 data-[active=true]:text-fg",
                       )}
                     >

@@ -68,7 +68,7 @@ export default function Experience() {
                   </span>
                 )}
                 <span className="mono ml-auto text-[11px] text-dim tnum">
-                  {r.experienceStatus.startAt} — {r.experienceStatus.endAt}
+                  {r.experienceStatus.startAt} to {r.experienceStatus.endAt}
                 </span>
               </div>
 

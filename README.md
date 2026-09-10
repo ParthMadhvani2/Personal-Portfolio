@@ -3,7 +3,7 @@
 **Live:** [parthmadhvani2.vercel.app](https://parthmadhvani2.vercel.app)
 
 From messy problem to working product. I take a product from the version someone
-describes out loud to something in production — schema, API, interface, iOS app,
+describes out loud to something in production: schema, API, interface, iOS app,
 billing, and the marketing site it launches behind.
 
 ## What's in here
@@ -27,13 +27,13 @@ billing, and the marketing site it launches behind.
 
 The interaction components this site is built from, kept portable on purpose.
 Each file depends on React, `lucide-react` for icons, and a two-line `cn`
-helper — no animation library, no headless-UI package, no context to wire up.
+helper. No animation library, no headless-UI package, no context to wire up.
 Colours resolve to CSS custom properties, so adopting one means copying the file
 and pointing about six variables at your own tokens. MIT.
 
 `CopyButton` · `Tooltip` · `SegmentedControl` · `AnimatedNumber` ·
 `HoldToConfirm` · `Sheet` · `SpotlightCard` · `Marquee` · `StatusPill` ·
-`ThemeToggle` — plus `useSpring`, a small interruptible spring with Apple's
+`ThemeToggle`, plus `useSpring`, a small interruptible spring with Apple's
 momentum projection and rubber-banding helpers.
 
 Every component carries a comment explaining the principle behind its timing
@@ -51,7 +51,7 @@ pnpm dev
 
 `NEXT_PUBLIC_SITE_URL` sets the canonical host for every canonical tag, OG URL,
 JSON-LD `@id` and sitemap entry. It defaults to the Vercel URL. **Set it in
-Vercel the moment a custom domain is connected** — otherwise canonicals keep
+Vercel the moment a custom domain is connected.** Otherwise canonicals keep
 pointing at the old host.
 
 ## Stack

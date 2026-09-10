@@ -12,7 +12,7 @@ export default function NotFound() {
       </h1>
       <p className="prose-body mt-4">
         This URL doesn&apos;t match a page. It may have moved, or it may never
-        have existed — either way the useful pages are one click away.
+        have existed. Either way the useful pages are one click away.
       </p>
       <div className="mt-8 flex flex-wrap gap-2">
         {[

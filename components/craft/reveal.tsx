@@ -5,7 +5,7 @@ import { cn } from "../../lib/cn";
 
 type Props = {
   children: React.ReactNode;
-  /** Stagger index — each step adds ~55ms. */
+  /** Stagger index. Each step adds ~55ms. */
   index?: number;
   /** How far below the fold it fires, in px. Negative means "further in". */
   margin?: number;
@@ -14,13 +14,13 @@ type Props = {
 };
 
 /**
- * Reveals its children when they scroll into view — once, then it stops.
+ * Reveals its children when they scroll into view: once, then it stops.
  *
  * The point is the *once*. A page-load entrance animation on content below the
  * fold plays to nobody: by the time the visitor scrolls down it finished
  * minutes ago, so it costs the same work and buys nothing. Worse, if anything
- * pauses animations — a background tab, an occluded window, a screenshot
- * pipeline — the content is stranded at opacity 0.
+ * pauses animations (a background tab, an occluded window, a screenshot
+ * pipeline), the content is stranded at opacity 0.
  *
  * So the observer disconnects after firing, the element is visible by default
  * for anyone without IntersectionObserver or JavaScript, and reduced motion

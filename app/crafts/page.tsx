@@ -8,10 +8,10 @@ import CodeBlock from "../../components/site/code-block";
 import { StatusPill } from "../../components/craft/status-pill";
 
 // Sources are read at build time, so the code on the page is always the code
-// that ships — it cannot drift from the component the way a pasted snippet does.
+// that ships. It cannot drift from the component the way a pasted snippet does.
 export const dynamic = "force-static";
 
-const title = "Crafts — interaction components";
+const title = "Crafts: interaction components";
 const description =
   "Ten interaction components with their source: a draggable sheet with momentum projection, a blur-masked copy button, a clip-path segmented control. No animation library. Copy the file.";
 
@@ -59,7 +59,7 @@ export default function CraftsPage() {
           <code className="mono text-[13px] text-fg">lucide-react</code> for
           icons, and a two-line{" "}
           <code className="mono text-[13px] text-fg">cn</code> helper. That is
-          the whole list — no Framer Motion, no Radix, no context to wire up.
+          the whole list. No Framer Motion, no Radix, no context to wire up.
         </p>
         <p className="prose-body mt-3">
           Colours resolve to CSS custom properties, so adopting one means
@@ -78,7 +78,7 @@ export default function CraftsPage() {
               <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
                 <div>
                   <p className="label mb-3">
-                    {String(i + 1).padStart(2, "0")} — {c.file}
+                    {String(i + 1).padStart(2, "0")} · {c.file}
                   </p>
                   <h2 className="title text-[22px]">{c.name}</h2>
                   <p className="prose-body mt-3 text-[14px]">{c.principle}</p>

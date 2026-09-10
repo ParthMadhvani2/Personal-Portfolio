@@ -6,13 +6,13 @@ export type SpringConfig = {
   /**
    * Overshoot, 0–1. `0` is critically damped (settles without bouncing) and is
    * the right default for almost all UI. Reach for bounce only when the gesture
-   * that triggered the motion carried momentum — a flick, a throw, a drag
+   * that triggered the motion carried momentum: a flick, a throw, a drag
    * release. Overshoot on a menu that merely faded in reads as wrong.
    */
   bounce?: number;
   /**
    * How quickly the value reaches its target, in seconds. This is not a
-   * duration — a spring has no fixed duration, its settle time emerges from the
+   * duration; a spring has no fixed duration, its settle time emerges from the
    * parameters. Lower is snappier.
    */
   duration?: number;
@@ -32,14 +32,14 @@ const DEFAULTS: Required<SpringConfig> = {
  * Two properties matter and are the whole reason not to use a CSS transition
  * for gesture-driven motion:
  *
- * 1. It always animates from the *presentation* value — the number currently on
- *    screen — so re-targeting mid-flight never produces a visible jump.
+ * 1. It always animates from the *presentation* value, the number currently on
+ *    screen, so re-targeting mid-flight never produces a visible jump.
  * 2. It carries velocity through a re-target. Swapping one tween for another at
  *    a gesture reversal creates a velocity discontinuity that reads as hitting a
  *    brick wall; blending velocity is what makes a reversal feel physical.
  *
  * Returns a live ref rather than React state so the animation never costs a
- * render — read `value.current` inside your own rAF loop, or pass `onChange`.
+ * render. Read `value.current` inside your own rAF loop, or pass `onChange`.
  *
  * @example
  * const y = useSpring(0, { bounce: 0.2, duration: 0.4 });
@@ -120,7 +120,7 @@ export function useSpring(
     [start],
   );
 
-  /** Jump without animating — for 1:1 tracking while a pointer is down. */
+  /** Jump without animating, for 1:1 tracking while a pointer is down. */
   const jump = useCallback(
     (to: number) => {
       stop();
@@ -141,7 +141,7 @@ export function useSpring(
  * Apple's momentum projection, from the Designing Fluid Interfaces sample code.
  * Given a release velocity, where would the content come to rest? Snap to the
  * target nearest *that* point rather than the nearest point to the release
- * position — this is what makes a flick feel like it throws the element.
+ * position. This is what makes a flick feel like it throws the element.
  *
  * Note this is exponential decay, not the physics-textbook `v² / 2a`.
  */

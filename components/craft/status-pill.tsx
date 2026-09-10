@@ -13,7 +13,7 @@ type Props = {
  * The pulse is a pseudo-element ring rather than an animation on the dot
  * itself, so the dot stays crisp and the ring can be dropped entirely under
  * reduced motion without the dot vanishing with it. Status is never carried by
- * colour alone — the label always says what the colour means.
+ * colour alone: the label always says what the colour means.
  */
 export function StatusPill({ children, tone = "neutral", className }: Props) {
   const color =
