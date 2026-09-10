@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notes } from "../../data/notes";
 import { site, SITE_URL } from "../../data/site";
+import { Rss } from "lucide-react";
 import { StatusPill } from "../../components/craft/status-pill";
 import NotesList from "../../components/site/notes-list";
 
@@ -52,7 +53,16 @@ export default function NotesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <StatusPill tone="accent">{notes.length} notes</StatusPill>
+      <div className="flex flex-wrap items-center gap-3">
+        <StatusPill tone="accent">{notes.length} notes</StatusPill>
+        <a
+          href="/notes/rss.xml"
+          className="group inline-flex items-center gap-1.5 text-[12px] text-dim transition-colors duration-fast ease-out hover:text-fg"
+        >
+          <Rss size={13} />
+          RSS
+        </a>
+      </div>
       <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
         notes
       </h1>

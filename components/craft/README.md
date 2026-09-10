@@ -1,6 +1,7 @@
 # craft
 
-Fifteen interaction components, kept portable on purpose.
+Fourteen interaction components, plus the two primitives they build on.
+Kept portable on purpose.
 
 Live demos with source: [parthmadhvani2.vercel.app/crafts](https://parthmadhvani2.vercel.app/crafts)
 

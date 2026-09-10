@@ -68,6 +68,14 @@ open http://localhost:3000/_resp.html
 
 An empty array is a pass. It is noindexed and disallowed in robots.
 
+## Machine-readable
+
+| Path | What it is |
+| --- | --- |
+| `/notes/rss.xml` | RSS 2.0 feed of the notes, generated from the same data the page renders from. Auto-discoverable from every page. |
+| `/llms.txt` | Site structure and quotable facts for language models, per the [llmstxt.org](https://llmstxt.org) convention. Generated, so it cannot go stale. |
+| `/sitemap.xml`, `/robots.txt` | Generated from the route and product data. |
+
 ## Configuration
 
 `NEXT_PUBLIC_SITE_URL` sets the canonical host for every canonical tag, OG URL,
