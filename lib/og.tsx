@@ -1,5 +1,10 @@
 import { ImageResponse } from "next/og";
 
+import { MARK_SVG } from "./mark-svg";
+
+/** Bundled, so no route ever reads public/ at runtime. */
+const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK_SVG).toString("base64")}`;
+
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
 
@@ -90,22 +95,9 @@ export async function ogImage({ eyebrow, title, subtitle, tags = [] }: Args) {
       />
 
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <div
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 11,
-            background: "#f5f5f7",
-            color: "#08080a",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 17,
-            fontWeight: 700,
-          }}
-        >
-          pm
-        </div>
+        {/* The mark itself, not a text stand-in for it. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={MARK_URI} width={44} height={44} alt="" />
         <div
           style={{
             display: "flex",
