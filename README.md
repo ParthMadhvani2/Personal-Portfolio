@@ -90,8 +90,14 @@ cannot drift from the tokens.
 
 - `/brand/linkedin.png` · 1584 × 396
 - `/brand/x.png` · 1500 × 500
-- `/media/mark.svg` · the mark, display cut
-- `/media/mark-small.svg` · favicon cut, heavier stem and a larger counter
+- `/media/mark.svg` · the mark, display cut: a P on squircle tiles, one slot open
+- `/media/mark-small.svg` · the 16px cut, drawn on a real pixel grid
+- `/media/mark-1024.png` · for uploads (GitHub, Peerlist, anywhere that wants a PNG)
+- `app/favicon.ico` (16, 32, 48) · `app/apple-icon.png` (full bleed, iOS masks it) · `public/icons/` for the PWA manifest
+
+The mark is generated, not drawn. `node scripts/mark.mjs` rewrites every SVG
+plus `lib/mark-svg.ts`, the copy the OG cards bundle so no route reads
+`public/` at runtime.
 
 Downloadable from [/colophon](https://parthmadhvani2.vercel.app/colophon).
 

@@ -36,3 +36,7 @@ yarn-error.log*
 next-env.d.ts
 # local editor/agent config
 .claude/
+
+# impeccable review captures and mock comps
+.impeccable/review/
+.impeccable/mocks/

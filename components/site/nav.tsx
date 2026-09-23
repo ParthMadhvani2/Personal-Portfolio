@@ -8,6 +8,9 @@ import { ThemeToggle } from "../craft/theme-toggle";
 import SiteCommand from "./site-command";
 import Image from "next/image";
 import { site } from "../../data/site";
+// Imported, not referenced by path: Next emits it at a content-hashed URL, so
+// a changed mark is a new URL and no browser can serve a stale copy.
+import markSmall from "../../public/media/mark-small.svg";
 
 /** tier 0 always shows, 1 hides under 420px, 2 hides under 768px. */
 const links: { href: string; label: string; tier?: 1 | 2 }[] = [
@@ -58,12 +61,14 @@ export default function SiteNav() {
             href="/"
             className="mr-auto flex shrink-0 items-center gap-2.5 rounded-md py-1 pr-2 transition-opacity duration-fast ease-out hover:opacity-70"
           >
+            {/* The pixel-grid cut: at 24px its gaps land on whole pixels and
+                stay open, where the squircle cut's gaps blur shut. */}
             <Image
-              src="/media/mark.svg"
+              src={markSmall}
               alt=""
               width={24}
               height={24}
-              className="h-6 w-6"
+              className="h-6 w-6 [image-rendering:crisp-edges]"
               priority
             />
             {/* Below 480px the wordmark wraps and shoves the toggle off the bar, so
