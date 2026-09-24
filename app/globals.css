@@ -334,6 +334,48 @@ body {
   }
 }
 
+/* Role map (contact): a single dot runs the active branch, then rests at the node.
+   offset-path is set inline per branch; the keyed element restarts on change. */
+.wire-dot {
+  offset-anchor: center;
+  offset-rotate: 0deg;
+  offset-distance: 100%;
+  animation: wire-run 900ms var(--ease-in-out) both;
+  box-shadow: 0 0 0 3px rgb(var(--surface));
+}
+
+@keyframes wire-run {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* the cell surfaces stay put; only their contents arrive, so the row never blanks */
+.role-proof > li > a > * {
+  animation: proof-in 380ms var(--ease-out) backwards;
+  animation-delay: calc(60ms + var(--i, 0) * 50ms);
+}
+
+@keyframes proof-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wire-dot {
+    animation: none;
+  }
+  .role-proof > li > a > * {
+    animation: none;
+  }
+}
+
 /* ---------------------------------------------------------------------------
    Accessibility
    Reduced motion means gentler, not absent. Opacity survives; travel does not.

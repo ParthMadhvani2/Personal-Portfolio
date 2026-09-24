@@ -2,6 +2,7 @@ import { ArrowUpRight, CalendarDays, Mail } from "lucide-react";
 import { site } from "../../data/site";
 import { CopyButton } from "../craft/copy-button";
 import { StatusPill } from "../craft/status-pill";
+import RoleMap from "./role-map";
 import Section from "./section";
 
 const elsewhere = [
@@ -17,7 +18,8 @@ const elsewhere = [
 export default function Contact() {
   return (
     <Section id="contact" label="Contact" title="what i'm looking for">
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <RoleMap />
+      <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <div className="rounded-lg border border-line bg-surface p-6">
           <StatusPill tone="live">{site.availability.label}</StatusPill>
 
