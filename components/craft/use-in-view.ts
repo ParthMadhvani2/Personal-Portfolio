@@ -29,7 +29,7 @@ export type InViewState = {
  */
 export function useInView<T extends HTMLElement = HTMLDivElement>(
   margin = -80,
-): readonly [React.RefObject<T>, InViewState] {
+): readonly [React.RefObject<T | null>, InViewState] {
   const ref = useRef<T>(null);
   const [state, setState] = useState<InViewState>({
     inView: true,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notes, noteHref } from "../../data/notes";
 import { site, SITE_URL } from "../../data/site";
 import { Rss } from "lucide-react";
@@ -75,12 +76,12 @@ export default function NotesPage() {
       </p>
       <p className="prose-body mt-3">
         Three sentences each. If it needs more than that, it is a{" "}
-        <a
+        <Link
           href="/work"
           className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
         >
           build write-up
-        </a>
+        </Link>
         , not a note.
       </p>
 

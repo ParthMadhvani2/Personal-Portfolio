@@ -15,7 +15,8 @@ import { productBySlug } from "../../../data/products";
 import { site, SITE_URL } from "../../../data/site";
 import { StatusPill } from "../../../components/craft/status-pill";
 
-type Params = { params: { slug: string } };
+// Next 15 passes route params as a promise.
+type Params = { params: Promise<{ slug: string }> };
 
 // One static page per note, so each lesson can rank for its own search instead
 // of sharing a single URL with thirteen others.
@@ -23,8 +24,8 @@ export function generateStaticParams() {
   return notes.map((n) => ({ slug: noteSlug(n) }));
 }
 
-export function generateMetadata({ params }: Params): Metadata {
-  const note = noteFromSlug(params.slug);
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const note = noteFromSlug((await params).slug);
   if (!note) return {};
   const description = noteDescription(note);
   return {
@@ -47,11 +48,12 @@ export function generateMetadata({ params }: Params): Metadata {
 const pill =
   "group inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-surface px-3.5 text-[13px] font-medium text-fg transition-[transform,background-color] duration-fast ease-out hover:bg-surface-hover active:scale-[0.97]";
 
-export default function NotePage({ params }: Params) {
-  const note = noteFromSlug(params.slug);
+export default async function NotePage({ params }: Params) {
+  const { slug } = await params;
+  const note = noteFromSlug(slug);
   if (!note) notFound();
   // An old or shortened slug still works, but only one URL gets indexed.
-  if (params.slug !== noteSlug(note)) permanentRedirect(noteHref(note));
+  if (slug !== noteSlug(note)) permanentRedirect(noteHref(note));
 
   const product = note.from ? productBySlug(note.from) : undefined;
   const related = relatedNotes(note);

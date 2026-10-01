@@ -9,7 +9,8 @@ import { BrowserFrame } from "../../../components/craft/browser-frame";
 import { StatusPill } from "../../../components/craft/status-pill";
 import { AnimatedNumber } from "../../../components/craft/animated-number";
 
-type Params = { params: { slug: string } };
+// Next 15 passes route params as a promise.
+type Params = { params: Promise<{ slug: string }> };
 
 // Every case study is a static page at build time, so each product gets its
 // own URL targeting its own long tail.
@@ -17,8 +18,8 @@ export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Params): Metadata {
-  const p = productBySlug(params.slug);
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const p = productBySlug((await params).slug);
   if (!p) return {};
   const title = `${p.name} · ${p.kind}`;
   const description = p.seo ?? p.summary;
@@ -36,8 +37,8 @@ export function generateMetadata({ params }: Params): Metadata {
   };
 }
 
-export default function CaseStudy({ params }: Params) {
-  const p = productBySlug(params.slug);
+export default async function CaseStudy({ params }: Params) {
+  const p = productBySlug((await params).slug);
   if (!p) notFound();
 
   const breadcrumb = {

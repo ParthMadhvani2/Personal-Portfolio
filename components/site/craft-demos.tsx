@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Bell, Github, Keyboard, Settings2, Trash2 } from "lucide-react";
+import { Bell, Keyboard, Settings2, Trash2 } from "lucide-react";
+// Lucide dropped brand marks in 1.0; Feather is the set it was forked from,
+// so the GitHub mark matches the stroke style of the icons beside it.
+import { FiGithub } from "react-icons/fi";
 import { AnimatedNumber } from "../craft/animated-number";
 import { CopyButton } from "../craft/copy-button";
 import { HoldToConfirm } from "../craft/hold-to-confirm";
@@ -35,7 +38,7 @@ function TooltipDemo() {
           { Icon: Bell, label: "Notifications", note: "⌘ + N" },
           { Icon: Settings2, label: "Settings", note: "⌘ + ," },
           { Icon: Keyboard, label: "Shortcuts", note: "Press ?" },
-          { Icon: Github, label: "Repository", note: "Opens GitHub" },
+          { Icon: FiGithub, label: "Repository", note: "Opens GitHub" },
         ].map(({ Icon, label, note }) => (
           <Tooltip key={label} label={label} description={note}>
             <button
