@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "../data/site";
 import { products } from "../data/products";
+import { notes, noteHref } from "../data/notes";
 
 /**
  * Generated from the same data the pages render from, so a new product cannot
@@ -29,5 +30,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...routes, ...work].map((r) => ({ ...r, lastModified: now }));
+  const notePages: MetadataRoute.Sitemap = notes.map((n) => ({
+    url: `${SITE_URL}${noteHref(n)}`,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  return [...routes, ...work, ...notePages].map((r) => ({
+    ...r,
+    lastModified: now,
+  }));
 }

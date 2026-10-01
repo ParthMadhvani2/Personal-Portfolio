@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { products, productBySlug } from "../../../data/products";
+import { notes, noteHref } from "../../../data/notes";
 import { site, SITE_URL } from "../../../data/site";
 import { BrowserFrame } from "../../../components/craft/browser-frame";
 import { StatusPill } from "../../../components/craft/status-pill";
@@ -60,6 +61,7 @@ export default function CaseStudy({ params }: Params) {
   };
 
   const others = products.filter((o) => o.slug !== p.slug);
+  const learned = notes.filter((n) => n.from === p.slug);
 
   return (
     <article className="mx-auto max-w-content px-4 sm:px-6">
@@ -249,6 +251,29 @@ export default function CaseStudy({ params }: Params) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {learned.length > 0 && (
+        <section className="mt-14 max-w-prose">
+          <h2 className="label mb-4">Notes from building it</h2>
+          <ol className="divide-y divide-line border-y border-line">
+            {learned.map((n) => (
+              <li key={n.n}>
+                <Link
+                  href={noteHref(n)}
+                  className="group grid grid-cols-[auto_minmax(0,1fr)] gap-5 py-4"
+                >
+                  <span className="mono pt-0.5 text-[12px] text-dim tnum">
+                    {String(n.n).padStart(2, "0")}
+                  </span>
+                  <span className="text-[15px] font-medium text-fg underline decoration-transparent underline-offset-4 transition-colors duration-fast ease-out group-hover:decoration-accent">
+                    {n.title}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </section>
       )}
 

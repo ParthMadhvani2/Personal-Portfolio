@@ -1,5 +1,5 @@
 import { crafts } from "../../data/crafts";
-import { notes } from "../../data/notes";
+import { notes, noteHref } from "../../data/notes";
 import {
   experiments,
   liveCount,
@@ -78,7 +78,7 @@ ${crafts.map((c) => `- ${c.name}: ${c.principle}`).join("\n")}
 
 ## Notes
 
-${notes.map((n) => `- ${n.title} (${n.date}, ${n.tags.join(", ")}): ${n.body}`).join("\n")}
+${notes.map((n) => `- [${n.title}](${SITE_URL}${noteHref(n)}) (${n.date}, ${n.tags.join(", ")}): ${n.body}`).join("\n")}
 
 ## Contact
 

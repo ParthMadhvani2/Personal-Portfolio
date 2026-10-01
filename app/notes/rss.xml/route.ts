@@ -1,4 +1,4 @@
-import { notes } from "../../../data/notes";
+import { notes, noteHref } from "../../../data/notes";
 import { products } from "../../../data/products";
 import { site, SITE_URL } from "../../../data/site";
 
@@ -32,12 +32,14 @@ export function GET() {
     .map((n) => {
       const from = productName(n.from);
       const body = from ? `${n.body}\n\nFrom building ${from}.` : n.body;
-      const url = `${SITE_URL}/notes#n${n.n}`;
+      const url = `${SITE_URL}${noteHref(n)}`;
+      // The guid predates per-note pages and is kept as it was, so readers
+      // that already have an item do not show it again as new.
+      const guid = `${SITE_URL}/notes#n${n.n}`;
       return `    <item>
       <title>${esc(n.title)}</title>
       <link>${esc(url)}</link>
-      <!-- The anchor is the permalink, so the guid is stable across edits. -->
-      <guid isPermaLink="true">${esc(url)}</guid>
+      <guid isPermaLink="false">${esc(guid)}</guid>
       <pubDate>${rfc822(n.date)}</pubDate>
       <description>${esc(body)}</description>
 ${n.tags.map((t) => `      <category>${esc(t)}</category>`).join("\n")}
@@ -53,7 +55,7 @@ ${n.tags.map((t) => `      <category>${esc(t)}</category>`).join("\n")}
     <title>${esc(`Notes · ${site.name}`)}</title>
     <link>${SITE_URL}/notes</link>
     <description>${esc(
-      "Short observations from shipping SaaS products. Things that cost something to learn, mostly by getting them wrong first."
+      "Short observations from shipping SaaS products. Things that cost something to learn, mostly by getting them wrong first.",
     )}</description>
     <language>en</language>
     <managingEditor>${esc(`${site.email} (${site.name})`)}</managingEditor>

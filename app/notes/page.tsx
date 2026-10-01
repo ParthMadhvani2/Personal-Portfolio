@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notes } from "../../data/notes";
+import { notes, noteHref } from "../../data/notes";
 import { site, SITE_URL } from "../../data/site";
 import { Rss } from "lucide-react";
 import { StatusPill } from "../../components/craft/status-pill";
@@ -36,7 +36,8 @@ const jsonLd = {
   author: { "@id": `${SITE_URL}/#person` },
   blogPost: notes.map((n) => ({
     "@type": "BlogPosting",
-    "@id": `${SITE_URL}/notes#n${n.n}`,
+    "@id": `${SITE_URL}${noteHref(n)}#post`,
+    url: `${SITE_URL}${noteHref(n)}`,
     headline: n.title,
     articleBody: n.body,
     keywords: n.tags.join(", "),

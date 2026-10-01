@@ -29,7 +29,8 @@ const type = [
   {
     role: "Headings",
     face: "Inter 600, section H2 550",
-    detail: "−0.032em tracking, 1.04 leading; 68px hero H1, 56px page H1, 40px H2",
+    detail:
+      "−0.032em tracking, 1.04 leading; 68px hero H1, 56px page H1, 40px H2",
   },
   {
     role: "Body + UI",
