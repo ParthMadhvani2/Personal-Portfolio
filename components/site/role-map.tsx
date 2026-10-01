@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { cn } from "../../lib/cn";
 import { products, shippedCount } from "../../data/products";
+import { crafts } from "../../data/crafts";
 
 type Proof = {
   href: string;
@@ -44,11 +45,11 @@ const ROLES: Role[] = [
   {
     id: "design",
     name: "design engineer",
-    hint: "14 components",
+    hint: `${crafts.length} components`,
     proof: [
       {
         href: "/crafts",
-        title: "14 interaction components",
+        title: `${crafts.length} interaction components`,
         detail: "copy button, segmented control, hold to confirm: with source, no animation library",
       },
       {

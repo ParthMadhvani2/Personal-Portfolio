@@ -24,7 +24,7 @@ export default function Hero() {
             <StatusPill tone="live">Available · {site.location}</StatusPill>
           </div>
 
-          <h1 className="display mt-6 text-[clamp(3rem,8.5vw,5.4rem)] lower">
+          <h1 className="display mt-6 text-[clamp(2.2rem,6.2vw,4.25rem)] lower">
             <span className="line-mask">
               <span style={{ ["--i" as string]: 1 }}>{site.name}</span>
             </span>
@@ -149,7 +149,7 @@ export default function Hero() {
           >
             <dt className="label mb-2">{String(i + 1).padStart(2, "0")}</dt>
             <dd>
-              <span className="title block text-[26px] text-fg">
+              <span className="figure block text-[30px] leading-none text-fg">
                 <AnimatedNumber value={s.value} suffix={s.suffix} countUp />
               </span>
               <span className="mt-0.5 block text-[13px] text-dim">

@@ -12,8 +12,7 @@ import { StatusPill } from "../../components/craft/status-pill";
 export const dynamic = "force-static";
 
 const title = "Crafts: interaction components";
-const description =
-  "Ten interaction components with their source: a draggable sheet with momentum projection, a blur-masked copy button, a clip-path segmented control. No animation library. Copy the file.";
+const description = `${crafts.length} interaction components with their source: a draggable sheet with momentum projection, a blur-masked copy button, a clip-path segmented control. No animation library.`;
 
 export const metadata: Metadata = {
   title,
@@ -50,7 +49,7 @@ export default function CraftsPage() {
     <>
       <section className="mx-auto max-w-content px-4 pb-4 pt-12 sm:px-6 sm:pt-20">
         <StatusPill tone="accent">{crafts.length} components · MIT</StatusPill>
-        <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
+        <h1 className="display mt-6 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
           crafts
         </h1>
         <p className="prose-body mt-5">

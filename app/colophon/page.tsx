@@ -27,24 +27,24 @@ export const metadata: Metadata = {
 
 const type = [
   {
-    role: "Display",
-    face: "Manrope 700–800",
-    detail: "−0.033em tracking, 1.02 leading",
+    role: "Headings",
+    face: "Inter 600, section H2 550",
+    detail: "−0.032em tracking, 1.04 leading; 68px hero H1, 56px page H1, 40px H2",
   },
   {
-    role: "Title",
-    face: "Manrope 600",
-    detail: "−0.02em tracking, 1.15 leading",
+    role: "Body + UI",
+    face: "Geist 400–600",
+    detail: "−0.003em tracking, 1.68 leading, 65ch measure",
   },
   {
-    role: "Body",
-    face: "Manrope 400",
-    detail: "0 tracking, 1.65 leading, 65ch measure",
+    role: "Code + labels",
+    face: "Geist Mono 400–500",
+    detail: "+0.1em tracking, uppercase, 11px for labels",
   },
   {
-    role: "Label",
-    face: "JetBrains Mono 400",
-    detail: "+0.1em tracking, uppercase, 11px",
+    role: "Figures",
+    face: "Literata 500, italic for asides",
+    detail: "lining tabular numerals; the signal row and pull quotes only",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function Colophon() {
   return (
     <div className="mx-auto max-w-content px-4 pb-4 pt-12 sm:px-6 sm:pt-20">
       <StatusPill tone="accent">Design notes</StatusPill>
-      <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
+      <h1 className="display mt-6 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
         colophon
       </h1>
       <p className="prose-body mt-5">

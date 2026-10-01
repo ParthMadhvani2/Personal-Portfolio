@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   // it is not overridden here, because a template applied to the homepage would
   // duplicate the name.
   alternates: { canonical: "/" },
-  description: `${site.tagline} ${site.summary} Embers, Hood Cleaning Report, SnapCount and OutboundQA.`,
+  description: `${site.tagline} Design engineer shipping SaaS end to end, web and iOS: Embers, SnapCount and Hood Cleaning Report.`,
 };
 
 export default function Home() {

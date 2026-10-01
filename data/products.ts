@@ -28,6 +28,13 @@ export type Product = {
   }[];
   /** Product Hunt launch: month, and the slug on his maker profile. */
   launch?: { date: string; slug: string };
+  /** App Store listing, for products with a native app. */
+  appStore?: string;
+  /**
+   * Search-result description, 120-160 characters: what it is, for whom, and
+   * what the write-up covers. Falls back to the summary.
+   */
+  seo?: string;
   /** For retired products: what happened and what it taught. */
   epilogue?: string;
 };
@@ -41,6 +48,7 @@ export const products: Product[] = [
     summary:
       "Turns LinkedIn engagement into a ranked queue of warm leads for founders and ghostwriters.",
     url: "https://useembers.com",
+    seo: "Embers turns LinkedIn engagement into a ranked queue of warm leads. How I built its scoring engine, ICP classifier, dashboard, billing and marketing site.",
     status: "live",
     kind: "LinkedIn lead pipeline",
     year: "2026",
@@ -108,6 +116,7 @@ export const products: Product[] = [
     summary:
       "NFPA 96 compliance reports for commercial kitchen exhaust contractors.",
     url: "https://hoodcleaningreport.com",
+    seo: "NFPA 96 compliance reports for kitchen exhaust cleaners. How I built the multi-tenant backend, CompanyCam integration, document vault and PDF pipeline.",
     status: "live",
     kind: "Compliance SaaS",
     year: "2026",
@@ -170,6 +179,8 @@ export const products: Product[] = [
     name: "SnapCount",
     summary: "Real-time multiplayer tally counter for iOS and the web.",
     url: "https://snapcount.app",
+    appStore: "https://apps.apple.com/app/snapcount-tally-counter/id6762636870",
+    seo: "SnapCount is a shared tally and people counter for iPhone and the web: up to 10 phones count one live total. How I built the iOS app and the sync layer.",
     status: "live",
     kind: "iOS + web app",
     year: "2026",
@@ -231,6 +242,7 @@ export const products: Product[] = [
     summary:
       "Inventory and accounting for jewellers: gold, diamonds, stones, sales, purchases and ledgers in one place.",
     url: "https://diam-jewels.leadcatalyst.in",
+    seo: "Diam Jewels: inventory and accounting for jewellers, with gold, diamonds, stones, sales, purchases and ledgers in one place. Notes on how it was built.",
     status: "live",
     kind: "Inventory and accounting",
     year: "2026",
@@ -250,6 +262,7 @@ export const products: Product[] = [
     summary:
       "Catches cold email infrastructure problems before a campaign goes out, not after it burns a domain.",
     url: "https://outboundqa.com",
+    seo: "OutboundQA checks cold-email infrastructure before a campaign goes out. How the check engine, the verdict model and the shareable client report were built.",
     status: "sunset",
     kind: "Outbound infrastructure QA",
     year: "2026",

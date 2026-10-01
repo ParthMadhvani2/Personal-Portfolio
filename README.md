@@ -40,9 +40,10 @@ the token contract, and how to adopt one.
 ## Design system
 
 Colours are raw `R G B` channels in CSS custom properties so Tailwind's alpha
-modifier resolves. Three type registers, each with a job: Instrument Serif for
-display, Geist for the interface, Geist Mono for labels and numbers. All
-self-hosted, latin subset, 81 KB.
+modifier resolves. Four type families, each with a job: Inter for headings,
+Geist for body and interface, Geist Mono for code, labels and metadata, and
+Literata for the signal figures and pull quotes. All self-hosted (Inter and
+Literata through next/font at build time), latin subset.
 
 Every decision is written up at [/colophon](https://parthmadhvani2.vercel.app/colophon).
 

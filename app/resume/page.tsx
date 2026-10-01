@@ -8,7 +8,8 @@ import { CopyButton } from "../../components/craft/copy-button";
 import { StatusPill } from "../../components/craft/status-pill";
 
 const title = "Résumé";
-const description = `Résumé for ${site.name}. Design engineer and product engineer. ${spell(shippedCount)} SaaS products shipped across web and iOS.`;
+const shipped = spell(shippedCount);
+const description = `Résumé for ${site.name}, design engineer and product engineer. ${shipped[0].toUpperCase()}${shipped.slice(1)} SaaS products shipped across web and iOS.`;
 
 export const metadata: Metadata = {
   title,
@@ -29,7 +30,7 @@ export default function ResumePage() {
       <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
         <div className="lg:sticky lg:top-24 lg:self-start">
           <StatusPill tone="live">{site.availability.label}</StatusPill>
-          <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.2rem)] lower">
+          <h1 className="display mt-6 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
             résumé
           </h1>
           <p className="prose-body mt-4">

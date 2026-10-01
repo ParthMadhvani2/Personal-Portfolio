@@ -33,7 +33,7 @@ export default function Section({
           <header>
             {label ? <p className="label mb-3">{label}</p> : null}
             {title ? (
-              <h2 className="display text-[clamp(1.9rem,4vw,2.6rem)] lower">
+              <h2 className="display display-section text-[clamp(1.625rem,3.4vw,2.5rem)] lower">
                 {title}
               </h2>
             ) : null}

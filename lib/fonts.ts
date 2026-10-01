@@ -1,39 +1,39 @@
+import { Inter, Literata } from "next/font/google";
 import localFont from "next/font/local";
 
 /**
- * Self-hosted, latin subset only.
- *
- * Three registers, each with a job, which is what stops a type system reading
+ * Four families, each with one job, which is what stops a type system reading
  * as decoration:
  *
- *   Instrument Serif  the human voice. Display headings and pull quotes.
- *   Geist             the interface. Body, UI, section titles.
- *   Geist Mono        the machine. Labels, code, counts, metadata.
+ *   Inter       headings. H1, section H2s and titles, set tight at 550-600.
+ *   Geist       the interface. Body, buttons, nav, demo UI.
+ *   Geist Mono  the machine. Code, URLs, labels, counts, metadata.
+ *   Literata    figures and the editorial aside. The three signal numbers
+ *               and pull quotes, nowhere else.
  *
- * Self-hosted rather than fetched from Google: no third-party DNS lookup and
- * connection on the critical path, and the files are versioned with the site
- * instead of being a remote dependency that can change under it.
+ * All four are self-hosted. Inter and Literata come through next/font/google,
+ * which downloads them at build time and serves them from this domain, so a
+ * visitor's browser never makes a request to Google; Geist and Geist Mono are
+ * versioned in /public/fonts.
  */
 
-export const display = localFont({
-  src: [
-    {
-      path: "../public/fonts/instrument-serif.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/instrument-serif-italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-  ],
+export const display = Inter({
+  subsets: ["latin"],
+  // Variable axis, so the 550 the section headings use is a real weight and
+  // not a synthesised one.
+  weight: "variable",
   variable: "--font-display",
   display: "swap",
-  // Matched so the fallback occupies close to the same space and the swap does
-  // not shove the layout sideways.
+  fallback: ["system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+});
+
+export const figure = Literata({
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  variable: "--font-figure",
+  display: "swap",
   fallback: ["Iowan Old Style", "Georgia", "serif"],
-  adjustFontFallback: "Times New Roman",
 });
 
 export const sans = localFont({

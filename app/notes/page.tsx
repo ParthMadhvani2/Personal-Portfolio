@@ -63,7 +63,7 @@ export default function NotesPage() {
           RSS
         </a>
       </div>
-      <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
+      <h1 className="display mt-6 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
         notes
       </h1>
       <p className="prose-body mt-5">

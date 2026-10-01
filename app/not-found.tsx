@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="mx-auto flex min-h-[60dvh] max-w-content flex-col justify-center px-4 py-20 sm:px-6">
       <p className="label mb-4">Error 404</p>
-      <h1 className="display text-[clamp(2.4rem,7vw,4rem)] lower">
+      <h1 className="display text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
         nothing here
       </h1>
       <p className="prose-body mt-4">

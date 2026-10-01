@@ -20,17 +20,18 @@ export function generateMetadata({ params }: Params): Metadata {
   const p = productBySlug(params.slug);
   if (!p) return {};
   const title = `${p.name} · ${p.kind}`;
+  const description = p.seo ?? p.summary;
   return {
     title,
-    description: p.summary,
+    description,
     alternates: { canonical: `/work/${p.slug}` },
     openGraph: {
       title: `${title} · ${site.name}`,
-      description: p.summary,
+      description,
       url: `${SITE_URL}/work/${p.slug}`,
       type: "article",
     },
-    twitter: { card: "summary_large_image", title, description: p.summary },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -98,7 +99,7 @@ export default function CaseStudy({ params }: Params) {
           </span>
         </div>
 
-        <h1 className="display mt-5 text-[clamp(2.2rem,6vw,3.4rem)] lower">
+        <h1 className="display mt-5 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
           {p.name}
         </h1>
         <p className="mt-4 text-[19px] leading-snug text-muted">{p.summary}</p>
@@ -112,6 +113,20 @@ export default function CaseStudy({ params }: Params) {
               className="group inline-flex h-10 items-center gap-2 rounded-md border border-line bg-surface px-4 text-[14px] font-medium text-fg transition-[transform,background-color] duration-fast ease-out hover:bg-surface-hover active:scale-[0.97]"
             >
               {new URL(p.url).hostname.replace("www.", "")}
+              <ArrowUpRight
+                size={15}
+                className="transition-transform duration-fast ease-out group-hover:-translate-y-px group-hover:translate-x-px"
+              />
+            </a>
+          )}
+          {p.appStore && (
+            <a
+              href={p.appStore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex h-10 items-center gap-2 rounded-md border border-line bg-surface px-4 text-[14px] font-medium text-fg transition-[transform,background-color] duration-fast ease-out hover:bg-surface-hover active:scale-[0.97]"
+            >
+              App Store
               <ArrowUpRight
                 size={15}
                 className="transition-transform duration-fast ease-out group-hover:-translate-y-px group-hover:translate-x-px"

@@ -20,7 +20,7 @@ export const site = {
   // and the social presence say the same thing.
   tagline: "From messy problem to working product.",
   summary:
-    "I build SaaS products end to end: backend, frontend, iOS, billing, design system, marketing site. Five products in production.",
+    "I build SaaS end to end: backend, frontend, iOS, billing and the marketing site. Five shipped, four still live.",
   location: "Surat / Bengaluru, India",
   timezone: "Asia/Kolkata",
   email: "madhvaniparth2@gmail.com",
