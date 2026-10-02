@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cn } from "../../lib/cn";
-import { notes, noteTags } from "../../data/notes";
+import { notes, noteHref, noteTags } from "../../data/notes";
 import { products } from "../../data/products";
 import { AnimatedNumber } from "../craft/animated-number";
 
@@ -48,17 +48,26 @@ export default function NotesList() {
             <li key={note.n} id={`n${note.n}`} className="scroll-mt-20 py-8">
               <div className="grid gap-3 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-7">
                 {/* Numbered so the collection visibly accumulates. Numbers are
-                    stable and never reused, because they are permalinks. */}
-                <a
-                  href={`#n${note.n}`}
-                  aria-label={`Link to note ${note.n}`}
+                    stable and never reused: they are the permalink, and the
+                    #n anchors still work for links made before notes had
+                    their own pages. */}
+                <Link
+                  href={noteHref(note)}
+                  aria-label={`Note ${note.n} on its own page`}
                   className="mono pt-1 text-[12px] text-dim tnum transition-colors duration-fast ease-out hover:text-accent"
                 >
                   {String(note.n).padStart(2, "0")}
-                </a>
+                </Link>
 
                 <div>
-                  <h2 className="title text-[17px]">{note.title}</h2>
+                  <h2 className="title text-[17px]">
+                    <Link
+                      href={noteHref(note)}
+                      className="underline decoration-transparent underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
+                    >
+                      {note.title}
+                    </Link>
+                  </h2>
                   <p className="prose-body mt-2 text-[15px]">{note.body}</p>
 
                   <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">

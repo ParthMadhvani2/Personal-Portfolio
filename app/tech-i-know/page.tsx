@@ -66,7 +66,7 @@ export default function StackPage() {
     <div className="mx-auto max-w-content px-4 pb-4 pt-12 sm:px-6 sm:pt-20">
       <StatusPill tone="accent">{total} entries · all shipped</StatusPill>
 
-      <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
+      <h1 className="display mt-6 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
         the stack i ship with
       </h1>
 

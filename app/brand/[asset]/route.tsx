@@ -62,9 +62,9 @@ function iconDataUri(file: string) {
 
 export async function GET(
   _req: Request,
-  { params }: { params: { asset: string } },
+  { params }: { params: Promise<{ asset: string }> },
 ) {
-  const spec = SPECS[params.asset as keyof typeof SPECS];
+  const spec = SPECS[(await params).asset as keyof typeof SPECS];
   if (!spec) return new Response("Not found", { status: 404 });
 
   const { w, h, avatar } = spec;

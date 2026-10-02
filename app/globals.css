@@ -177,29 +177,51 @@ body {
   text-transform: lowercase;
 }
 
-/* Display: Instrument Serif. One weight by design; a high-contrast serif at
-   display size does not need bold, it needs air and tight tracking. */
+/* Display: Inter, for H1s and section H2s. Semibold with tight tracking: a
+   sans heading at display size reads as engineered when the letters close up,
+   and as a default when they do not. Section H2s step down to 550. */
 .display {
   font-family:
     var(--font-display),
-    Iowan Old Style,
-    Georgia,
-    serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 0.98;
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.032em;
+  line-height: 1.04;
+  font-feature-settings: "cv11", "ss03";
 }
 
-/* The editorial register: used for pull quotes and asides, never for UI. */
+/* The editorial register: Literata italic, for pull quotes and asides, never
+   for UI. */
+/* Section H2s: the same face one step lighter, so the H1 stays the loudest
+   thing on the page. */
+.display-section {
+  font-weight: 550;
+}
+
 .editorial {
   font-family:
-    var(--font-display),
+    var(--font-figure),
     Iowan Old Style,
     Georgia,
     serif;
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.01em;
+}
+
+/* Figures: Literata with lining, tabular numerals, for the few numbers that
+   are the point of a block (the signal row). */
+.figure {
+  font-family:
+    var(--font-figure),
+    Iowan Old Style,
+    Georgia,
+    serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .title {

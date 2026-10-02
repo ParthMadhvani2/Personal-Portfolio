@@ -142,3 +142,46 @@ export const notes: Note[] = [
 export const noteTags = Array.from(
   new Set(notes.flatMap((n) => n.tags)),
 ).sort();
+
+/**
+ * A note's URL: its number, then its title for search. The number is the
+ * permalink and is what resolves, so editing a title changes the readable part
+ * of the URL without breaking it (the page redirects old slugs).
+ */
+export function noteSlug(note: Note) {
+  const words = note.title
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return `${note.n}-${words}`;
+}
+
+export const noteHref = (note: Note) => `/notes/${noteSlug(note)}`;
+
+/** Resolves "14", "14-anything" or "14-the-current-title" to note 14. */
+export function noteFromSlug(slug: string) {
+  const n = Number.parseInt(slug, 10);
+  return Number.isNaN(n) ? null : (notes.find((note) => note.n === n) ?? null);
+}
+
+/** The body cut at a word boundary for search results, which show ~155 characters. */
+export function noteDescription(note: Note, max = 155) {
+  if (note.body.length <= max) return note.body;
+  const cut = note.body.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
+/**
+ * Up to `count` other notes worth reading next: the same product first, then
+ * shared tags, newest first within each.
+ */
+export function relatedNotes(note: Note, count = 3) {
+  const score = (o: Note) =>
+    (o.from && o.from === note.from ? 10 : 0) +
+    o.tags.filter((t) => note.tags.includes(t)).length;
+  return notes
+    .filter((o) => o.n !== note.n && score(o) > 0)
+    .sort((a, b) => score(b) - score(a) || b.n - a.n)
+    .slice(0, count);
+}

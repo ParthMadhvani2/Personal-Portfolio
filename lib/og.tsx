@@ -8,14 +8,14 @@ const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK_SVG).toString("ba
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
 
-export type Face = { weight: 400 | 800; data: ArrayBuffer };
+export type Face = { weight: 400 | 600; data: ArrayBuffer };
 
 let fontCache: Promise<Face[]> | null = null;
 
 /**
- * Loads real Manrope faces for the card. Without them ImageResponse cannot
- * synthesise weight, and every title renders at regular, which is the wrong impression
- * for a card about interface craft. Both weights are loaded, or the whole card
+ * Loads real Inter faces for the card, the face the site's headings use.
+ * Without them ImageResponse cannot synthesise weight, and every title renders
+ * at regular, which is the wrong impression for a card about interface craft. Both weights are loaded, or the whole card
  * ends up bold including its body copy.
  *
  * Fetched once per build and cached. If the network is unavailable the card
@@ -24,12 +24,12 @@ let fontCache: Promise<Face[]> | null = null;
 export async function faces(): Promise<Face[]> {
   if (!fontCache) {
     fontCache = (async () => {
-      const load = async (weight: 400 | 800): Promise<Face | null> => {
+      const load = async (weight: 400 | 600): Promise<Face | null> => {
         try {
           // An old user-agent makes the CSS API return TTF rather than WOFF2,
           // which is the only format ImageResponse accepts.
           const css = await fetch(
-            `https://fonts.googleapis.com/css2?family=Manrope:wght@${weight}`,
+            `https://fonts.googleapis.com/css2?family=Inter:wght@${weight}`,
             { headers: { "User-Agent": "Mozilla/5.0 (Windows NT 6.1)" } },
           ).then((r) => r.text());
           const url = css.match(/src:\s*url\((.+?)\)/)?.[1];
@@ -42,7 +42,7 @@ export async function faces(): Promise<Face[]> {
           return null;
         }
       };
-      const loaded = await Promise.all([load(400), load(800)]);
+      const loaded = await Promise.all([load(400), load(600)]);
       return loaded.filter((f): f is Face => f !== null);
     })();
   }
@@ -77,7 +77,7 @@ export async function ogImage({ eyebrow, title, subtitle, tags = [] }: Args) {
         justifyContent: "space-between",
         background: "#08080a",
         padding: "64px 72px",
-        fontFamily: hasFont ? "Manrope" : "sans-serif",
+        fontFamily: hasFont ? "Inter" : "sans-serif",
         fontWeight: 400,
       }}
     >
@@ -116,8 +116,9 @@ export async function ogImage({ eyebrow, title, subtitle, tags = [] }: Args) {
         <div
           style={{
             display: "flex",
-            fontSize: title.length > 26 ? 74 : 92,
-            fontWeight: 800,
+            // Product names are a word; note titles are a sentence.
+            fontSize: title.length > 48 ? 58 : title.length > 26 ? 74 : 92,
+            fontWeight: 600,
             color: "#f5f5f7",
             letterSpacing: -3,
             lineHeight: 1.02,
@@ -172,7 +173,7 @@ export async function ogImage({ eyebrow, title, subtitle, tags = [] }: Args) {
       ...OG_SIZE,
       fonts: hasFont
         ? loaded.map((f) => ({
-            name: "Manrope",
+            name: "Inter",
             data: f.data,
             weight: f.weight,
             style: "normal" as const,

@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { cn } from "../../lib/cn";
 import { products, shippedCount } from "../../data/products";
+import { crafts } from "../../data/crafts";
 
 type Proof = {
   href: string;
@@ -44,12 +45,13 @@ const ROLES: Role[] = [
   {
     id: "design",
     name: "design engineer",
-    hint: "14 components",
+    hint: `${crafts.length} components`,
     proof: [
       {
         href: "/crafts",
-        title: "14 interaction components",
-        detail: "copy button, segmented control, hold to confirm: with source, no animation library",
+        title: `${crafts.length} interaction components`,
+        detail:
+          "copy button, segmented control, hold to confirm: with source, no animation library",
       },
       {
         href: "/colophon",
@@ -84,7 +86,8 @@ const ROLES: Role[] = [
       {
         href: "/work",
         title: `${shippedCount} shipped, ${launched} launched on product hunt`,
-        detail: "every layer owned, from the schema to the page it launches behind",
+        detail:
+          "every layer owned, from the schema to the page it launches behind",
       },
       ...(oqa
         ? [
@@ -143,8 +146,14 @@ export default function RoleMap() {
         </p>
 
         {/* branches: desktop only; on phones the list below carries the structure */}
-        <div className="relative hidden h-[192px] w-[120px] sm:block" aria-hidden>
-          <svg viewBox="0 0 120 192" className="absolute inset-0 h-full w-full overflow-visible">
+        <div
+          className="relative hidden h-[192px] w-[120px] sm:block"
+          aria-hidden
+        >
+          <svg
+            viewBox="0 0 120 192"
+            className="absolute inset-0 h-full w-full overflow-visible"
+          >
             {WIRES.map((d, i) => (
               <path
                 key={i}
@@ -207,7 +216,11 @@ export default function RoleMap() {
         aria-live="polite"
       >
         {role.proof.map((p, i) => (
-          <li key={p.href + p.title} className="bg-surface" style={{ "--i": i } as React.CSSProperties}>
+          <li
+            key={p.href + p.title}
+            className="bg-surface"
+            style={{ "--i": i } as React.CSSProperties}
+          >
             <Link
               href={p.href}
               className="group flex h-full items-start gap-3 bg-surface px-4 py-4 transition-colors duration-fast ease-out hover:bg-surface-hover"
@@ -222,8 +235,12 @@ export default function RoleMap() {
                 />
               ) : null}
               <span className="min-w-0">
-                <span className="block text-[14px] font-medium text-fg">{p.title}</span>
-                <span className="mt-1 block text-[13px] leading-snug text-muted">{p.detail}</span>
+                <span className="block text-[14px] font-medium text-fg">
+                  {p.title}
+                </span>
+                <span className="mt-1 block text-[13px] leading-snug text-muted">
+                  {p.detail}
+                </span>
               </span>
               <ArrowUpRight
                 size={14}

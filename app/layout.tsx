@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { display, mono, sans } from "../lib/fonts";
+import { display, figure, mono, sans } from "../lib/fonts";
 import "./globals.css";
 import { keywords, site, SITE_URL } from "../data/site";
 import { products } from "../data/products";
@@ -135,7 +135,14 @@ const jsonLd = {
         description: p.summary,
         url: p.url,
         applicationCategory: "BusinessApplication",
-        operatingSystem: p.slug === "snapcount" ? "iOS, Web" : "Web",
+        operatingSystem: p.appStore ? "iOS 15.1 or later, Web" : "Web",
+        ...(p.appStore
+          ? {
+              installUrl: p.appStore,
+              downloadUrl: p.appStore,
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+            }
+          : {}),
         author: { "@id": `${SITE_URL}/#person` },
         ...(p.launch
           ? {
@@ -156,7 +163,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${display.variable} ${figure.variable} ${sans.variable} ${mono.variable}`}
     >
       <head>
         {/* Runs before first paint so a stored theme never flashes the wrong one. */}

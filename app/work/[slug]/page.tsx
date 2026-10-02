@@ -3,12 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { products, productBySlug } from "../../../data/products";
+import { notes, noteHref } from "../../../data/notes";
 import { site, SITE_URL } from "../../../data/site";
 import { BrowserFrame } from "../../../components/craft/browser-frame";
 import { StatusPill } from "../../../components/craft/status-pill";
 import { AnimatedNumber } from "../../../components/craft/animated-number";
 
-type Params = { params: { slug: string } };
+// Next 15 passes route params as a promise.
+type Params = { params: Promise<{ slug: string }> };
 
 // Every case study is a static page at build time, so each product gets its
 // own URL targeting its own long tail.
@@ -16,26 +18,27 @@ export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Params): Metadata {
-  const p = productBySlug(params.slug);
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const p = productBySlug((await params).slug);
   if (!p) return {};
   const title = `${p.name} · ${p.kind}`;
+  const description = p.seo ?? p.summary;
   return {
     title,
-    description: p.summary,
+    description,
     alternates: { canonical: `/work/${p.slug}` },
     openGraph: {
       title: `${title} · ${site.name}`,
-      description: p.summary,
+      description,
       url: `${SITE_URL}/work/${p.slug}`,
       type: "article",
     },
-    twitter: { card: "summary_large_image", title, description: p.summary },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
-export default function CaseStudy({ params }: Params) {
-  const p = productBySlug(params.slug);
+export default async function CaseStudy({ params }: Params) {
+  const p = productBySlug((await params).slug);
   if (!p) notFound();
 
   const breadcrumb = {
@@ -59,6 +62,7 @@ export default function CaseStudy({ params }: Params) {
   };
 
   const others = products.filter((o) => o.slug !== p.slug);
+  const learned = notes.filter((n) => n.from === p.slug);
 
   return (
     <article className="mx-auto max-w-content px-4 sm:px-6">
@@ -98,7 +102,7 @@ export default function CaseStudy({ params }: Params) {
           </span>
         </div>
 
-        <h1 className="display mt-5 text-[clamp(2.2rem,6vw,3.4rem)] lower">
+        <h1 className="display mt-5 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
           {p.name}
         </h1>
         <p className="mt-4 text-[19px] leading-snug text-muted">{p.summary}</p>
@@ -112,6 +116,20 @@ export default function CaseStudy({ params }: Params) {
               className="group inline-flex h-10 items-center gap-2 rounded-md border border-line bg-surface px-4 text-[14px] font-medium text-fg transition-[transform,background-color] duration-fast ease-out hover:bg-surface-hover active:scale-[0.97]"
             >
               {new URL(p.url).hostname.replace("www.", "")}
+              <ArrowUpRight
+                size={15}
+                className="transition-transform duration-fast ease-out group-hover:-translate-y-px group-hover:translate-x-px"
+              />
+            </a>
+          )}
+          {p.appStore && (
+            <a
+              href={p.appStore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex h-10 items-center gap-2 rounded-md border border-line bg-surface px-4 text-[14px] font-medium text-fg transition-[transform,background-color] duration-fast ease-out hover:bg-surface-hover active:scale-[0.97]"
+            >
+              App Store
               <ArrowUpRight
                 size={15}
                 className="transition-transform duration-fast ease-out group-hover:-translate-y-px group-hover:translate-x-px"
@@ -234,6 +252,29 @@ export default function CaseStudy({ params }: Params) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {learned.length > 0 && (
+        <section className="mt-14 max-w-prose">
+          <h2 className="label mb-4">Notes from building it</h2>
+          <ol className="divide-y divide-line border-y border-line">
+            {learned.map((n) => (
+              <li key={n.n}>
+                <Link
+                  href={noteHref(n)}
+                  className="group grid grid-cols-[auto_minmax(0,1fr)] gap-5 py-4"
+                >
+                  <span className="mono pt-0.5 text-[12px] text-dim tnum">
+                    {String(n.n).padStart(2, "0")}
+                  </span>
+                  <span className="text-[15px] font-medium text-fg underline decoration-transparent underline-offset-4 transition-colors duration-fast ease-out group-hover:decoration-accent">
+                    {n.title}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </section>
       )}
 

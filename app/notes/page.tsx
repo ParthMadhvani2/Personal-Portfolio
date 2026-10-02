@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { notes } from "../../data/notes";
+import Link from "next/link";
+import { notes, noteHref } from "../../data/notes";
 import { site, SITE_URL } from "../../data/site";
 import { Rss } from "lucide-react";
 import { StatusPill } from "../../components/craft/status-pill";
@@ -36,7 +37,8 @@ const jsonLd = {
   author: { "@id": `${SITE_URL}/#person` },
   blogPost: notes.map((n) => ({
     "@type": "BlogPosting",
-    "@id": `${SITE_URL}/notes#n${n.n}`,
+    "@id": `${SITE_URL}${noteHref(n)}#post`,
+    url: `${SITE_URL}${noteHref(n)}`,
     headline: n.title,
     articleBody: n.body,
     keywords: n.tags.join(", "),
@@ -63,7 +65,7 @@ export default function NotesPage() {
           RSS
         </a>
       </div>
-      <h1 className="display mt-6 text-[clamp(2.2rem,6vw,3.6rem)] lower">
+      <h1 className="display mt-6 text-[clamp(2.1rem,5.4vw,3.5rem)] lower">
         notes
       </h1>
       <p className="prose-body mt-5">
@@ -74,12 +76,12 @@ export default function NotesPage() {
       </p>
       <p className="prose-body mt-3">
         Three sentences each. If it needs more than that, it is a{" "}
-        <a
+        <Link
           href="/work"
           className="text-fg underline decoration-line underline-offset-4 transition-colors duration-fast ease-out hover:decoration-accent"
         >
           build write-up
-        </a>
+        </Link>
         , not a note.
       </p>
 
